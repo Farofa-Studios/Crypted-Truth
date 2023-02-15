@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		17A3BB5C299A72B600D27026 /* CryptedTruthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A3BB5B299A72B600D27026 /* CryptedTruthApp.swift */; };
-		17A3BB5E299A72B600D27026 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A3BB5D299A72B600D27026 /* ContentView.swift */; };
+		17A3BB5E299A72B600D27026 /* MiniGame2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A3BB5D299A72B600D27026 /* MiniGame2.swift */; };
 		17A3BB60299A72B700D27026 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17A3BB5F299A72B700D27026 /* Assets.xcassets */; };
 		17A3BB63299A72B700D27026 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17A3BB62299A72B700D27026 /* Preview Assets.xcassets */; };
 		17A3BB6A299A72CD00D27026 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 17A3BB69299A72CD00D27026 /* .gitignore */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		17A3BB58299A72B600D27026 /* CryptedTruth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptedTruth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17A3BB5B299A72B600D27026 /* CryptedTruthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptedTruthApp.swift; sourceTree = "<group>"; };
-		17A3BB5D299A72B600D27026 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		17A3BB5D299A72B600D27026 /* MiniGame2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame2.swift; sourceTree = "<group>"; };
 		17A3BB5F299A72B700D27026 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17A3BB62299A72B700D27026 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17A3BB69299A72CD00D27026 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				17A3BB5B299A72B600D27026 /* CryptedTruthApp.swift */,
-				17A3BB5D299A72B600D27026 /* ContentView.swift */,
+				17A3BB5D299A72B600D27026 /* MiniGame2.swift */,
 				17A3BB5F299A72B700D27026 /* Assets.xcassets */,
 				17A3BB61299A72B700D27026 /* Preview Content */,
 			);
@@ -141,7 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17A3BB5E299A72B600D27026 /* ContentView.swift in Sources */,
+				17A3BB5E299A72B600D27026 /* MiniGame2.swift in Sources */,
 				17A3BB5C299A72B600D27026 /* CryptedTruthApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
