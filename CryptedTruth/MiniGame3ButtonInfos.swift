@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct MiniGame3ButtonInfos {
+class MiniGame3ButtonInfos: ObservableObject {
     var image: String
-    var rotation: Double
+    @Published var rotation: Double
+    
+    init(image: String, rotation: Double) {
+        self.image = image
+        self.rotation = rotation
+    }
 }

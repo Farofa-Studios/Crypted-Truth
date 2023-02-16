@@ -7,11 +7,8 @@
 
 import SwiftUI
 
-struct MiniGame3: View {
-    
-    @State var degrees: Int = 0
-    
-    @State var coffes: [MiniGame3ButtonInfos] = [
+class ContentX: ObservableObject {
+    @Published var infoX = [
         MiniGame3ButtonInfos(image: "coffee-1", rotation: 0),
         MiniGame3ButtonInfos(image: "coffee-2", rotation: 1),
         MiniGame3ButtonInfos(image: "coffee-3", rotation: 2),
@@ -29,33 +26,25 @@ struct MiniGame3: View {
         MiniGame3ButtonInfos(image: "coffee-15", rotation: 2),
         MiniGame3ButtonInfos(image: "coffee-16", rotation: 3)
     ]
+}
+
+struct MiniGame3: View {
     
-    let rows = Array(repeating: GridItem(.flexible(), spacing: -80), count: 4)
+    @StateObject var coffes = ContentX()
+    
+    let rows = Array(repeating: GridItem(.flexible(), spacing: -20), count: 4)
     
     var body: some View {
         
         HStack {
             
-            LazyVGrid(columns: rows, spacing: 12) {
+            LazyVGrid(columns: rows, spacing: 25) {
                 
-                ForEach(coffes, id: \.image) { item in
-                    
-                    Button{
-                        
-    //                    ao selecionar -> ver id,
-    //                    somar rotação e modulo 3 (rotation % 3 + 1),
-    //                    alterar rotacao da imagem conforme rotation
-                    } label: {
-                        Image(item.image)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 180, height: 180)
-                    }
-                    .buttonStyle(.card)
-                    .rotationEffect(.degrees(90 * item.rotation))
+                ForEach($coffes.infoX, id: \.image) { $item in
+                    CardButton(image: item.image, rotation: item.rotation)
                 }
             }
-            VStack(spacing: 200) {
+            VStack(spacing: 50) {
                 Text("Clique na imagem para rotacionar e descubra a pista escondida")
                     .font(.title3)
                     .foregroundColor(.blue)
@@ -69,8 +58,27 @@ struct MiniGame3: View {
     }
 }
 
-struct MiniGame3_Previews: PreviewProvider {
-    static var previews: some View {
-        MiniGame3()
+struct CardButton: View {
+    let image: String
+    @State var rotation: Double
+    
+    var body: some View {
+        
+        Button(action: {
+            rotation += 1
+        }) {
+            Image(image)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 180, height: 180)
+        }
+        .buttonStyle(.card)
+        .rotationEffect(.degrees(90 * rotation))
     }
 }
+
+//struct MiniGame3_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MiniGame3()
+//    }
+//}
