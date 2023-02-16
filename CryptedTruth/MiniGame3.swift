@@ -7,30 +7,30 @@
 
 import SwiftUI
 
-class ContentX: ObservableObject {
-    @Published var infoX = [
-        MiniGame3ButtonInfos(image: "coffee-1", rotation: 0),
-        MiniGame3ButtonInfos(image: "coffee-2", rotation: 1),
-        MiniGame3ButtonInfos(image: "coffee-3", rotation: 2),
-        MiniGame3ButtonInfos(image: "coffee-4", rotation: 3),
-        MiniGame3ButtonInfos(image: "coffee-5", rotation: 0),
-        MiniGame3ButtonInfos(image: "coffee-6", rotation: 1),
-        MiniGame3ButtonInfos(image: "coffee-7", rotation: 2),
-        MiniGame3ButtonInfos(image: "coffee-8", rotation: 3),
-        MiniGame3ButtonInfos(image: "coffee-9", rotation: 0),
-        MiniGame3ButtonInfos(image: "coffee-10", rotation: 1),
-        MiniGame3ButtonInfos(image: "coffee-11", rotation: 2),
-        MiniGame3ButtonInfos(image: "coffee-12", rotation: 3),
-        MiniGame3ButtonInfos(image: "coffee-13", rotation: 0),
-        MiniGame3ButtonInfos(image: "coffee-14", rotation: 1),
-        MiniGame3ButtonInfos(image: "coffee-15", rotation: 2),
-        MiniGame3ButtonInfos(image: "coffee-16", rotation: 3)
+class Images: ObservableObject {
+    @Published var listOfPieces = [
+        MiniGame3Images(image: "01", rotation: 3),
+        MiniGame3Images(image: "02", rotation: 1),
+        MiniGame3Images(image: "03", rotation: 2),
+        MiniGame3Images(image: "04", rotation: 3),
+        MiniGame3Images(image: "05", rotation: 4),
+        MiniGame3Images(image: "06", rotation: 1),
+        MiniGame3Images(image: "07", rotation: 2),
+        MiniGame3Images(image: "08", rotation: 3),
+        MiniGame3Images(image: "09", rotation: 2),
+        MiniGame3Images(image: "10", rotation: 1),
+        MiniGame3Images(image: "11", rotation: 2),
+        MiniGame3Images(image: "12", rotation: 3),
+        MiniGame3Images(image: "13", rotation: 2),
+        MiniGame3Images(image: "14", rotation: 1),
+        MiniGame3Images(image: "15", rotation: 2),
+        MiniGame3Images(image: "16", rotation: 3)
     ]
 }
 
 struct MiniGame3: View {
     
-    @StateObject var coffes = ContentX()
+    @StateObject var pieces = Images()
     
     let rows = Array(repeating: GridItem(.flexible(), spacing: -20), count: 4)
     
@@ -40,8 +40,8 @@ struct MiniGame3: View {
             
             LazyVGrid(columns: rows, spacing: 25) {
                 
-                ForEach($coffes.infoX, id: \.image) { $item in
-                    CardButton(image: item.image, rotation: item.rotation)
+                ForEach($pieces.listOfPieces, id: \.image) { $piece in
+                    CardButton(image: piece.image, rotation: piece.rotation)
                 }
             }
             VStack(spacing: 50) {
