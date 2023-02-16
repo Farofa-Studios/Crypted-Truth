@@ -32,11 +32,11 @@ struct MiniGame3: View {
     
     @StateObject var pieces = Images()
     
-    let rows = Array(repeating: GridItem(.flexible(), spacing: -20), count: 4)
+    let rows = Array(repeating: GridItem(.flexible(), spacing: -1000), count: 4)
     
     var body: some View {
         
-        HStack {
+        VStack {
             
             LazyVGrid(columns: rows, spacing: 25) {
                 
@@ -44,16 +44,19 @@ struct MiniGame3: View {
                     CardButton(image: piece.image, rotation: piece.rotation)
                 }
             }
-            VStack(spacing: 50) {
-                Text("Clique na imagem para rotacionar e descubra a pista escondida")
-                    .font(.title3)
-                    .foregroundColor(.blue)
-                Button("Confirm") {
-                    print("button confirm pressed")
-                }
-                .buttonStyle(.borderedProminent)
-                .foregroundColor(.green)
-            }
+            
+            SubtitleView()
+            
+//            VStack(spacing: 50) {
+//                Text("Clique na imagem para rotacionar e descubra a pista escondida")
+//                    .font(.title3)
+//                    .foregroundColor(.blue)
+//                Button("Confirm") {
+//                    print("button confirm pressed")
+//                }
+//                .buttonStyle(.borderedProminent)
+//                .foregroundColor(.green)
+//            }
         }
     }
 }
@@ -66,19 +69,20 @@ struct CardButton: View {
         
         Button(action: {
             rotation += 1
+//            rotation = Double(rotation % 3) + 1
         }) {
             Image(image)
                 .resizable()
                 .scaledToFill()
-                .frame(width: 180, height: 180)
+                .frame(width: 160, height: 160)
         }
         .buttonStyle(.card)
         .rotationEffect(.degrees(90 * rotation))
     }
 }
 
-//struct MiniGame3_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MiniGame3()
-//    }
-//}
+struct MiniGame3_Previews: PreviewProvider {
+    static var previews: some View {
+        MiniGame3()
+    }
+}
