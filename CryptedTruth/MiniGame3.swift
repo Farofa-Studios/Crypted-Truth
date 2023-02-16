@@ -7,24 +7,30 @@
 
 import SwiftUI
 
+func randomPosition() -> Double {
+    let number = Int.random(in: 1...4)
+    let doubleNumber: Double =  Double(number)
+    return doubleNumber
+}
+
 class Images: ObservableObject {
     @Published var listOfPieces = [
-        MiniGame3Images(image: "01", rotation: 3),
-        MiniGame3Images(image: "02", rotation: 1),
-        MiniGame3Images(image: "03", rotation: 2),
-        MiniGame3Images(image: "04", rotation: 3),
-        MiniGame3Images(image: "05", rotation: 4),
-        MiniGame3Images(image: "06", rotation: 1),
-        MiniGame3Images(image: "07", rotation: 2),
-        MiniGame3Images(image: "08", rotation: 3),
-        MiniGame3Images(image: "09", rotation: 2),
-        MiniGame3Images(image: "10", rotation: 1),
-        MiniGame3Images(image: "11", rotation: 2),
-        MiniGame3Images(image: "12", rotation: 3),
-        MiniGame3Images(image: "13", rotation: 2),
-        MiniGame3Images(image: "14", rotation: 1),
-        MiniGame3Images(image: "15", rotation: 2),
-        MiniGame3Images(image: "16", rotation: 3)
+        MiniGame3Images(image: "01", rotation: randomPosition()),
+        MiniGame3Images(image: "02", rotation: randomPosition()),
+        MiniGame3Images(image: "03", rotation: randomPosition()),
+        MiniGame3Images(image: "04", rotation: randomPosition()),
+        MiniGame3Images(image: "05", rotation: randomPosition()),
+        MiniGame3Images(image: "06", rotation: randomPosition()),
+        MiniGame3Images(image: "07", rotation: randomPosition()),
+        MiniGame3Images(image: "08", rotation: randomPosition()),
+        MiniGame3Images(image: "09", rotation: randomPosition()),
+        MiniGame3Images(image: "10", rotation: randomPosition()),
+        MiniGame3Images(image: "11", rotation: randomPosition()),
+        MiniGame3Images(image: "12", rotation: randomPosition()),
+        MiniGame3Images(image: "13", rotation: randomPosition()),
+        MiniGame3Images(image: "14", rotation: randomPosition()),
+        MiniGame3Images(image: "15", rotation: randomPosition()),
+        MiniGame3Images(image: "16", rotation: randomPosition())
     ]
 }
 
@@ -41,7 +47,7 @@ struct MiniGame3: View {
             LazyVGrid(columns: rows, spacing: 25) {
                 
                 ForEach($pieces.listOfPieces, id: \.image) { $piece in
-                    CardButton(image: piece.image, rotation: piece.rotation)
+                    CardButton(image: piece.image, rotation: Int(piece.rotation))
                 }
             }
             
@@ -63,13 +69,13 @@ struct MiniGame3: View {
 
 struct CardButton: View {
     let image: String
-    @State var rotation: Double
+    @State var rotation: Int
     
     var body: some View {
         
         Button(action: {
-            rotation += 1
-//            rotation = Double(rotation % 3) + 1
+            rotation = rotation % 4 + 1
+            print(rotation)
         }) {
             Image(image)
                 .resizable()
@@ -77,7 +83,7 @@ struct CardButton: View {
                 .frame(width: 160, height: 160)
         }
         .buttonStyle(.card)
-        .rotationEffect(.degrees(90 * rotation))
+        .rotationEffect(.degrees(90 * Double(rotation)))
     }
 }
 
