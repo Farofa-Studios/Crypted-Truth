@@ -14,16 +14,18 @@ struct BoardView: View {
 
     
     let columns =
-    [GridItem(.flexible()), GridItem(.flexible())]
+    [GridItem(.fixed(904)), GridItem(.fixed(904))]
         
     var body: some View {
         NavigationStack {
             
             ZStack {
-                Color(.white)
+                Color(UIColor(red: 0.09, green: 0.11, blue: 0.13, alpha: 1.00))
                     .ignoresSafeArea()
                 VStack {
                     ZStack {
+                        Image("")
+
                         LazyVGrid(columns: columns, spacing: 168) {
                             ForEach(Victims.allVictims, id: \.id) { victim in
                                 ZStack {

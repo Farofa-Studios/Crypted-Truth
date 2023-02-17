@@ -19,7 +19,9 @@ struct CardBoardView: View {
                 .frame(width: 140, height: 175)
             Text(victim.name)
         }
-        .padding()
+        .frame(width: 1320, height: 742.5)
+        
+        SubtitleView()
         
     }
 }
