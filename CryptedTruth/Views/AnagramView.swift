@@ -8,88 +8,50 @@
 import SwiftUI
 
 struct AnagramView: View {
+    
+    let rows =
+    [GridItem(.flexible())]
+    
     var body: some View {
-        VStack {
-            HStack(spacing: 20) {
-                Image("anagrama")
-                Image("anagrama")
-                Image("anagrama")
-                Image("anagrama")
-                Image("anagrama")
-                Image("anagrama")
-                Image("anagrama")
-                Image("anagrama")
-            }
-            
-            HStack {
+        ZStack {
+            Color(.blue)
+                .ignoresSafeArea()
+            VStack {
                 
-                Button {
-                    //
-                } label: {
-                    Rectangle()
-                        .frame(width: 46, height: 44)
-                        .foregroundColor(Color(UIColor(red: 0.05, green: 0.32, blue: 0.42, alpha: 1.00)))
-                }
-                .buttonStyle(.card)
-                Button {
-                    //
-                } label: {
-                    Rectangle()
-                        .frame(width: 46, height: 44)
-                        .foregroundColor(Color(UIColor(red: 0.05, green: 0.32, blue: 0.42, alpha: 1.00)))
-                }
-                .buttonStyle(.card)
-                Button {
-                    //
-                } label: {
-                    Rectangle()
-                        .frame(width: 46, height: 44)
-                        .foregroundColor(Color(UIColor(red: 0.05, green: 0.32, blue: 0.42, alpha: 1.00)))
-                }
-                .buttonStyle(.card)
-                Button {
-                    //
-                } label: {
-                    Rectangle()
-                        .frame(width: 46, height: 44)
-                        .foregroundColor(Color(UIColor(red: 0.05, green: 0.32, blue: 0.42, alpha: 1.00)))
-                }
-                .buttonStyle(.card)
-                Button {
-                    //
-                } label: {
-                    Rectangle()
-                        .frame(width: 46, height: 44)
-                        .foregroundColor(Color(UIColor(red: 0.05, green: 0.32, blue: 0.42, alpha: 1.00)))
-                }
-                .buttonStyle(.card)
-                Button {
-                    //
-                } label: {
-                    Rectangle()
-                        .frame(width: 46, height: 44)
-                        .foregroundColor(Color(UIColor(red: 0.05, green: 0.32, blue: 0.42, alpha: 1.00)))
-                }
-                .buttonStyle(.card)
-                Button {
-                    //
-                } label: {
-                    Rectangle()
-                        .frame(width: 46, height: 44)
-                        .foregroundColor(Color(UIColor(red: 0.05, green: 0.32, blue: 0.42, alpha: 1.00)))
-                }
-                .buttonStyle(.card)
-                Button {
-                    //
-                } label: {
-                    Rectangle()
-                        .frame(width: 46, height: 44)
-                        .foregroundColor(Color(UIColor(red: 0.05, green: 0.32, blue: 0.42, alpha: 1.00)))
-                }
-                .buttonStyle(.card)
-            }
-            
+                LazyHGrid(rows: rows, spacing: 8) {
+                    Button("T") {}
+                    Button("S") {}
+                    Button("D") {}
+                    Button("N") {}
+                    Button("S") {}
+                    Button("I") {}
+                    Button("E") {}
+                    Button("O") {}
 
+                }
+                
+                HStack(spacing: 16) {
+                    Button {
+                        //
+                    } label: {
+                        HStack(spacing: 12) {
+                            Image(systemName: "delete.left")
+                            Text("Desfazer")
+                        }
+                    }
+                    
+                    Button {
+                        //
+                    } label: {
+                        HStack(spacing: 12) {
+                            Image(systemName: "trash")
+                            Text("Apagar")
+                        }
+                    }
+
+                }
+               
+            }
         }
     }
 }
