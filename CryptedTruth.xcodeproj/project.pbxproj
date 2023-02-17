@@ -8,19 +8,49 @@
 
 /* Begin PBXBuildFile section */
 		17A3BB5C299A72B600D27026 /* CryptedTruthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A3BB5B299A72B600D27026 /* CryptedTruthApp.swift */; };
-		17A3BB5E299A72B600D27026 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A3BB5D299A72B600D27026 /* ContentView.swift */; };
 		17A3BB60299A72B700D27026 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17A3BB5F299A72B700D27026 /* Assets.xcassets */; };
 		17A3BB63299A72B700D27026 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17A3BB62299A72B700D27026 /* Preview Assets.xcassets */; };
 		17A3BB6A299A72CD00D27026 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 17A3BB69299A72CD00D27026 /* .gitignore */; };
+		8B5B663E299E7AA5006A23CD /* MiniGame2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B663D299E7AA5006A23CD /* MiniGame2.swift */; };
+		8B5B6640299E7AEA006A23CD /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B663F299E7AEA006A23CD /* Recipe.swift */; };
+		8B5B6642299E8169006A23CD /* RecipesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B6641299E8169006A23CD /* RecipesService.swift */; };
+		8D55F92F299D2CE500964EAC /* MiniGame3Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55F92E299D2CE500964EAC /* MiniGame3Images.swift */; };
+		8D55F931299D2D4400964EAC /* MiniGame3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55F930299D2D4400964EAC /* MiniGame3.swift */; };
+		8D67B1E3299E94D4003A2B09 /* MiniGame3CardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67B1E2299E94D4003A2B09 /* MiniGame3CardButtonView.swift */; };
+		BD78003E299D13C700C6C974 /* Victim.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD78003D299D13C700C6C974 /* Victim.swift */; };
+		BD780042299D15F100C6C974 /* VictimsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD780041299D15F100C6C974 /* VictimsService.swift */; };
+		BD780049299D581D00C6C974 /* VictimViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD780048299D581D00C6C974 /* VictimViewModel.swift */; };
+		BD78004C299E5C8300C6C974 /* Subtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD78004B299E5C8300C6C974 /* Subtitle.swift */; };
+		BD78004E299E5D7600C6C974 /* SubtitlesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD78004D299E5D7600C6C974 /* SubtitlesService.swift */; };
+		BD780050299E5F4E00C6C974 /* SubtitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD78004F299E5F4E00C6C974 /* SubtitleViewModel.swift */; };
+		BD780052299E5FA400C6C974 /* SubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD780051299E5FA400C6C974 /* SubtitleView.swift */; };
+		BD780054299FA89200C6C974 /* AnagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD780053299FA89200C6C974 /* AnagramView.swift */; };
+		BDE36FC3299BBCF5005E399E /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE36FC2299BBCF5005E399E /* BoardView.swift */; };
+		BDE36FCD299BDC77005E399E /* CardBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE36FCC299BDC77005E399E /* CardBoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		17A3BB58299A72B600D27026 /* CryptedTruth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptedTruth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17A3BB5B299A72B600D27026 /* CryptedTruthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptedTruthApp.swift; sourceTree = "<group>"; };
-		17A3BB5D299A72B600D27026 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		17A3BB5F299A72B700D27026 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17A3BB62299A72B700D27026 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17A3BB69299A72CD00D27026 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		8D55F92E299D2CE500964EAC /* MiniGame3Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3Images.swift; sourceTree = "<group>"; };
+		8D55F930299D2D4400964EAC /* MiniGame3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3.swift; sourceTree = "<group>"; };
+		8D67B1E2299E94D4003A2B09 /* MiniGame3CardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3CardButtonView.swift; sourceTree = "<group>"; };
+		8B5B663D299E7AA5006A23CD /* MiniGame2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame2.swift; sourceTree = "<group>"; };
+		8B5B663F299E7AEA006A23CD /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		8B5B6641299E8169006A23CD /* RecipesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesService.swift; sourceTree = "<group>"; };
+		BD78003D299D13C700C6C974 /* Victim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Victim.swift; sourceTree = "<group>"; };
+		BD780041299D15F100C6C974 /* VictimsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictimsService.swift; sourceTree = "<group>"; };
+		BD780048299D581D00C6C974 /* VictimViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictimViewModel.swift; sourceTree = "<group>"; };
+		BD78004B299E5C8300C6C974 /* Subtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subtitle.swift; sourceTree = "<group>"; };
+		BD78004D299E5D7600C6C974 /* SubtitlesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitlesService.swift; sourceTree = "<group>"; };
+		BD78004F299E5F4E00C6C974 /* SubtitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleViewModel.swift; sourceTree = "<group>"; };
+		BD780051299E5FA400C6C974 /* SubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleView.swift; sourceTree = "<group>"; };
+		BD780053299FA89200C6C974 /* AnagramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnagramView.swift; sourceTree = "<group>"; };
+		BDE36FC2299BBCF5005E399E /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		BDE36FCC299BDC77005E399E /* CardBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +85,12 @@
 			isa = PBXGroup;
 			children = (
 				17A3BB5B299A72B600D27026 /* CryptedTruthApp.swift */,
+				8D67B1E4299E9655003A2B09 /* MiniGame3 */,
 				17A3BB5D299A72B600D27026 /* ContentView.swift */,
+				BD780047299D307100C6C974 /* Services */,
+				BD780040299D13E400C6C974 /* Models */,
+				BD78003C299D113900C6C974 /* Views */,
+				BD78004A299D642800C6C974 /* ViewModel */,
 				17A3BB5F299A72B700D27026 /* Assets.xcassets */,
 				17A3BB61299A72B700D27026 /* Preview Content */,
 			);
@@ -68,6 +103,57 @@
 				17A3BB62299A72B700D27026 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8D67B1E4299E9655003A2B09 /* MiniGame3 */ = {
+			isa = PBXGroup;
+			children = (
+				8D55F92E299D2CE500964EAC /* MiniGame3Images.swift */,
+				8D55F930299D2D4400964EAC /* MiniGame3.swift */,
+				8D67B1E2299E94D4003A2B09 /* MiniGame3CardButtonView.swift */,
+			);
+			path = MiniGame3;
+			sourceTree = "<group>";
+		};
+		BD78003C299D113900C6C974 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BDE36FC2299BBCF5005E399E /* BoardView.swift */,
+				BDE36FCC299BDC77005E399E /* CardBoardView.swift */,
+				BD780051299E5FA400C6C974 /* SubtitleView.swift */,
+				8B5B663D299E7AA5006A23CD /* MiniGame2.swift */,
+				BD780053299FA89200C6C974 /* AnagramView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BD780040299D13E400C6C974 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BD78003D299D13C700C6C974 /* Victim.swift */,
+				BD78004B299E5C8300C6C974 /* Subtitle.swift */,
+				8B5B663F299E7AEA006A23CD /* Recipe.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BD780047299D307100C6C974 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BD780041299D15F100C6C974 /* VictimsService.swift */,
+				BD78004D299E5D7600C6C974 /* SubtitlesService.swift */,
+				8B5B6641299E8169006A23CD /* RecipesService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BD78004A299D642800C6C974 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BD780048299D581D00C6C974 /* VictimViewModel.swift */,
+				BD78004F299E5F4E00C6C974 /* SubtitleViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +227,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDE36FC3299BBCF5005E399E /* BoardView.swift in Sources */,
+				8D67B1E3299E94D4003A2B09 /* MiniGame3CardButtonView.swift in Sources */,
+				8D55F931299D2D4400964EAC /* MiniGame3.swift in Sources */,
 				17A3BB5E299A72B600D27026 /* ContentView.swift in Sources */,
+				BD780050299E5F4E00C6C974 /* SubtitleViewModel.swift in Sources */,
 				17A3BB5C299A72B600D27026 /* CryptedTruthApp.swift in Sources */,
+				8B5B6640299E7AEA006A23CD /* Recipe.swift in Sources */,
+				BD780049299D581D00C6C974 /* VictimViewModel.swift in Sources */,
+				8B5B6642299E8169006A23CD /* RecipesService.swift in Sources */,
+				8B5B663E299E7AA5006A23CD /* MiniGame2.swift in Sources */,
+				BD780042299D15F100C6C974 /* VictimsService.swift in Sources */,
+				BD78004C299E5C8300C6C974 /* Subtitle.swift in Sources */,
+				BDE36FCD299BDC77005E399E /* CardBoardView.swift in Sources */,
+				BD78004E299E5D7600C6C974 /* SubtitlesService.swift in Sources */,
+				BD78003E299D13C700C6C974 /* Victim.swift in Sources */,
+				BD780054299FA89200C6C974 /* AnagramView.swift in Sources */,
+				BD780052299E5FA400C6C974 /* SubtitleView.swift in Sources */,
+				8D55F92F299D2CE500964EAC /* MiniGame3Images.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +373,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CryptedTruth/Preview Content\"";
-				DEVELOPMENT_TEAM = ZPDCX326AZ;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -297,7 +399,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CryptedTruth/Preview Content\"";
-				DEVELOPMENT_TEAM = ZPDCX326AZ;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
