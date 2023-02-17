@@ -18,7 +18,7 @@ struct SubtitleView: View {
             ZStack {
                 Rectangle()
                     .frame(width: 1320, height: 200, alignment: .center)
-                    .foregroundColor(Color(UIColor(red: 0.05, green: 0.32, blue: 0.42, alpha: 1.00)))
+                    .foregroundColor(Color(UIColor(red: 1, green: 1, blue: 1, alpha: 0.1).cgColor))
                 Text("Hello blablabla")
                     .frame(width: 1255.81, height: 120, alignment: .leading)
             }

@@ -13,13 +13,15 @@ struct CardBoardView: View {
         
     var body: some View {
         
-        VStack {
-            Image(victim.picture)
-                .resizable()
-                .frame(width: 140, height: 175)
-            Text(victim.name)
+        ZStack {
+            
+            Color(UIColor(red: 0.09, green: 0.11, blue: 0.13, alpha: 1.00))
+                .ignoresSafeArea()
+        
+            Image("Quadro")
+            Image(victim.card)
+            
         }
-        .frame(width: 1320, height: 742.5)
         
         SubtitleView()
         
