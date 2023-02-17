@@ -19,11 +19,11 @@ struct Recipe: Identifiable {
     /// Recipe title
     let title: String
     /// List of ingredients
-    let ingredientsList: [String: String]
+    let ingredientsList: [String]
     /// Correct answer
     let correctAnswer: String
     
-    init(id: Int, image: String, title: String, ingredientsList: [String: String], correctAnswer: String) {
+    init(id: Int, image: String, title: String, ingredientsList: [String], correctAnswer: String) {
         self.id = id
         self.image = image
         self.title = title
