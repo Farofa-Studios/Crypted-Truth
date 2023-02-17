@@ -14,6 +14,9 @@
 		8B5B663E299E7AA5006A23CD /* MiniGame2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B663D299E7AA5006A23CD /* MiniGame2.swift */; };
 		8B5B6640299E7AEA006A23CD /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B663F299E7AEA006A23CD /* Recipe.swift */; };
 		8B5B6642299E8169006A23CD /* RecipesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B6641299E8169006A23CD /* RecipesService.swift */; };
+		8D55F92F299D2CE500964EAC /* MiniGame3Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55F92E299D2CE500964EAC /* MiniGame3Images.swift */; };
+		8D55F931299D2D4400964EAC /* MiniGame3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55F930299D2D4400964EAC /* MiniGame3.swift */; };
+		8D67B1E3299E94D4003A2B09 /* MiniGame3CardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67B1E2299E94D4003A2B09 /* MiniGame3CardButtonView.swift */; };
 		BD78003E299D13C700C6C974 /* Victim.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD78003D299D13C700C6C974 /* Victim.swift */; };
 		BD780042299D15F100C6C974 /* VictimsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD780041299D15F100C6C974 /* VictimsService.swift */; };
 		BD780049299D581D00C6C974 /* VictimViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD780048299D581D00C6C974 /* VictimViewModel.swift */; };
@@ -32,6 +35,9 @@
 		17A3BB5F299A72B700D27026 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17A3BB62299A72B700D27026 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17A3BB69299A72CD00D27026 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		8D55F92E299D2CE500964EAC /* MiniGame3Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3Images.swift; sourceTree = "<group>"; };
+		8D55F930299D2D4400964EAC /* MiniGame3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3.swift; sourceTree = "<group>"; };
+		8D67B1E2299E94D4003A2B09 /* MiniGame3CardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3CardButtonView.swift; sourceTree = "<group>"; };
 		8B5B663D299E7AA5006A23CD /* MiniGame2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame2.swift; sourceTree = "<group>"; };
 		8B5B663F299E7AEA006A23CD /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		8B5B6641299E8169006A23CD /* RecipesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesService.swift; sourceTree = "<group>"; };
@@ -79,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				17A3BB5B299A72B600D27026 /* CryptedTruthApp.swift */,
+				8D67B1E4299E9655003A2B09 /* MiniGame3 */,
+				17A3BB5D299A72B600D27026 /* ContentView.swift */,
 				BD780047299D307100C6C974 /* Services */,
 				BD780040299D13E400C6C974 /* Models */,
 				BD78003C299D113900C6C974 /* Views */,
@@ -95,6 +103,16 @@
 				17A3BB62299A72B700D27026 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8D67B1E4299E9655003A2B09 /* MiniGame3 */ = {
+			isa = PBXGroup;
+			children = (
+				8D55F92E299D2CE500964EAC /* MiniGame3Images.swift */,
+				8D55F930299D2D4400964EAC /* MiniGame3.swift */,
+				8D67B1E2299E94D4003A2B09 /* MiniGame3CardButtonView.swift */,
+			);
+			path = MiniGame3;
 			sourceTree = "<group>";
 		};
 		BD78003C299D113900C6C974 /* Views */ = {
@@ -210,6 +228,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDE36FC3299BBCF5005E399E /* BoardView.swift in Sources */,
+				8D67B1E3299E94D4003A2B09 /* MiniGame3CardButtonView.swift in Sources */,
+				8D55F931299D2D4400964EAC /* MiniGame3.swift in Sources */,
+				17A3BB5E299A72B600D27026 /* ContentView.swift in Sources */,
 				BD780050299E5F4E00C6C974 /* SubtitleViewModel.swift in Sources */,
 				17A3BB5C299A72B600D27026 /* CryptedTruthApp.swift in Sources */,
 				8B5B6640299E7AEA006A23CD /* Recipe.swift in Sources */,
@@ -223,6 +244,7 @@
 				BD78003E299D13C700C6C974 /* Victim.swift in Sources */,
 				BD780054299FA89200C6C974 /* AnagramView.swift in Sources */,
 				BD780052299E5FA400C6C974 /* SubtitleView.swift in Sources */,
+				8D55F92F299D2CE500964EAC /* MiniGame3Images.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
