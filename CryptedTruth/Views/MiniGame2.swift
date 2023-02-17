@@ -1,40 +1,33 @@
 //
-//  ContentView.swift
+//  MiniGame2.swift
 //  CryptedTruth
 //
-//  Created by Alex A. Rocha on 13/02/23.
+//  Created by Anna Alicia Milani on 14/02/23.
 //
 
 import SwiftUI
 
 struct MiniGame2: View {
     
-    @State var ingredient = "questionmark.square.fill"
-    
-    let ingredientsOptionList = ["globe.americas.fill", "sun.min.fill", "sunset.circle.fill", "sun.dust.circle.fill", "moon.fill", "moon.haze.fill", "moon.stars.fill", "cloud.fill"]
-    
-    let recipeIngredientsList = ["cup.and.saucer.fill", "wineglass.fill", "carrot.fill"]
-    
-    let recipe = "birthday.cake.fill"
-    
-    let level = "Fase 1"
-    
-    let correctAnswer = "moon.haze.fill"
-    
-    @State var selected = ""
+    let ingredientsOptionList = ["globe.americas.fill", "sun.min.fill", "sunset.circle.fill", "sun.dust.circle.fill", "moon.fill", "moon.haze.fill", "moon.stars.fill", "cloud.fill"].shuffled()
     
     @State var scale = 1.0
+    
+    @State var ingredient = "questionmark.square.fill"
+    
+    let recipe = Recipes.allRecipes[0]
     
     var body: some View {
         VStack {
             
-            Text(level)
-//                .animation(.easeInOut.repeatCount(5), value: scaleValue)
+            Spacer()
+            
+            Text("Nível \(recipe.id)")
             
             HStack {
                 VStack{
                     Text("Receita")
-                    Image(systemName: recipe)
+                    Image(systemName: recipe.image)
                         .padding()
                 }
                 
@@ -42,7 +35,7 @@ struct MiniGame2: View {
                     Text("Ingredientes")
                     
                     HStack {
-                        ForEach(recipeIngredientsList, id: \.self) { item in
+                        ForEach(recipe.ingredientsList, id: \.self) { item in
                             Image(systemName: item)
                         }
                         
@@ -61,19 +54,22 @@ struct MiniGame2: View {
             HStack {
                 ForEach(ingredientsOptionList, id: \.self) { item in
                     
-                    IngredientsButton(image: item, answer: correctAnswer){
+                    IngredientsButton(image: item, answer: recipe.correctAnswer){
                         self.buttonTapped(item)
                     }
                 }
             }
             .padding()
             
+            Spacer()
+            
+            SubtitleView()
         }
         .padding()
     }
     
     private func buttonTapped(_ selected: String) {
-        if selected == correctAnswer {
+        if selected == recipe.correctAnswer {
             ingredient = selected
             
             // aumenta escala
@@ -134,7 +130,6 @@ struct IngredientsButton: View {
         }
         
         .rotationEffect(.degrees(image != answer ? angle: 0))
-//        .foregroundColor(isWrong ? .red: .black)
     }
 }
 
