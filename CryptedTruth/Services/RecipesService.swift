@@ -12,8 +12,8 @@ struct Recipes {
     static let allRecipes: [Recipe] = [
         .init(id: 1,
               image: "birthday.cake.fill",
-              title: "Bolo",
-              ingredientsList: ["cup.and.saucer.fill", "wineglass.fill", "carrot.fill"],
+              title: "Macarronada",
+              ingredientsList: ["cup.and.saucer.fill": "Queijo", "wineglass.fill": "Carne Moída", "carrot.fill": "Massa", "fork.knife": "Orégano"],
               correctAnswer: "moon.haze.fill"),
     ]
     

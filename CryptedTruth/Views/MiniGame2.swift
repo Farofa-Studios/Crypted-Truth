@@ -17,39 +17,57 @@ struct MiniGame2: View {
     
     let recipe = Recipes.allRecipes[0]
     
+    let numOfRecipes = Recipes.allRecipes.count
+    
     var body: some View {
         VStack {
             
             Spacer()
             
-            Text("Nível \(recipe.id)")
-            
             HStack {
-                VStack{
-                    Text("Receita")
-                    Image(systemName: recipe.image)
-                        .padding()
+                VStack {
+                    Text("Rodada")
+                        .font(.system(size: 38))
+                    
+                    HStack (spacing: 0){
+                        Text("\(recipe.id)")
+                            .font(.system(size: 57))
+                            .foregroundColor(.white)
+                        
+                        Text("/\(numOfRecipes)")
+                            .font(.system(size: 48))
+                            .foregroundColor(.white)
+                            .opacity(0.6)
+                    }
                 }
                 
-                VStack{
+                VStack (alignment: .center){
+                    
                     Text("Ingredientes")
+                        .font(.system(size: 38))
                     
                     HStack {
-                        ForEach(recipe.ingredientsList, id: \.self) { item in
-                            Image(systemName: item)
+                        ForEach(recipe.ingredientsList.sorted(by: >), id: \.key) { key, value in
+                            VStack {
+                                
+                                Image(systemName: key)
+                                
+                                
+                                Text(value)
+                                    .font(.system(size: 25))
+                            }
                         }
-                        
-                        Image(systemName: ingredient)
-                            .scaleEffect(scale)
-                        
                     }
-                    .padding()
                 }
-                .padding()
+                
+                VStack {
+                    Text(recipe.title)
+                        .font(.system(size: 38))
+                    Image(systemName: recipe.image)
+                }
             }
-            .padding()
             
-            Text("Qual é o ingrediente que falta?")
+            Spacer()
             
             HStack {
                 ForEach(ingredientsOptionList, id: \.self) { item in
@@ -59,14 +77,13 @@ struct MiniGame2: View {
                     }
                 }
             }
-            .padding()
             
             Spacer()
             
             SubtitleView()
         }
-        .padding()
     }
+    
     
     private func buttonTapped(_ selected: String) {
         if selected == recipe.correctAnswer {
@@ -85,7 +102,6 @@ struct MiniGame2: View {
             }
         }
     }
-    
 }
 
 struct IngredientsButton: View {
@@ -121,7 +137,6 @@ struct IngredientsButton: View {
                         self.angle -= 5.0
                     }
                 }
-                
             }
             action()
             
