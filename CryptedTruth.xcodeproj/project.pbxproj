@@ -24,6 +24,7 @@
 		BD780054299FA89200C6C974 /* AnagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD780053299FA89200C6C974 /* AnagramView.swift */; };
 		BDE36FC3299BBCF5005E399E /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE36FC2299BBCF5005E399E /* BoardView.swift */; };
 		BDE36FCD299BDC77005E399E /* CardBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE36FCC299BDC77005E399E /* CardBoardView.swift */; };
+		BDF97C22299FD8D000DFABEE /* Color+customColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF97C21299FD8D000DFABEE /* Color+customColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		BD780053299FA89200C6C974 /* AnagramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnagramView.swift; sourceTree = "<group>"; };
 		BDE36FC2299BBCF5005E399E /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		BDE36FCC299BDC77005E399E /* CardBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBoardView.swift; sourceTree = "<group>"; };
+		BDF97C21299FD8D000DFABEE /* Color+customColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+customColors.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				BD780040299D13E400C6C974 /* Models */,
 				BD78003C299D113900C6C974 /* Views */,
 				BD78004A299D642800C6C974 /* ViewModel */,
+				BDF97C20299FD8BC00DFABEE /* Extensions */,
 				17A3BB5F299A72B700D27026 /* Assets.xcassets */,
 				17A3BB61299A72B700D27026 /* Preview Content */,
 			);
@@ -136,6 +139,14 @@
 				BD78004F299E5F4E00C6C974 /* SubtitleViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BDF97C20299FD8BC00DFABEE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BDF97C21299FD8D000DFABEE /* Color+customColors.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +234,7 @@
 				BD78003E299D13C700C6C974 /* Victim.swift in Sources */,
 				BD780054299FA89200C6C974 /* AnagramView.swift in Sources */,
 				BD780052299E5FA400C6C974 /* SubtitleView.swift in Sources */,
+				BDF97C22299FD8D000DFABEE /* Color+customColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
