@@ -21,6 +21,7 @@
 		BD78004E299E5D7600C6C974 /* SubtitlesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD78004D299E5D7600C6C974 /* SubtitlesService.swift */; };
 		BD780050299E5F4E00C6C974 /* SubtitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD78004F299E5F4E00C6C974 /* SubtitleViewModel.swift */; };
 		BD780052299E5FA400C6C974 /* SubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD780051299E5FA400C6C974 /* SubtitleView.swift */; };
+		BD780054299FA89200C6C974 /* AnagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD780053299FA89200C6C974 /* AnagramView.swift */; };
 		BDE36FC3299BBCF5005E399E /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE36FC2299BBCF5005E399E /* BoardView.swift */; };
 		BDE36FCD299BDC77005E399E /* CardBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE36FCC299BDC77005E399E /* CardBoardView.swift */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,7 @@
 		BD78004D299E5D7600C6C974 /* SubtitlesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitlesService.swift; sourceTree = "<group>"; };
 		BD78004F299E5F4E00C6C974 /* SubtitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleViewModel.swift; sourceTree = "<group>"; };
 		BD780051299E5FA400C6C974 /* SubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleView.swift; sourceTree = "<group>"; };
+		BD780053299FA89200C6C974 /* AnagramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnagramView.swift; sourceTree = "<group>"; };
 		BDE36FC2299BBCF5005E399E /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		BDE36FCC299BDC77005E399E /* CardBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +104,7 @@
 				BDE36FCC299BDC77005E399E /* CardBoardView.swift */,
 				BD780051299E5FA400C6C974 /* SubtitleView.swift */,
 				8B5B663D299E7AA5006A23CD /* MiniGame2.swift */,
+				BD780053299FA89200C6C974 /* AnagramView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				BDE36FCD299BDC77005E399E /* CardBoardView.swift in Sources */,
 				BD78004E299E5D7600C6C974 /* SubtitlesService.swift in Sources */,
 				BD78003E299D13C700C6C974 /* Victim.swift in Sources */,
+				BD780054299FA89200C6C974 /* AnagramView.swift in Sources */,
 				BD780052299E5FA400C6C974 /* SubtitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
