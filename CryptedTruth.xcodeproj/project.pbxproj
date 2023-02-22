@@ -30,17 +30,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		173502D929A6931600C57D55 /* FuzzyBubbles-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FuzzyBubbles-Bold.ttf"; sourceTree = "<group>"; };
+		173502DA29A6931600C57D55 /* FuzzyBubbles-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FuzzyBubbles-Regular.ttf"; sourceTree = "<group>"; };
+		173502DB29A6931F00C57D55 /* PTMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTMono-Regular.ttf"; sourceTree = "<group>"; };
 		17A3BB58299A72B600D27026 /* CryptedTruth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptedTruth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17A3BB5B299A72B600D27026 /* CryptedTruthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptedTruthApp.swift; sourceTree = "<group>"; };
 		17A3BB5F299A72B700D27026 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17A3BB62299A72B700D27026 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17A3BB69299A72CD00D27026 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		8D55F92E299D2CE500964EAC /* MiniGame3Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3Images.swift; sourceTree = "<group>"; };
-		8D55F930299D2D4400964EAC /* MiniGame3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3.swift; sourceTree = "<group>"; };
-		8D67B1E2299E94D4003A2B09 /* MiniGame3CardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3CardButtonView.swift; sourceTree = "<group>"; };
 		8B5B663D299E7AA5006A23CD /* MiniGame2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame2.swift; sourceTree = "<group>"; };
 		8B5B663F299E7AEA006A23CD /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		8B5B6641299E8169006A23CD /* RecipesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesService.swift; sourceTree = "<group>"; };
+		8D55F92E299D2CE500964EAC /* MiniGame3Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3Images.swift; sourceTree = "<group>"; };
+		8D55F930299D2D4400964EAC /* MiniGame3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3.swift; sourceTree = "<group>"; };
+		8D67B1E2299E94D4003A2B09 /* MiniGame3CardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3CardButtonView.swift; sourceTree = "<group>"; };
 		BD78003D299D13C700C6C974 /* Victim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Victim.swift; sourceTree = "<group>"; };
 		BD780041299D15F100C6C974 /* VictimsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictimsService.swift; sourceTree = "<group>"; };
 		BD780048299D581D00C6C974 /* VictimViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictimViewModel.swift; sourceTree = "<group>"; };
@@ -64,6 +67,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		173502CF29A6928D00C57D55 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				17A3BB5F299A72B700D27026 /* Assets.xcassets */,
+				173502DB29A6931F00C57D55 /* PTMono-Regular.ttf */,
+				173502D929A6931600C57D55 /* FuzzyBubbles-Bold.ttf */,
+				173502DA29A6931600C57D55 /* FuzzyBubbles-Regular.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		17A3BB4F299A72B600D27026 = {
 			isa = PBXGroup;
 			children = (
@@ -86,12 +100,11 @@
 			children = (
 				17A3BB5B299A72B600D27026 /* CryptedTruthApp.swift */,
 				8D67B1E4299E9655003A2B09 /* MiniGame3 */,
-				17A3BB5D299A72B600D27026 /* ContentView.swift */,
 				BD780047299D307100C6C974 /* Services */,
 				BD780040299D13E400C6C974 /* Models */,
 				BD78003C299D113900C6C974 /* Views */,
 				BD78004A299D642800C6C974 /* ViewModel */,
-				17A3BB5F299A72B700D27026 /* Assets.xcassets */,
+				173502CF29A6928D00C57D55 /* Resources */,
 				17A3BB61299A72B700D27026 /* Preview Content */,
 			);
 			path = CryptedTruth;
@@ -230,7 +243,6 @@
 				BDE36FC3299BBCF5005E399E /* BoardView.swift in Sources */,
 				8D67B1E3299E94D4003A2B09 /* MiniGame3CardButtonView.swift in Sources */,
 				8D55F931299D2D4400964EAC /* MiniGame3.swift in Sources */,
-				17A3BB5E299A72B600D27026 /* ContentView.swift in Sources */,
 				BD780050299E5F4E00C6C974 /* SubtitleViewModel.swift in Sources */,
 				17A3BB5C299A72B600D27026 /* CryptedTruthApp.swift in Sources */,
 				8B5B6640299E7AEA006A23CD /* Recipe.swift in Sources */,
