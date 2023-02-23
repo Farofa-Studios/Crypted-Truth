@@ -8,32 +8,33 @@
 import SwiftUI
 
 struct BoardView: View {
-    
-    //@StateObject var viewModel = VictimViewModel()
-    @State private var name: String = ""
 
-    
     let columns =
     [GridItem(.fixed(824)), GridItem(.fixed(824))]
-        
+    
+    @StateObject var victims = Victims()
+    
     var body: some View {
         NavigationStack {
-            
             ZStack {
-                Color.blue
+                Color.darkColor
                     .ignoresSafeArea()
                 VStack {
                     ZStack {
                         Image("Quadro")
 
                         LazyVGrid(columns: columns, spacing: 168) {
-                            ForEach(Victims.allVictims, id: \.id) { victim in
+                            ForEach($victims.allVictims, id: \.id) { $victim in
                                 ZStack {
                                     
                                     NavigationLink {
-                                        CardBoardView(victim: victim)
+//                                        CardBoardView(victim: victim)
+                                        victim.minigame
+                                        //victim.tapped.toggle()
+
+
                                     } label: {
-                                        Image("\(victim.picture)")
+                                        Image("\(victim.firstPicture)")
                                     }
                                     .buttonStyle(.card)
                                 }
@@ -44,7 +45,21 @@ struct BoardView: View {
                     }
                     
                     SubtitleView()
+                    
                 }
+                                
+                // Espaco para letras liberadas
+                
+//                LazyHStack {
+//                    ForEach(Victims.allVictims, id: \.id) { victim in
+//
+//                            Text("\(victim.letters[0])")
+//                            .foregroundColor(.primary1Color)
+//                            Text("\(victim.letters[1])")
+//                            .foregroundColor(.primary1Color)
+//
+//                    }
+//                }
             }
         }
     }
