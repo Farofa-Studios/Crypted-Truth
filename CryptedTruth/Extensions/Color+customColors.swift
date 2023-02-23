@@ -13,4 +13,5 @@ extension Color {
     static let primaryColor = Color("primary-color")
     static let secondaryColor = Color("secondary-color")
     static let accentColor = Color("accent-color")
+    static let background = Color("background")
 }

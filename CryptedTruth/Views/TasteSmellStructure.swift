@@ -7,22 +7,24 @@
 
 import SwiftUI
 
-struct MiniGame2: View {
+struct TasteSmellStructure: View {
     
-    let ingredientsOptionList = ["Op-Ovos", "Op-Bacon", "Op-Queijo", "Op-Tomate", "Op-Trigo"].shuffled()
+    let ingredientsOptionList: [String]
     
     @State var scale = 1.0
     
-    @State var ingredient = "Ing-Faltando"
+    @State var ingredient = "Ing-faltando"
     
-    let recipe = Recipes.allRecipes[3]
+    let recipe: Recipe
     
-    let numOfRecipes = Recipes.allRecipes.count
+    let numOfRecipes: Int
+    
+    let title: String
     
     var body: some View {
         
         ZStack {
-            Color.darkColor
+            Color.background
                 .ignoresSafeArea()
             
             VStack {
@@ -48,7 +50,7 @@ struct MiniGame2: View {
                     
                     VStack (alignment: .center){
                         
-                        Text("Ingredientes")
+                        Text(title)
                             .font(.system(size: 38))
                         
                         HStack (alignment: .top, spacing: 40) {
@@ -59,19 +61,22 @@ struct MiniGame2: View {
                                         .frame(width: 174, height: 200)
                                 }
                             }
+                            
                             Image(ingredient)
                                 .scaleEffect(scale)
                         }
                     }
                     
-                    VStack {
-                        Text("Receita")
-                            .font(.system(size: 38))
-                        Image(recipe.image)
-                            .resizable()
-                            .frame(width: 162, height: 162)
-                        Text(recipe.title)
-                            .font(.system(size: 29))
+                    if let image = recipe.image {
+                        VStack {
+                            Text("Receita")
+                                .font(.system(size: 38))
+                            Image(image)
+                                .resizable()
+                                .frame(width: 162, height: 162)
+                            Text(recipe.title)
+                                .font(.system(size: 29))
+                        }
                     }
                 }
                 
@@ -97,7 +102,7 @@ struct MiniGame2: View {
     private func buttonTapped(_ selected: String) {
         
         if selected.contains(recipe.correctAnswer) {
-            ingredient = "Ing-" + recipe.correctAnswer
+            ingredient = recipe.correctAnswerImage
             
             // aumenta escala
             withAnimation(.easeIn(duration: 0.5)){
@@ -162,8 +167,12 @@ struct IngredientsButton: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct TasteSmellStructure_Previews: PreviewProvider {
     static var previews: some View {
-        MiniGame2()
+        TasteSmellStructure(
+            ingredientsOptionList: ["Op-Ovos", "Op-Bacon", "Op-Queijo", "Op-Tomate", "Op-Trigo"],
+            recipe: Recipes.allRecipes[3],
+            numOfRecipes: Recipes.allRecipes.count,
+            title: "Ingredientes")
     }
 }
