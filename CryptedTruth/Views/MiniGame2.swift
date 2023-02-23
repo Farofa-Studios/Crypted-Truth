@@ -22,14 +22,15 @@ struct MiniGame2: View {
     var body: some View {
         
         ZStack {
-            // adicionar a cor de fundo aqui
+            Color.backgroundColor
+                .ignoresSafeArea()
             
             VStack {
                 
                 Spacer()
                 
-                HStack (alignment: .top) {
-                    VStack {
+                HStack (alignment: .top, spacing: 110) {
+                    VStack (spacing: 8){
                         Text("Rodada")
                             .font(.system(size: 38))
                         
@@ -50,7 +51,7 @@ struct MiniGame2: View {
                         Text("Ingredientes")
                             .font(.system(size: 38))
                         
-                        HStack (alignment: .top) {
+                        HStack (alignment: .top, spacing: 40) {
                             ForEach(recipe.ingredientsList, id: \.self) { item in
                                 VStack {
                                     Image(item)
@@ -76,7 +77,7 @@ struct MiniGame2: View {
                 
                 Spacer()
                 
-                HStack (alignment: .top) {
+                HStack (alignment: .top, spacing: 32) {
                     ForEach(ingredientsOptionList, id: \.self) { item in
                         
                         IngredientsButton(image: item, answer: recipe.correctAnswer){
@@ -153,9 +154,8 @@ struct IngredientsButton: View {
         }) {
             Image(image)
                 .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 236, height: 236)
-            
+                .scaledToFit()
+                .clipped()
         }
         
         .rotationEffect(.degrees(image != answer ? angle: 0))
