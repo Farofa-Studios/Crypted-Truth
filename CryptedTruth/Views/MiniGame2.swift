@@ -22,7 +22,7 @@ struct MiniGame2: View {
     var body: some View {
         
         ZStack {
-            Color.backgroundColor
+            Color.darkColor
                 .ignoresSafeArea()
             
             VStack {
