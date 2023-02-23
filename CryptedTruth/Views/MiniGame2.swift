@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MiniGame2: View {
     
-    let ingredientsOptionList = ["Op-Ovos", "Op-Oregano", "Op-Queijo", "Op-Tomate", "Op-Trigo"].shuffled()
+    let ingredientsOptionList = ["Op-Ovos", "Op-Bacon", "Op-Queijo", "Op-Tomate", "Op-Trigo"].shuffled()
     
     @State var scale = 1.0
     
