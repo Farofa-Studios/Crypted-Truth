@@ -14,10 +14,10 @@
 		8B4FD22629A7997800D3BCF0 /* GeniusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4FD22529A7997800D3BCF0 /* GeniusView.swift */; };
 		8B4FD22829A7998E00D3BCF0 /* GeniusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4FD22729A7998E00D3BCF0 /* GeniusViewModel.swift */; };
 		8B4FD22B29A799BD00D3BCF0 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4FD22A29A799BD00D3BCF0 /* Direction.swift */; };
-		8B4FD22E29A799DF00D3BCF0 /* Color+customColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4FD22D29A799DF00D3BCF0 /* Color+customColors.swift */; };
 		8B5B663E299E7AA5006A23CD /* MiniGame2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B663D299E7AA5006A23CD /* MiniGame2.swift */; };
 		8B5B6640299E7AEA006A23CD /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B663F299E7AEA006A23CD /* Recipe.swift */; };
 		8B5B6642299E8169006A23CD /* RecipesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B6641299E8169006A23CD /* RecipesService.swift */; };
+		8BF75AE829A7A544008EECBB /* Color+customColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF75AE729A7A544008EECBB /* Color+customColors.swift */; };
 		8D55F92F299D2CE500964EAC /* MiniGame3Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55F92E299D2CE500964EAC /* MiniGame3Images.swift */; };
 		8D55F931299D2D4400964EAC /* MiniGame3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55F930299D2D4400964EAC /* MiniGame3.swift */; };
 		8D67B1E3299E94D4003A2B09 /* MiniGame3CardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67B1E2299E94D4003A2B09 /* MiniGame3CardButtonView.swift */; };
@@ -31,7 +31,6 @@
 		BD780054299FA89200C6C974 /* AnagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD780053299FA89200C6C974 /* AnagramView.swift */; };
 		BDE36FC3299BBCF5005E399E /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE36FC2299BBCF5005E399E /* BoardView.swift */; };
 		BDE36FCD299BDC77005E399E /* CardBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE36FCC299BDC77005E399E /* CardBoardView.swift */; };
-		BDF97C22299FD8D000DFABEE /* Color+customColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF97C21299FD8D000DFABEE /* Color+customColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,10 +45,10 @@
 		8B4FD22529A7997800D3BCF0 /* GeniusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeniusView.swift; sourceTree = "<group>"; };
 		8B4FD22729A7998E00D3BCF0 /* GeniusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeniusViewModel.swift; sourceTree = "<group>"; };
 		8B4FD22A29A799BD00D3BCF0 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
-		8B4FD22D29A799DF00D3BCF0 /* Color+customColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+customColors.swift"; sourceTree = "<group>"; };
 		8B5B663D299E7AA5006A23CD /* MiniGame2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame2.swift; sourceTree = "<group>"; };
 		8B5B663F299E7AEA006A23CD /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		8B5B6641299E8169006A23CD /* RecipesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesService.swift; sourceTree = "<group>"; };
+		8BF75AE729A7A544008EECBB /* Color+customColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+customColors.swift"; sourceTree = "<group>"; };
 		8D55F92E299D2CE500964EAC /* MiniGame3Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3Images.swift; sourceTree = "<group>"; };
 		8D55F930299D2D4400964EAC /* MiniGame3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3.swift; sourceTree = "<group>"; };
 		8D67B1E2299E94D4003A2B09 /* MiniGame3CardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3CardButtonView.swift; sourceTree = "<group>"; };
@@ -63,7 +62,6 @@
 		BD780053299FA89200C6C974 /* AnagramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnagramView.swift; sourceTree = "<group>"; };
 		BDE36FC2299BBCF5005E399E /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		BDE36FCC299BDC77005E399E /* CardBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBoardView.swift; sourceTree = "<group>"; };
-		BDF97C21299FD8D000DFABEE /* Color+customColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+customColors.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +78,6 @@
 		173502CF29A6928D00C57D55 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				17A3BB5F299A72B700D27026 /* Assets.xcassets */,
 				173502DB29A6931F00C57D55 /* PTMono-Regular.ttf */,
 				173502D929A6931600C57D55 /* FuzzyBubbles-Bold.ttf */,
 				173502DA29A6931600C57D55 /* FuzzyBubbles-Regular.ttf */,
@@ -108,15 +105,14 @@
 		17A3BB5A299A72B600D27026 /* CryptedTruth */ = {
 			isa = PBXGroup;
 			children = (
+				8BF75AE629A7A531008EECBB /* Extensions */,
 				8B4FD22929A799A800D3BCF0 /* Enumerations */,
-				8B4FD22C29A799CC00D3BCF0 /* Extensions */,
 				17A3BB5B299A72B600D27026 /* CryptedTruthApp.swift */,
 				8D67B1E4299E9655003A2B09 /* MiniGame3 */,
 				BD780047299D307100C6C974 /* Services */,
 				BD780040299D13E400C6C974 /* Models */,
 				BD78003C299D113900C6C974 /* Views */,
 				BD78004A299D642800C6C974 /* ViewModel */,
-				BDF97C20299FD8BC00DFABEE /* Extensions */,
 				17A3BB5F299A72B700D27026 /* Assets.xcassets */,
 				173502CF29A6928D00C57D55 /* Resources */,
 				17A3BB61299A72B700D27026 /* Preview Content */,
@@ -140,10 +136,10 @@
 			path = Enumerations;
 			sourceTree = "<group>";
 		};
-		8B4FD22C29A799CC00D3BCF0 /* Extensions */ = {
+		8BF75AE629A7A531008EECBB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8B4FD22D29A799DF00D3BCF0 /* Color+customColors.swift */,
+				8BF75AE729A7A544008EECBB /* Color+customColors.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -199,14 +195,6 @@
 				8B4FD22729A7998E00D3BCF0 /* GeniusViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		BDF97C20299FD8BC00DFABEE /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				BDF97C21299FD8D000DFABEE /* Color+customColors.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,10 +285,9 @@
 				BDE36FCD299BDC77005E399E /* CardBoardView.swift in Sources */,
 				BD78004E299E5D7600C6C974 /* SubtitlesService.swift in Sources */,
 				BD78003E299D13C700C6C974 /* Victim.swift in Sources */,
-				8B4FD22E29A799DF00D3BCF0 /* Color+customColors.swift in Sources */,
+				8BF75AE829A7A544008EECBB /* Color+customColors.swift in Sources */,
 				BD780054299FA89200C6C974 /* AnagramView.swift in Sources */,
 				BD780052299E5FA400C6C974 /* SubtitleView.swift in Sources */,
-				BDF97C22299FD8D000DFABEE /* Color+customColors.swift in Sources */,
 				8D55F92F299D2CE500964EAC /* MiniGame3Images.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
