@@ -32,7 +32,7 @@ struct Recipes {
                   image: "Receita-Carbonara",
                   title: "Carbonara",
                   ingredientsList: ["Ing-Massa", "Ing-Queijo", "Ing-Pimenta", "Ing-Ovos"],
-                  correctAnswer: "Oregano"),
+                  correctAnswer: "Bacon"),
     ]
     
 }
