@@ -20,7 +20,7 @@ struct BoardView: View {
         NavigationStack {
             
             ZStack {
-                Color.backgroundColor
+                Color.blue
                     .ignoresSafeArea()
                 VStack {
                     ZStack {
