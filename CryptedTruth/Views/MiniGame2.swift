@@ -9,83 +9,109 @@ import SwiftUI
 
 struct MiniGame2: View {
     
-    let ingredientsOptionList = ["globe.americas.fill", "sun.min.fill", "sunset.circle.fill", "sun.dust.circle.fill", "moon.fill", "moon.haze.fill", "moon.stars.fill", "cloud.fill"].shuffled()
+    let ingredientsOptionList = ["Op-Ovos", "Op-Oregano", "Op-Queijo", "Op-Tomate", "Op-Trigo"].shuffled()
     
     @State var scale = 1.0
     
-    @State var ingredient = "questionmark.square.fill"
+    @State var ingredient = "Ing-Faltando"
     
-    let recipe = Recipes.allRecipes[0]
+    let recipe = Recipes.allRecipes[3]
+    
+    let numOfRecipes = Recipes.allRecipes.count
     
     var body: some View {
-        VStack {
+        
+        ZStack {
+            Color.backgroundColor
+                .ignoresSafeArea()
             
-            Spacer()
-            
-            Text("Nível \(recipe.id)")
-            
-            HStack {
-                VStack{
-                    Text("Receita")
-                    Image(systemName: recipe.image)
-                        .padding()
+            VStack {
+                
+                Spacer()
+                
+                HStack (alignment: .top, spacing: 110) {
+                    VStack (spacing: 8){
+                        Text("Rodada")
+                            .font(.system(size: 38))
+                        
+                        HStack (spacing: 0){
+                            Text("\(recipe.id)")
+                                .font(.system(size: 57))
+                                .foregroundColor(.white)
+                            
+                            Text("/\(numOfRecipes)")
+                                .font(.system(size: 48))
+                                .foregroundColor(.white)
+                                .opacity(0.6)
+                        }
+                    }
+                    
+                    VStack (alignment: .center){
+                        
+                        Text("Ingredientes")
+                            .font(.system(size: 38))
+                        
+                        HStack (alignment: .top, spacing: 40) {
+                            ForEach(recipe.ingredientsList, id: \.self) { item in
+                                VStack {
+                                    Image(item)
+                                        .resizable()
+                                        .frame(width: 174, height: 200)
+                                }
+                            }
+                            Image(ingredient)
+                                .scaleEffect(scale)
+                        }
+                    }
+                    
+                    VStack {
+                        Text("Receita")
+                            .font(.system(size: 38))
+                        Image(recipe.image)
+                            .resizable()
+                            .frame(width: 162, height: 162)
+                        Text(recipe.title)
+                            .font(.system(size: 29))
+                    }
                 }
                 
-                VStack{
-                    Text("Ingredientes")
-                    
-                    HStack {
-                        ForEach(recipe.ingredientsList, id: \.self) { item in
-                            Image(systemName: item)
+                Spacer()
+                
+                HStack (alignment: .top, spacing: 32) {
+                    ForEach(ingredientsOptionList, id: \.self) { item in
+                        
+                        IngredientsButton(image: item, answer: recipe.correctAnswer){
+                            self.buttonTapped(item)
                         }
-                        
-                        Image(systemName: ingredient)
-                            .scaleEffect(scale)
-                        
-                    }
-                    .padding()
-                }
-                .padding()
-            }
-            .padding()
-            
-            Text("Qual é o ingrediente que falta?")
-            
-            HStack {
-                ForEach(ingredientsOptionList, id: \.self) { item in
-                    
-                    IngredientsButton(image: item, answer: recipe.correctAnswer){
-                        self.buttonTapped(item)
                     }
                 }
+                
+                Spacer()
+                
+//                SubtitleView()
             }
-            .padding()
-            
-            Spacer()
-            
-            SubtitleView()
         }
-        .padding()
     }
     
+    
     private func buttonTapped(_ selected: String) {
-        if selected == recipe.correctAnswer {
-            ingredient = selected
+        
+        if selected.contains(recipe.correctAnswer) {
+            ingredient = "Ing-" + recipe.correctAnswer
             
             // aumenta escala
-            withAnimation(.easeIn(duration: 0.3)){
-                self.scale += 1.0
+            withAnimation(.easeIn(duration: 0.5)){
+                self.scale += 0.2
             }
             
             // retorna escala original
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
                 withAnimation(.easeIn(duration: 0.3)){
                     self.scale = 1.0
                 }
             }
         }
     }
-    
 }
 
 struct IngredientsButton: View {
@@ -99,7 +125,8 @@ struct IngredientsButton: View {
     
     var body: some View {
         Button(action: {
-            if self.image != self.answer {
+            
+            if !self.image.contains(self.answer){
                 
                 isWrong = true
                 
@@ -121,12 +148,14 @@ struct IngredientsButton: View {
                         self.angle -= 5.0
                     }
                 }
-                
             }
             action()
             
         }) {
-            Image(systemName: image)
+            Image(image)
+                .resizable()
+                .scaledToFit()
+                .clipped()
         }
         
         .rotationEffect(.degrees(image != answer ? angle: 0))
