@@ -10,6 +10,7 @@ import SwiftUI
 struct MiniGame3: View {
     
     @StateObject var pieces = ImagesProperties()
+    @AppStorage("minigame2") var OK2 = false
     
     let rows = Array(repeating: GridItem(.flexible(), spacing: -1000), count: 4)
     
@@ -24,6 +25,9 @@ struct MiniGame3: View {
                 }
             }
             SubtitleView()
+        }
+        .onAppear() {
+            OK2 = true
         }
     }
 }

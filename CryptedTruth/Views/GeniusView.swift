@@ -11,6 +11,7 @@ import GameController
 struct GeniusView: View {
     
     @ObservedObject var viewModel = GeniusViewModel()
+    @AppStorage("minigame1") var OK1 = false
     
     var body: some View {
         
@@ -76,6 +77,7 @@ struct GeniusView: View {
                 print(direction)
             })
             
+            OK1 = true
         }
         
     }

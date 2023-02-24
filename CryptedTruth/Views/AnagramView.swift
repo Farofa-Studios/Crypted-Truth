@@ -16,6 +16,9 @@ struct AnagramView: View {
        let finalText: String = "Hello, World!"
     let writing = false
     
+    @AppStorage("minigame4") var OK4 = false
+
+    
     var body: some View {
 //        ZStack {
 ////            Color(.blue)
@@ -60,9 +63,9 @@ struct AnagramView: View {
    
         VStack(spacing: 16.0) {
             ZStack {
-                SubtitleView()
+                //SubtitleView()
                 Text(text)
-                        
+
             }
             Button("Type") {
                 typeWriter()
@@ -70,6 +73,9 @@ struct AnagramView: View {
             
             
             
+        }
+        .onAppear() {
+            OK4 = true
         }
         
     }

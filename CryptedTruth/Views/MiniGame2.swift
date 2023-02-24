@@ -14,7 +14,9 @@ struct MiniGame2: View {
     @State var scale = 1.0
     
     @State var ingredient = "Ing-Faltando"
-    
+        
+    @AppStorage("minigame3") var OK3 = false
+                
     let recipe = Recipes.allRecipes[3]
     
     let numOfRecipes = Recipes.allRecipes.count
@@ -98,6 +100,8 @@ struct MiniGame2: View {
         
         if selected.contains(recipe.correctAnswer) {
             ingredient = "Ing-" + recipe.correctAnswer
+            
+            OK3 = true
             
             // aumenta escala
             withAnimation(.easeIn(duration: 0.5)){
