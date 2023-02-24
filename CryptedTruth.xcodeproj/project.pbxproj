@@ -21,6 +21,9 @@
 		8D55F92F299D2CE500964EAC /* MiniGame3Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55F92E299D2CE500964EAC /* MiniGame3Images.swift */; };
 		8D55F931299D2D4400964EAC /* MiniGame3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55F930299D2D4400964EAC /* MiniGame3.swift */; };
 		8D67B1E3299E94D4003A2B09 /* MiniGame3CardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67B1E2299E94D4003A2B09 /* MiniGame3CardButtonView.swift */; };
+		BD2BA5D129A94989003968AC /* PTMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 173502DB29A6931F00C57D55 /* PTMono-Regular.ttf */; };
+		BD2BA5D229A9498D003968AC /* FuzzyBubbles-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 173502D929A6931600C57D55 /* FuzzyBubbles-Bold.ttf */; };
+		BD2BA5D329A94990003968AC /* FuzzyBubbles-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 173502DA29A6931600C57D55 /* FuzzyBubbles-Regular.ttf */; };
 		BD78003E299D13C700C6C974 /* Victim.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD78003D299D13C700C6C974 /* Victim.swift */; };
 		BD780042299D15F100C6C974 /* VictimsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD780041299D15F100C6C974 /* VictimsService.swift */; };
 		BD780049299D581D00C6C974 /* VictimViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD780048299D581D00C6C974 /* VictimViewModel.swift */; };
@@ -52,6 +55,7 @@
 		8D55F92E299D2CE500964EAC /* MiniGame3Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3Images.swift; sourceTree = "<group>"; };
 		8D55F930299D2D4400964EAC /* MiniGame3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3.swift; sourceTree = "<group>"; };
 		8D67B1E2299E94D4003A2B09 /* MiniGame3CardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3CardButtonView.swift; sourceTree = "<group>"; };
+		BD2BA5D029A9482B003968AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BD78003D299D13C700C6C974 /* Victim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Victim.swift; sourceTree = "<group>"; };
 		BD780041299D15F100C6C974 /* VictimsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictimsService.swift; sourceTree = "<group>"; };
 		BD780048299D581D00C6C974 /* VictimViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictimViewModel.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 		17A3BB5A299A72B600D27026 /* CryptedTruth */ = {
 			isa = PBXGroup;
 			children = (
+				BD2BA5D029A9482B003968AC /* Info.plist */,
 				8BF75AE629A7A531008EECBB /* Extensions */,
 				8B4FD22929A799A800D3BCF0 /* Enumerations */,
 				17A3BB5B299A72B600D27026 /* CryptedTruthApp.swift */,
@@ -255,8 +260,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD2BA5D229A9498D003968AC /* FuzzyBubbles-Bold.ttf in Resources */,
 				17A3BB63299A72B700D27026 /* Preview Assets.xcassets in Resources */,
+				BD2BA5D329A94990003968AC /* FuzzyBubbles-Regular.ttf in Resources */,
 				17A3BB6A299A72CD00D27026 /* .gitignore in Resources */,
+				BD2BA5D129A94989003968AC /* PTMono-Regular.ttf in Resources */,
 				17A3BB60299A72B700D27026 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +428,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CryptedTruth/Info.plist;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -446,6 +455,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CryptedTruth/Info.plist;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (
