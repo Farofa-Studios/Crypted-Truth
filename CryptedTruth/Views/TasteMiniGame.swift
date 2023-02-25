@@ -16,6 +16,8 @@ struct TasteMiniGame: View {
     
     let numOfItems = Recipes.allRecipes.count
     
+    @AppStorage("minigame3") var OK3 = false
+    
     var body: some View {
     
         TasteSmellStructure(
@@ -23,7 +25,9 @@ struct TasteMiniGame: View {
             recipe: recipe,
             numOfRecipes: numOfItems,
             title: "Ingredientes"
-        )
+        ).onAppear() {
+            OK3 = true
+        }
        
     }
     
