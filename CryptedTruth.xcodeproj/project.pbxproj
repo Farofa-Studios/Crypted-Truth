@@ -123,7 +123,6 @@
 		173502CF29A6928D00C57D55 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				17A3BB5F299A72B700D27026 /* Assets.xcassets */,
 				17ED78AC29A8EDAF00CA20AF /* guitar.mpeg */,
 				17ED78AB29A8EDAF00CA20AF /* piano.mpeg */,
 				17ED78AA29A8EDAF00CA20AF /* sax.mpeg */,
@@ -165,6 +164,7 @@
 				BD78004A299D642800C6C974 /* ViewModel */,
 				173502CE299FF23000C57D55 /* Enumerations */,
 				173502C9299FD91700C57D55 /* Extensions */,
+				17A3BB5F299A72B700D27026 /* Assets.xcassets */,
 				173502CF29A6928D00C57D55 /* Resources */,
 				17A3BB61299A72B700D27026 /* Preview Content */,
 			);
