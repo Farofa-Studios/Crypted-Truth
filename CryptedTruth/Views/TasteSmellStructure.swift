@@ -89,12 +89,13 @@ struct TasteSmellStructure: View {
                         IngredientsButton(image: item, answer: recipe.correctAnswer){
                             self.buttonTapped(item)
                         }
+                        .padding(-25)
                     }
                 }
                 
                 Spacer()
                 
-//                SubtitleView()
+                //                SubtitleView()
             }
         }
     }
@@ -128,6 +129,7 @@ struct IngredientsButton: View {
     
     @State private var angle = 0.0
     @State private var isWrong = false
+    @State var selected = false
     
     var body: some View {
         Button(action: {
@@ -156,13 +158,25 @@ struct IngredientsButton: View {
                 }
             }
             action()
-            
+            self.selected.toggle()
         }) {
-            Image(image)
-                .resizable()
-                .frame(width: 236, height: 236)
+            
+            VStack {
+                Image(image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 270, height: 270, alignment: .center)
+                Spacer()
+                Spacer()
+            }
+            .frame(width: 236, height: 236, alignment: .center)
+            
+            
         }
-        .clipShape(Polygon(sides: 5))
+        //        .background(self.selected ? Color.white.opacity(20.0) : Color.white.opacity(20.0))
+        .background(Color.buttonMinigame)
+        .clipShape(Pentagon())
+        
         .rotationEffect(.degrees(image != answer ? angle: 0))
     }
 }
@@ -176,3 +190,20 @@ struct TasteSmellStructure_Previews: PreviewProvider {
             title: "Ingredientes")
     }
 }
+
+//struct ContentView: View {
+//    @FocusState private var isButtonFocused: Bool
+//
+//    var body: some View {
+//        Button("Botão") {}
+//            .tint(.blue)
+//            .focusedSceneValue(isButtonFocused ? Color.red : Color.blue)
+//            .focusable(true)
+//            .focused($isButtonFocused) {
+//                print("Botão está em foco: \(isButtonFocused)")
+//            }
+//            .onReceive(NotificationCenter.default.publisher(for: UIFocusSystem.didUpdateNotification)) { _ in
+//                isButtonFocused = UIScreen.main.focusedItem === self
+//            }
+//    }
+//}
