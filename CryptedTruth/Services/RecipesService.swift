@@ -14,25 +14,30 @@ struct Recipes {
               image: "Receita-Macarronada",
               title: "Macarronada",
               ingredientsList: ["Ing-Queijo", "Ing-Massa", "Ing-Oregano", "Ing-Carne"],
-              correctAnswer: "Tomate"),
+              correctAnswer: "Tomate",
+              correctAnswerImage: "Ing-Tomate"
+             ),
         
             .init(id: 2,
                   image: "Receita-Ravioli",
                   title: "Ravioli",
                   ingredientsList: ["Ing-Trigo", "Ing-Presunto", "Ing-Oregano", "Ing-Tomate"],
-                  correctAnswer: "Ovos"),
+                  correctAnswer: "Ovos",
+                  correctAnswerImage: "Ing-Ovos"),
         
             .init(id: 3,
                   image: "Receita-Lasanha",
                   title: "Lasanha",
                   ingredientsList: ["Ing-Massa", "Ing-Carne", "Ing-Tomate", "Ing-Oregano"],
-                  correctAnswer: "Queijo"),
+                  correctAnswer: "Queijo",
+                  correctAnswerImage: "Ing-Queijo"),
         
             .init(id: 4,
                   image: "Receita-Carbonara",
                   title: "Carbonara",
                   ingredientsList: ["Ing-Massa", "Ing-Queijo", "Ing-Pimenta", "Ing-Ovos"],
-                  correctAnswer: "Bacon"),
+                  correctAnswer: "Bacon",
+                  correctAnswerImage: "Ing-Bacon"),
     ]
     
 }
