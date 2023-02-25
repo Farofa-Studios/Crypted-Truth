@@ -1,5 +1,5 @@
 //
-//  Avatars.swift
+//  Avatares.swift
 //  CryptedTruth
 //
 //  Created by Anna Alicia Milani on 24/02/23.

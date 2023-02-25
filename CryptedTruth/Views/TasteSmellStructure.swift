@@ -24,7 +24,7 @@ struct TasteSmellStructure: View {
     var body: some View {
         
         ZStack {
-            Color.backgroundColor
+            Color.background
                 .ignoresSafeArea()
             
             VStack {

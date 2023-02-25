@@ -12,7 +12,7 @@ struct GeniusView: View {
     
     @ObservedObject var viewModel = GeniusViewModel()
     @AppStorage("minigame1") var OK1 = false
-        
+    
     var body: some View {
         
         VStack {
@@ -21,68 +21,63 @@ struct GeniusView: View {
                 
                 VStack {
                     Text("Rodada")
-                        .font(.custom("PTMono-Regular", size: 38))
-                        .padding(.bottom, 10)
-                    Text("\(viewModel.roundCounter)/9")
-                        .font(.custom("PTMono-Regular", size: 50))
+                    Text("\(viewModel.round)/9")
                 }
                 
                 Spacer()
                 
                 VStack {
                     Text("Erros")
-                        .font(.custom("PTMono-Regular", size: 38))
-                        .padding(.bottom, 10)
-                    Text("\(viewModel.mistakesCounter)")
-                        .font(.custom("PTMono-Regular", size: 50))
+                    Text("\(viewModel.mistakes)")
                 }
                 
             }
-            .padding(.horizontal, 100)
-            .offset(y: 215)
             
             Spacer()
             
             VStack {
-                Image(viewModel.sax.image)
+                Image("up-default")
                 HStack {
-                    Image(viewModel.piano.image)
-                    if viewModel.isPlayerTurn {
-                        Text("Sua\nvez")
-                            .padding(.horizontal, 25)
-                            .font(.custom("PTMono-Bold", size: 48))
-                            .multilineTextAlignment(.center)
-                    } else {
-                        Text("Ouça")
-                            .padding(.horizontal, 25)
-                            .font(.custom("PTMono-Bold", size: 48))
-                    }
-                    Image(viewModel.tambourine.image)
+                    Image("left-default")
+                    Text("Ouça")
+                        .padding(.horizontal, 25)
+                    Image("right-default")
                 }
-                Image(viewModel.guitar.image)
+                Image("down-default")
             }
-            .padding(.top, 75)
             
             Spacer()
             
-            Image("dialog")
-                .padding(.top, 20)
-                .padding(.bottom, 175)
+            HStack {
+                
+                VStack {
+                    Text("Deslize para o lado que corresponde ao som na ordem em que escutar... Memorize e reproduza a sequência de sons sem errar para liberar mais informações do caso.")
+                }
+                .border(.red, width: 1)
+                
+                VStack {
+                    Text("bot tutorial")
+                }
+                .border(.red, width: 1)
+                
+                
+            }
             
         }
+        .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background {
             Color.darkColor
-                .ignoresSafeArea()
         }
+        .ignoresSafeArea()
         .onAppear {
-                        
-            viewModel.playInstrumentsByRoundNumber(roundNumber: 9)
             
+            print(viewModel.matchDirections)
             GeniusViewModel.getDirections(directionHandler: { direction in
                 print(direction)
             })
             
+            OK1 = true
         }
         
     }
