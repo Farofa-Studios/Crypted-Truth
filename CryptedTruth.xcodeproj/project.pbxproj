@@ -17,6 +17,7 @@
 		8B5B663E299E7AA5006A23CD /* TasteSmellStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B663D299E7AA5006A23CD /* TasteSmellStructure.swift */; };
 		8B5B6640299E7AEA006A23CD /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B663F299E7AEA006A23CD /* Recipe.swift */; };
 		8B5B6642299E8169006A23CD /* RecipesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B6641299E8169006A23CD /* RecipesService.swift */; };
+		8B76730B29AA7A01006BE515 /* Shape+Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76730A29AA7A01006BE515 /* Shape+Polygon.swift */; };
 		8BBBDC9629A7B57D00F40463 /* SmellMiniGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBBDC9529A7B57D00F40463 /* SmellMiniGame.swift */; };
 		8BBBDC9829A7B59200F40463 /* TasteMiniGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBBDC9729A7B59200F40463 /* TasteMiniGame.swift */; };
 		8BBBDC9A29A7B9EE00F40463 /* AromasService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBBDC9929A7B9EE00F40463 /* AromasService.swift */; };
@@ -56,6 +57,7 @@
 		8B5B663D299E7AA5006A23CD /* TasteSmellStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteSmellStructure.swift; sourceTree = "<group>"; };
 		8B5B663F299E7AEA006A23CD /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		8B5B6641299E8169006A23CD /* RecipesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesService.swift; sourceTree = "<group>"; };
+		8B76730A29AA7A01006BE515 /* Shape+Polygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+Polygon.swift"; sourceTree = "<group>"; };
 		8BBBDC9529A7B57D00F40463 /* SmellMiniGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmellMiniGame.swift; sourceTree = "<group>"; };
 		8BBBDC9729A7B59200F40463 /* TasteMiniGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteMiniGame.swift; sourceTree = "<group>"; };
 		8BBBDC9929A7B9EE00F40463 /* AromasService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AromasService.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				8BF75AE729A7A544008EECBB /* Color+customColors.swift */,
+				8B76730A29AA7A01006BE515 /* Shape+Polygon.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDE36FC3299BBCF5005E399E /* BoardView.swift in Sources */,
+				8B76730B29AA7A01006BE515 /* Shape+Polygon.swift in Sources */,
 				8D67B1E3299E94D4003A2B09 /* MiniGame3CardButtonView.swift in Sources */,
 				8BBBDC9E29A8E99E00F40463 /* MiniGameSubtitle.swift in Sources */,
 				8BBBDC9C29A8E83400F40463 /* Avatars.swift in Sources */,

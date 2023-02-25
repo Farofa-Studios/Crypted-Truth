@@ -162,7 +162,7 @@ struct IngredientsButton: View {
                 .resizable()
                 .frame(width: 236, height: 236)
         }
-        
+        .clipShape(Polygon(sides: 5))
         .rotationEffect(.degrees(image != answer ? angle: 0))
     }
 }
