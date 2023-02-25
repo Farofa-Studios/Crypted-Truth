@@ -34,15 +34,15 @@ struct TasteSmellStructure: View {
                 HStack (alignment: .top, spacing: 110) {
                     VStack (spacing: 8){
                         Text("Rodada")
-                            .font(.system(size: 38))
+                            .font(.custom("PTMono-Regular", size: 38))
                         
                         HStack (spacing: 0){
                             Text("\(recipe.id)")
-                                .font(.system(size: 57))
+                                .font(.custom("PTMono-Regular", size: 57))
                                 .foregroundColor(.white)
                             
                             Text("/\(numOfRecipes)")
-                                .font(.system(size: 48))
+                                .font(.custom("PTMono-Regular", size: 48))
                                 .foregroundColor(.white)
                                 .opacity(0.6)
                         }
@@ -51,7 +51,8 @@ struct TasteSmellStructure: View {
                     VStack (alignment: .center){
                         
                         Text(title)
-                            .font(.system(size: 38))
+                            .font(.custom("PTMono-Regular", size: 38))
+                            .padding(.bottom, 40)
                         
                         HStack (alignment: .top, spacing: 40) {
                             ForEach(recipe.ingredientsList, id: \.self) { item in
@@ -70,12 +71,12 @@ struct TasteSmellStructure: View {
                     if let image = recipe.image {
                         VStack {
                             Text("Receita")
-                                .font(.system(size: 38))
+                                .font(.custom("PTMono-Regular", size: 38))
                             Image(image)
                                 .resizable()
                                 .frame(width: 162, height: 162)
                             Text(recipe.title)
-                                .font(.system(size: 29))
+                                .font(.custom("PTMono-Regular", size: 29))
                         }
                     }
                 }
@@ -159,8 +160,7 @@ struct IngredientsButton: View {
         }) {
             Image(image)
                 .resizable()
-                .scaledToFit()
-                .clipped()
+                .frame(width: 236, height: 236)
         }
         
         .rotationEffect(.degrees(image != answer ? angle: 0))
