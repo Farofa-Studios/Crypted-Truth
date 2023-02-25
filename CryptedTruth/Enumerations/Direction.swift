@@ -8,9 +8,5 @@
 import Foundation
 
 enum Direction: String {
-    case up = "sax"
-    case down = "guitar"
-    case left = "piano"
-    case right = "tambourine"
-    case invalid = "invalid"
+    case up, down, left, right, invalid
 }
