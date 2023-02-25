@@ -14,16 +14,18 @@ import Foundation
 struct Subtitle: Identifiable {
     
     /// Unique identifier.
-    let id: String
+    let id: Int
     /// Image speaker
     let image: String
+    /// Type of speaker
+    let type: Avatars
     /// Subtitle
-    let subtitle: [String]
+    let subtitle: String
     
-    init(id: String, image: String, subtitle: [String]) {
+    init(id: Int, image: String, type: Avatars, subtitle: String) {
         self.id = id
         self.image = image
+        self.type = type
         self.subtitle = subtitle
     }
-    
 }
