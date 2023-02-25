@@ -80,10 +80,10 @@ struct BoardView: View {
                                 
                                 if victim.tapped {
                                     Text("\(victim.letters[0])")
-                                        .foregroundColor(.primary1Color)
+                                        .foregroundColor(.primaryColor)
                                         .font(.custom("PTMono-Regular", size: 29))
                                     Text("\(victim.letters[1])")
-                                        .foregroundColor(.primary1Color)
+                                        .foregroundColor(.primaryColor)
                                         .font(.custom("PTMono-Regular", size: 29))
                                 }
                                 
