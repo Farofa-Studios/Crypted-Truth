@@ -5,8 +5,9 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>PTMono-Regular.ttf</string>
-		<string>FuzzyBubbles-Bold.ttf</string>
+		<string>PTMono-Bold.ttf</string>
 		<string>FuzzyBubbles-Regular.ttf</string>
+		<string>FuzzyBubbles-Bold.ttf</string>
 	</array>
 </dict>
 </plist>

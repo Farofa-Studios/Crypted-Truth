@@ -10,26 +10,129 @@ import GameController
 
 class GeniusViewModel: ObservableObject {
  
-    @Published var matchDirections: [[Direction]] = createGeniusGame()
-    @Published var round: Int = 1
-    @Published var mistakes: Int = 0
-    @Published var currentDirection: Direction = .invalid
+    @Published var matchInstruments: [[Instrument]]
+    @Published var roundCounter: Int
+    @Published var mistakesCounter: Int
+    @Published var isPlayerTurn: Bool
+    @Published var isCorrectInput: Bool?
     
-    static func createGeniusGame() -> [[Direction]] {
+    @Published var isInstrumentBlinking: Bool
+    @Published var isGuitarBlinking: Bool
+    @Published var isPianoBlinking: Bool
+    @Published var isSaxBlinking: Bool
+    @Published var isTambourineBlinking: Bool
+    
+    let sax, guitar, piano, tambourine: Instrument
+    let instruments: [Instrument]
+            
+    init() {
+        
+        sax = Instrument(name: "sax", direction: .up)
+        guitar = Instrument(name: "guitar", direction: .down)
+        piano = Instrument(name: "piano", direction: .left)
+        tambourine = Instrument(name: "tambourine", direction: .right)
+        
+        instruments = [sax, guitar, piano, tambourine]
+        
+        self.matchInstruments = GeniusViewModel.createGeniusGame(instruments: instruments)
+        self.roundCounter = 1
+        self.mistakesCounter = 0
+        self.isPlayerTurn = false
+        
+        self.isInstrumentBlinking = false
+        self.isGuitarBlinking = false
+        self.isPianoBlinking = false
+        self.isSaxBlinking = false
+        self.isTambourineBlinking = false
+        
+    }
+    
+    static func createGeniusGame(instruments: [Instrument]) -> [[Instrument]] {
         
         let rounds = 9
-        let options: [Direction] = [.up, .down, .left, .right]
         
-        var matchDirections: [[Direction]] = []
-        var roundDirections: [Direction] = []
+        var matchInstruments: [[Instrument]] = []
+        var roundInstruments: [Instrument] = []
         
         for _ in 1...rounds {
-            roundDirections.append(options.randomElement()!)
-            matchDirections.append(roundDirections)
+            roundInstruments.append(instruments.randomElement()!)
+            matchInstruments.append(roundInstruments)
         }
         
-        return matchDirections
+        return matchInstruments
         
+    }
+    
+    func playInstrument(_ instrument: Instrument) {
+            
+        SoundManager.instance.playSound(instrument.name)
+        updateInstrumentStatus(instrument, status: true)
+        instrument.image = getInstrumentImage(instrument: instrument)
+            
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.updateInstrumentStatus(instrument, status: false)
+            instrument.image = self.getInstrumentImage(instrument: instrument)
+        }
+        
+    }
+    
+    func playInstrumentsByRoundNumber(roundNumber: Int) {
+        
+        let roundDirections = matchInstruments[roundNumber - 1]
+        var counter = 0
+        
+        Timer.scheduledTimer(withTimeInterval: 1.25, repeats: true) { timer in
+                        
+            if counter == roundDirections.count {
+                timer.invalidate()
+                return
+            }
+            
+            let currentInstrument = roundDirections[counter]
+            print("\(counter + 1) - playing: \(currentInstrument.name)")
+            self.playInstrument(currentInstrument)
+            
+            counter += 1
+            
+        }
+        
+    }
+    
+    private func updateInstrumentStatus(_ instrument: Instrument, status: Bool) {
+        
+        isInstrumentBlinking = status
+        
+        switch instrument.direction {
+            case .up:
+                isSaxBlinking = status
+            case .down:
+                isGuitarBlinking = status
+            case .left:
+                isPianoBlinking = status
+            case .right:
+                isTambourineBlinking = status
+            case .invalid:
+                print("invalid direction")
+        }
+        
+    }
+    
+    private func getInstrumentImage(instrument: Instrument) -> String {
+        
+        if !isInstrumentBlinking {
+            return "\(instrument.direction.rawValue)-default"
+        }
+
+        if !isPlayerTurn {
+            return "\(instrument.direction.rawValue)-yellow"
+        }
+
+        if isCorrectInput! {
+            return "\(instrument.direction.rawValue)-blue"
+        } else {
+            return "\(instrument.direction.rawValue)-red"
+        }
+
     }
     
     static func calcSwipeDirection(_ x: Float, _ y: Float) -> Direction {
@@ -53,7 +156,7 @@ class GeniusViewModel: ObservableObject {
         }
         
         return .invalid
-        
+                
     }
     
     static func getDirections(directionHandler: @escaping (Direction) -> ()) {
