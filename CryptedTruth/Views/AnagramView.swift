@@ -9,14 +9,12 @@ import SwiftUI
 
 struct AnagramView: View {
     
-    let letters = ["T", "S", "D", "N", "S", "I", "E", "O"]
+    let letters = ["E", "T", "S", "D", "I", "N", "S", "O"]
     @State var anagramaFinal: [String] = []
     @State var ok = 0
     
     var body: some View {
         ZStack {
-//            Color.darkColor
-//                .ignoresSafeArea()
             if ok == 0 {
                 VStack {
                     
@@ -74,6 +72,7 @@ struct AnagramView: View {
                         
                     }
                 }
+                //.frame(width: 540, height: 190)
                 
             }
             else {
