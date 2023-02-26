@@ -11,12 +11,15 @@ struct AnagramView: View {
     
     let letters = ["E", "T", "S", "D", "I", "N", "S", "O"]
     @State var anagramaFinal: [String] = []
-    @State var ok = 0
+    @AppStorage("minigame5") var ok5 = false
     
     var body: some View {
         ZStack {
-            if ok == 0 {
-                VStack {
+//            Color.gray
+//                .ignoresSafeArea()
+            
+            if !ok5 {
+                VStack(spacing: 16){
                     
                     Text("\(anagramaFinal.joined(separator: " "))")
                         .font(.custom("PTMono-Regular", size: 29))
@@ -24,18 +27,27 @@ struct AnagramView: View {
                         .padding(.top, 16)
                         .padding()
                     
-                    HStack {
+                    HStack (spacing: 8) {
                         ForEach(letters, id: \.self) { letter in
-                            Button("\(letter)") {
+                            Button(action: {
                                 if anagramaFinal.count > 7 {
                                     //
                                 } else {
                                     anagramaFinal.append(letter)
-                                    //anagramaFinal.contains(letter)
                                 }
+                            }) {
+                                ZStack {
+                                    Rectangle()
+                                        .frame(width: 52, height: 50)
+                                    Text("\(letter)")
+                                        .font(.custom("PTMono-Regular", size: 29))
+                                        .foregroundColor(.primaryColor)
+                                }
+                                
                             }
-                            .font(.custom("PTMono-Regular", size: 29))
-                            .foregroundColor(.primaryColor)
+                            .buttonStyle(.card)
+                            .clipShape(RoundedRectangle(cornerRadius: 5))
+                            
                         }
                     }
                     
@@ -54,7 +66,11 @@ struct AnagramView: View {
                                     .font(.custom("PTMono-Regular", size: 25))
                                     .foregroundColor(.primaryColor)
                             }
+                            .frame(width: 190, height: 44)
+
                         }
+                        .buttonStyle(.card)
+                        .clipShape(Rectangle())
                         
                         Button {
                             if !anagramaFinal.isEmpty {
@@ -68,11 +84,14 @@ struct AnagramView: View {
                                     .font(.custom("PTMono-Regular", size: 25))
                                     .foregroundColor(.primaryColor)
                             }
+                            .frame(width: 190, height: 44)
+
                         }
+                        .buttonStyle(.card)
+                        .clipShape(Rectangle())
                         
                     }
                 }
-                //.frame(width: 540, height: 190)
                 
             }
             else {
@@ -82,7 +101,7 @@ struct AnagramView: View {
         .onChange(of: anagramaFinal, perform: { newValue in
                 if anagramaFinal == ["S", "E", "N", "T", "I", "D", "O", "S"] {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        ok = 1
+                        ok5 = true
                     }
                 }
         })

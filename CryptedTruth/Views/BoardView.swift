@@ -19,6 +19,10 @@ struct BoardView: View {
     @AppStorage("minigame2") var ok2 = false
     @AppStorage("minigame3") var ok3 = false
     @AppStorage("minigame4") var ok4 = false
+    @AppStorage("minigame5") var ok5 = false
+    @AppStorage("anagramConcluido") var anagramShowing = false
+    
+    @State var lettersAnagram = [String]()
     
     var body: some View {
         NavigationStack {
@@ -41,7 +45,7 @@ struct BoardView: View {
                                             CardBoardView(victim: victim)
                                             
                                         } label: {
-                                            Image("\(victim.picture)")
+                                            Image(ok5 ? "\(victim.finalPicture)" :  "\(victim.picture)")
                                         }
                                         .buttonStyle(.card)
                                     }
@@ -76,22 +80,47 @@ struct BoardView: View {
                         
                         // Espaco para letras liberadas
                         
-                        LazyHStack(spacing: 36) {
-                            
-                            ForEach(victims, id: \.id) { victim in
+                        if !anagramShowing {
+                            LazyHStack(spacing: 36) {
                                 
-                                if victim.tapped {
-                                    Text("\(victim.letters[0])")
-                                        .foregroundColor(.primaryColor)
-                                        .font(.custom("PTMono-Regular", size: 29))
-                                    Text("\(victim.letters[1])")
-                                        .foregroundColor(.primaryColor)
-                                        .font(.custom("PTMono-Regular", size: 29))
+                                ForEach(victims, id: \.id) { victim in
+                                    
+                                    if victim.tapped {
+                                        
+                                        Text("\(victim.letters[0])")
+                                            .foregroundColor(.primaryColor)
+                                            .font(.custom("PTMono-Regular", size: 29))
+                                            .onAppear(){
+                                                lettersAnagram.append("\(victim.letters[0])")
+                                            }
+                                            
+                                        Text("\(victim.letters[1])")
+                                            .foregroundColor(.primaryColor)
+                                            .font(.custom("PTMono-Regular", size: 29))
+                                            .onAppear(){
+                                                lettersAnagram.append("\(victim.letters[1])")
+                                            }
+                                        
+                                    }
+                                    
                                 }
                                 
                             }
+                            .offset(y: 80)
+                            .onChange(of: lettersAnagram) { newValue in
+                                if lettersAnagram.count == 8 {
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                        anagramShowing = true
+                                    }
+                                }
+                                        
+                            }
                         }
-                        .offset(y: 80)
+                        
+                        else if anagramShowing {
+                            AnagramView()
+                                .offset(y: 80)
+                        }
                         
                     }
                     

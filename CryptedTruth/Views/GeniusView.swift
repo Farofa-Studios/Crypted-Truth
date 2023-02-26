@@ -77,6 +77,7 @@ struct GeniusView: View {
         }
         .onAppear {
             viewModel.playAllRounds()
+            ok1 = true
         }
         
     }
