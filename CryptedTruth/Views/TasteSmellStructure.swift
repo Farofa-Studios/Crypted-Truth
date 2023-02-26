@@ -190,14 +190,21 @@ struct IngredientsButton: View {
     }
 }
 
-//struct TasteSmellStructure_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TasteSmellStructure(
-//            ingredientsOptionList: ["Op-Ovos", "Op-Bacon", "Op-Queijo", "Op-Tomate", "Op-Trigo"],
-//            recipe: Recipes.allRecipes[3],
-//            numOfRecipes: Recipes.allRecipes.count,
-//            title: "Ingredientes")
-//    }
-//}
+struct TasteSmellStructure_Previews: PreviewProvider {
+    @State static var currentTasteFase: Int = 0
+    @State static var isTasteGameFinished: Bool = false
+    
+    static var previews: some View {
+        TasteSmellStructure(
+            ingredientsOptionList: ["Op-Ovos", "Op-Bacon", "Op-Queijo", "Op-Tomate", "Op-Trigo"],
+            recipe: Recipes.allRecipes[3],
+            numOfRecipes: Recipes.allRecipes.count,
+            title: "Ingredientes",
+            currentFase: $currentTasteFase,
+            isGameFinished: $isTasteGameFinished
+        )
+        
+    }
+}
 
 
