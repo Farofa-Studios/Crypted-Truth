@@ -39,7 +39,7 @@ struct TasteMiniGame: View {
                 }
             }
             .navigationDestination(isPresented: $isTasteGameFinished) {
-                BoardView()
+                ChallengeConcludedView()
             }
         }
     }
