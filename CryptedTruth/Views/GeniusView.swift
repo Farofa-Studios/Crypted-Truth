@@ -45,21 +45,36 @@ struct GeniusView: View {
             
             VStack {
                 Image(viewModel.sax.image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 236, height: 236)
                 HStack {
-                    Image(viewModel.piano.image)
-                    if viewModel.isPlayerTurn {
-                        Text("Sua\nvez")
-                            .padding(.horizontal, 25)
-                            .font(.custom("PTMono-Bold", size: 48))
-                            .multilineTextAlignment(.center)
-                    } else {
-                        Text("Ouça")
-                            .padding(.horizontal, 25)
-                            .font(.custom("PTMono-Bold", size: 48))
+                    ZStack {
+                        Image(viewModel.piano.image)
+                            .resizable()
+                            .frame(width: 236, height: 236)
+                            .padding(.trailing, 500)
+                        
+                        if viewModel.isPlayerTurn {
+                            Text("Sua\nvez")
+                                .padding(.horizontal, 25)
+                                .font(.custom("PTMono-Bold", size: 48))
+                                .multilineTextAlignment(.center)
+                        } else {
+                            Text("Ouça")
+                                .padding(.horizontal, 25)
+                                .font(.custom("PTMono-Bold", size: 48))
+                        }
+                        
+                        Image(viewModel.tambourine.image)
+                            .resizable()
+                            .frame(width: 236, height: 236)
+                            .padding(.leading, 500)
                     }
-                    Image(viewModel.tambourine.image)
                 }
                 Image(viewModel.guitar.image)
+                    .resizable()
+                    .frame(width: 236, height: 236)
             }
             .padding(.top, 75)
             

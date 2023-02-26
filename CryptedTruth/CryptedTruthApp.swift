@@ -11,7 +11,7 @@ import SwiftUI
 struct CryptedTruthApp: App {
     var body: some Scene {
         WindowGroup {
-            TasteMiniGame()
+            GeniusView()
         }
     }
 }
