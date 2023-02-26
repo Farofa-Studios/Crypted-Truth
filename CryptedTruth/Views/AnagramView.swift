@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SwiftUI
+import SwiftUI
 
 struct AnagramView: View {
     
@@ -15,17 +17,19 @@ struct AnagramView: View {
     
     var body: some View {
         ZStack {
-//            Color.gray
-//                .ignoresSafeArea()
             
             if !ok5 {
                 VStack(spacing: 16){
                     
-                    Text("\(anagramaFinal.joined(separator: " "))")
-                        .font(.custom("PTMono-Regular", size: 29))
-                        .foregroundColor(.primaryColor)
-                        .padding(.top, 16)
-                        .padding()
+                    HStack(spacing: 52) {
+                        ForEach(anagramaFinal, id: \.self) { test in
+                            Text(test)
+                                .font(.custom("PTMono-Regular", size: 29))
+                                .foregroundColor(.primaryColor)
+                        }
+                    }
+                    .offset(y: -20)
+                    .frame(width: 540, height: 60)
                     
                     HStack (spacing: 8) {
                         ForEach(letters, id: \.self) { letter in
@@ -67,7 +71,7 @@ struct AnagramView: View {
                                     .foregroundColor(.primaryColor)
                             }
                             .frame(width: 190, height: 44)
-
+                            
                         }
                         .buttonStyle(.card)
                         .clipShape(Rectangle())
@@ -85,13 +89,15 @@ struct AnagramView: View {
                                     .foregroundColor(.primaryColor)
                             }
                             .frame(width: 190, height: 44)
-
+                            
                         }
                         .buttonStyle(.card)
                         .clipShape(Rectangle())
                         
                     }
                 }
+                .frame(width: 540, height: 194)
+                
                 
             }
             else {
@@ -99,14 +105,14 @@ struct AnagramView: View {
             }
         }
         .onChange(of: anagramaFinal, perform: { newValue in
-                if anagramaFinal == ["S", "E", "N", "T", "I", "D", "O", "S"] {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        ok5 = true
-                    }
+            if anagramaFinal == ["S", "E", "N", "T", "I", "D", "O", "S"] {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    ok5 = true
                 }
+            }
         })
-        
     }
+    
 }
 
 struct AnagramView_Previews: PreviewProvider {
