@@ -20,7 +20,6 @@ struct CardButton: View {
             rotation = rotation % 4 + 1
             
             if rotation == 4 {
-                print("rotacao ok")
                 if check.checkPiecesRotation() == 1 {
                     print("jogo ganho")
                 }

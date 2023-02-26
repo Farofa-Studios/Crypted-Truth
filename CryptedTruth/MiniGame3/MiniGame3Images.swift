@@ -43,8 +43,9 @@ class ImagesProperties: ObservableObject {
     func checkPiecesRotation() -> Int {
         for position in 0...listOfPieces.count - 1 {
             if listOfPieces[position].rotation != 4 {
-                print("")
+                print("quadro \(position + 1) errado, rotacao \(listOfPieces[position].rotation)")
                 checkGame = 0
+                print(checkGame)
             }
         }
         return checkGame
