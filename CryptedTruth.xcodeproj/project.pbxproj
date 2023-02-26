@@ -37,6 +37,7 @@
 		8D55F92F299D2CE500964EAC /* MiniGame3Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55F92E299D2CE500964EAC /* MiniGame3Images.swift */; };
 		8D55F931299D2D4400964EAC /* MiniGame3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55F930299D2D4400964EAC /* MiniGame3.swift */; };
 		8D67B1E3299E94D4003A2B09 /* MiniGame3CardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67B1E2299E94D4003A2B09 /* MiniGame3CardButtonView.swift */; };
+		BD6C973429AAA78400DF0AA5 /* ChallengeConcludedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6C973329AAA78400DF0AA5 /* ChallengeConcludedView.swift */; };
 		BD78003E299D13C700C6C974 /* Victim.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD78003D299D13C700C6C974 /* Victim.swift */; };
 		BD780042299D15F100C6C974 /* VictimsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD780041299D15F100C6C974 /* VictimsService.swift */; };
 		BD780049299D581D00C6C974 /* VictimViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD780048299D581D00C6C974 /* VictimViewModel.swift */; };
@@ -82,6 +83,7 @@
 		8D55F92E299D2CE500964EAC /* MiniGame3Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3Images.swift; sourceTree = "<group>"; };
 		8D55F930299D2D4400964EAC /* MiniGame3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3.swift; sourceTree = "<group>"; };
 		8D67B1E2299E94D4003A2B09 /* MiniGame3CardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3CardButtonView.swift; sourceTree = "<group>"; };
+		BD6C973329AAA78400DF0AA5 /* ChallengeConcludedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeConcludedView.swift; sourceTree = "<group>"; };
 		BD78003D299D13C700C6C974 /* Victim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Victim.swift; sourceTree = "<group>"; };
 		BD780041299D15F100C6C974 /* VictimsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictimsService.swift; sourceTree = "<group>"; };
 		BD780048299D581D00C6C974 /* VictimViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictimViewModel.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				173502C5299FD8D900C57D55 /* GeniusView.swift */,
 				8BBBDC9529A7B57D00F40463 /* SmellMiniGame.swift */,
 				8BBBDC9729A7B59200F40463 /* TasteMiniGame.swift */,
+				BD6C973329AAA78400DF0AA5 /* ChallengeConcludedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				8D55F931299D2D4400964EAC /* MiniGame3.swift in Sources */,
 				173502C8299FD8F000C57D55 /* GeniusViewModel.swift in Sources */,
 				BD780050299E5F4E00C6C974 /* SubtitleViewModel.swift in Sources */,
+				BD6C973429AAA78400DF0AA5 /* ChallengeConcludedView.swift in Sources */,
 				17A3BB5C299A72B600D27026 /* CryptedTruthApp.swift in Sources */,
 				8B5B6640299E7AEA006A23CD /* Recipe.swift in Sources */,
 				BD780049299D581D00C6C974 /* VictimViewModel.swift in Sources */,
