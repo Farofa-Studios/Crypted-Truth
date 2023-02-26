@@ -119,13 +119,12 @@ struct TasteSmellStructure: View {
                 }
             }
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
-                ingredient = "Ing-faltando"
-                ingredientsOptionList = ingredientsOptionList.shuffled()
-                
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.3){
                 if currentFase == 3 {
                     isGameFinished = true
                 } else {
+                    ingredient = "Ing-faltando"
+                    ingredientsOptionList = ingredientsOptionList.shuffled()
                     currentFase += 1
                 }
             }
