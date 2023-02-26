@@ -15,7 +15,8 @@
 		17A3BB63299A72B700D27026 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17A3BB62299A72B700D27026 /* Preview Assets.xcassets */; };
 		17A3BB6A299A72CD00D27026 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 17A3BB69299A72CD00D27026 /* .gitignore */; };
 		17BA3DA329AA9AB500D7E810 /* Avatars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA3DA229AA9AB500D7E810 /* Avatars.swift */; };
-		17ED78A529A69C9300CA20AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17A3BB5F299A72B700D27026 /* Assets.xcassets */; };
+		17CA287E29AADD6200A3F563 /* GeniusMockedSwipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA287D29AADD6200A3F563 /* GeniusMockedSwipes.swift */; };
+		17CA287F29AAECD800A3F563 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17A3BB5F299A72B700D27026 /* Assets.xcassets */; };
 		17ED78AD29A8EDAF00CA20AF /* tambourine.mpeg in Resources */ = {isa = PBXBuildFile; fileRef = 17ED78A929A8EDAF00CA20AF /* tambourine.mpeg */; };
 		17ED78AE29A8EDAF00CA20AF /* sax.mpeg in Resources */ = {isa = PBXBuildFile; fileRef = 17ED78AA29A8EDAF00CA20AF /* sax.mpeg */; };
 		17ED78AF29A8EDAF00CA20AF /* piano.mpeg in Resources */ = {isa = PBXBuildFile; fileRef = 17ED78AB29A8EDAF00CA20AF /* piano.mpeg */; };
@@ -62,6 +63,7 @@
 		17A3BB62299A72B700D27026 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17A3BB69299A72CD00D27026 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		17BA3DA229AA9AB500D7E810 /* Avatars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatars.swift; sourceTree = "<group>"; };
+		17CA287D29AADD6200A3F563 /* GeniusMockedSwipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeniusMockedSwipes.swift; sourceTree = "<group>"; };
 		17ED78A929A8EDAF00CA20AF /* tambourine.mpeg */ = {isa = PBXFileReference; lastKnownFileType = video.mpeg; path = tambourine.mpeg; sourceTree = "<group>"; };
 		17ED78AA29A8EDAF00CA20AF /* sax.mpeg */ = {isa = PBXFileReference; lastKnownFileType = video.mpeg; path = sax.mpeg; sourceTree = "<group>"; };
 		17ED78AB29A8EDAF00CA20AF /* piano.mpeg */ = {isa = PBXFileReference; lastKnownFileType = video.mpeg; path = piano.mpeg; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				8B5B663F299E7AEA006A23CD /* Recipe.swift */,
 				17ED78BC29A9872600CA20AF /* Instrument.swift */,
 				8BBBDC9D29A8E99E00F40463 /* MiniGameSubtitle.swift */,
+				17CA287D29AADD6200A3F563 /* GeniusMockedSwipes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -302,11 +305,11 @@
 			files = (
 				17ED78B729A91CBC00CA20AF /* FuzzyBubbles-Regular.ttf in Resources */,
 				17ED78AF29A8EDAF00CA20AF /* piano.mpeg in Resources */,
+				17CA287F29AAECD800A3F563 /* Assets.xcassets in Resources */,
 				17ED78BB29A924B900CA20AF /* PTMono-Bold.ttf in Resources */,
 				17ED78AD29A8EDAF00CA20AF /* tambourine.mpeg in Resources */,
 				17ED78B629A91CBA00CA20AF /* FuzzyBubbles-Bold.ttf in Resources */,
 				17A3BB63299A72B700D27026 /* Preview Assets.xcassets in Resources */,
-				17ED78A529A69C9300CA20AF /* Assets.xcassets in Resources */,
 				17ED78B829A91DF400CA20AF /* PTMono-Regular.ttf in Resources */,
 				17ED78AE29A8EDAF00CA20AF /* sax.mpeg in Resources */,
 				17A3BB6A299A72CD00D27026 /* .gitignore in Resources */,
@@ -349,6 +352,7 @@
 				BD78003E299D13C700C6C974 /* Victim.swift in Sources */,
 				BD780054299FA89200C6C974 /* AnagramView.swift in Sources */,
 				BD780052299E5FA400C6C974 /* SubtitleView.swift in Sources */,
+				17CA287E29AADD6200A3F563 /* GeniusMockedSwipes.swift in Sources */,
 				8D55F92F299D2CE500964EAC /* MiniGame3Images.swift in Sources */,
 				17BA3DA329AA9AB500D7E810 /* Avatars.swift in Sources */,
 			);

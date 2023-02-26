@@ -11,8 +11,8 @@ import GameController
 struct GeniusView: View {
     
     @ObservedObject var viewModel = GeniusViewModel()
-    @AppStorage("minigame1") var OK1 = false
-        
+    @AppStorage("minigame1") var ok1 = false
+    
     var body: some View {
         
         VStack {
@@ -65,7 +65,7 @@ struct GeniusView: View {
             
             Spacer()
             
-            Image("dialog")
+            Image("instructions")
                 .padding(.top, 20)
                 .padding(.bottom, 175)
             
@@ -76,13 +76,7 @@ struct GeniusView: View {
                 .ignoresSafeArea()
         }
         .onAppear {
-                        
-            viewModel.playInstrumentsByRoundNumber(roundNumber: 9)
-            
-            GeniusViewModel.getDirections(directionHandler: { direction in
-                print(direction)
-            })
-            
+            viewModel.playAllRounds()
         }
         
     }
