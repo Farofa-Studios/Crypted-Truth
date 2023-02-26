@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CardButton: View {
+    
+    var check = ImagesProperties()
+    
     let image: String
     @State var rotation: Int
     
@@ -16,8 +19,11 @@ struct CardButton: View {
         Button(action: {
             rotation = rotation % 4 + 1
             
-            if rotation == 1 {
-                // varrer vetor e confirmar posição 1 em rotation
+            if rotation == 4 {
+                print("rotacao ok")
+                if check.checkPiecesRotation() == 1 {
+                    print("jogo ganho")
+                }
             }
             print(rotation)
             

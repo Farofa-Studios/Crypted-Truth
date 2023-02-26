@@ -18,6 +18,9 @@ class MiniGame3Images: ObservableObject {
 }
 
 class ImagesProperties: ObservableObject {
+    
+    var checkGame: Int = 1
+    
     @Published var listOfPieces = [
         MiniGame3Images(image: "01", rotation: randomPosition()),
         MiniGame3Images(image: "02", rotation: randomPosition()),
@@ -36,6 +39,16 @@ class ImagesProperties: ObservableObject {
         MiniGame3Images(image: "15", rotation: randomPosition()),
         MiniGame3Images(image: "16", rotation: randomPosition())
     ]
+    
+    func checkPiecesRotation() -> Int {
+        for position in 0...listOfPieces.count - 1 {
+            if listOfPieces[position].rotation != 4 {
+                print("")
+                checkGame = 0
+            }
+        }
+        return checkGame
+    }
 }
 
 func randomPosition() -> Double {
