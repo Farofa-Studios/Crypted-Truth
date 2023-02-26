@@ -74,6 +74,8 @@ struct BoardView: View {
                             }
                         }
                         
+                        // Espaco para letras liberadas
+                        
                         LazyHStack(spacing: 36) {
                             
                             ForEach(victims, id: \.id) { victim in
@@ -96,10 +98,7 @@ struct BoardView: View {
                     SubtitleView()
                     
                 }
-                
-                // Espaco para letras liberadas
-                
-                
+                                
             }
         }
         
