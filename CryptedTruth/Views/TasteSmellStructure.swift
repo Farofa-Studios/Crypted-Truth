@@ -9,21 +9,22 @@ import SwiftUI
 
 struct TasteSmellStructure: View {
     
-    @State var ingredientsOptionList: [String]
+    let ingredientsOptionList: [String]
+    
     @State var scale = 1.0
+    
     @State var ingredient = "Ing-faltando"
     
     let recipe: Recipe
-    let numOfRecipes: Int
-    let title: String
     
-    @Binding var currentFase: Int
-    @Binding var isGameFinished: Bool
+    let numOfRecipes: Int
+    
+    let title: String
     
     var body: some View {
         
         ZStack {
-            Color.background
+            Color.backgroundColor
                 .ignoresSafeArea()
             
             VStack {
@@ -33,15 +34,15 @@ struct TasteSmellStructure: View {
                 HStack (alignment: .top, spacing: 110) {
                     VStack (spacing: 8){
                         Text("Rodada")
-                            .font(.custom("PTMono-Regular", size: 38))
+                            .font(.system(size: 38))
                         
                         HStack (spacing: 0){
                             Text("\(recipe.id)")
-                                .font(.custom("PTMono-Regular", size: 57))
+                                .font(.system(size: 57))
                                 .foregroundColor(.white)
                             
                             Text("/\(numOfRecipes)")
-                                .font(.custom("PTMono-Regular", size: 48))
+                                .font(.system(size: 48))
                                 .foregroundColor(.white)
                                 .opacity(0.6)
                         }
@@ -50,8 +51,7 @@ struct TasteSmellStructure: View {
                     VStack (alignment: .center){
                         
                         Text(title)
-                            .font(.custom("PTMono-Regular", size: 38))
-                            .padding(.bottom, 40)
+                            .font(.system(size: 38))
                         
                         HStack (alignment: .top, spacing: 40) {
                             ForEach(recipe.ingredientsList, id: \.self) { item in
@@ -70,12 +70,12 @@ struct TasteSmellStructure: View {
                     if let image = recipe.image {
                         VStack {
                             Text("Receita")
-                                .font(.custom("PTMono-Regular", size: 38))
+                                .font(.system(size: 38))
                             Image(image)
                                 .resizable()
                                 .frame(width: 162, height: 162)
                             Text(recipe.title)
-                                .font(.custom("PTMono-Regular", size: 29))
+                                .font(.system(size: 29))
                         }
                     }
                 }
@@ -84,19 +84,16 @@ struct TasteSmellStructure: View {
                 
                 HStack (alignment: .top, spacing: 32) {
                     ForEach(ingredientsOptionList, id: \.self) { item in
-                        if item == ingredientsOptionList.first {
-                            
-                        }
+                        
                         IngredientsButton(image: item, answer: recipe.correctAnswer){
                             self.buttonTapped(item)
                         }
-                        .padding(-25)
                     }
                 }
                 
                 Spacer()
                 
-                //                SubtitleView()
+//                SubtitleView()
             }
         }
     }
@@ -118,17 +115,6 @@ struct TasteSmellStructure: View {
                     self.scale = 1.0
                 }
             }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
-                ingredient = "Ing-faltando"
-                ingredientsOptionList = ingredientsOptionList.shuffled()
-                
-                if currentFase == 3 {
-                    isGameFinished = true
-                } else {
-                    currentFase += 1
-                }
-            }
         }
     }
 }
@@ -141,7 +127,6 @@ struct IngredientsButton: View {
     
     @State private var angle = 0.0
     @State private var isWrong = false
-    @State var selected = false
     
     var body: some View {
         Button(action: {
@@ -170,35 +155,24 @@ struct IngredientsButton: View {
                 }
             }
             action()
-            self.selected.toggle()
+            
         }) {
-            
-            VStack {
-                Image(image)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 270, height: 270, alignment: .center)
-                Spacer()
-                Spacer()
-            }
-            .frame(width: 236, height: 236, alignment: .center)
-            
-            
+            Image(image)
+                .resizable()
+                .scaledToFit()
+                .clipped()
         }
-        .background(Color.buttonMinigame)
-        .clipShape(Pentagon())
+        
         .rotationEffect(.degrees(image != answer ? angle: 0))
     }
 }
 
-//struct TasteSmellStructure_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TasteSmellStructure(
-//            ingredientsOptionList: ["Op-Ovos", "Op-Bacon", "Op-Queijo", "Op-Tomate", "Op-Trigo"],
-//            recipe: Recipes.allRecipes[3],
-//            numOfRecipes: Recipes.allRecipes.count,
-//            title: "Ingredientes")
-//    }
-//}
-
-
+struct TasteSmellStructure_Previews: PreviewProvider {
+    static var previews: some View {
+        TasteSmellStructure(
+            ingredientsOptionList: ["Op-Ovos", "Op-Bacon", "Op-Queijo", "Op-Tomate", "Op-Trigo"],
+            recipe: Recipes.allRecipes[3],
+            numOfRecipes: Recipes.allRecipes.count,
+            title: "Ingredientes")
+    }
+}

@@ -12,36 +12,23 @@ struct TasteMiniGame: View {
     
     let ingredientsOptionList = ["Op-Ovos", "Op-Bacon", "Op-Queijo", "Op-Tomate", "Op-Trigo"].shuffled()
     
+    let recipe = Recipes.allRecipes[1]
+    
     let numOfItems = Recipes.allRecipes.count
     
     @AppStorage("minigame3") var OK3 = false
     
-    @State var currentTasteFase: Int = 0
-    @State var isTasteGameFinished: Bool = false
-    
     var body: some View {
-        
-        let recipe = Recipes.allRecipes[currentTasteFase]
-        NavigationStack {
-            ZStack {
-                TasteSmellStructure(
-                    ingredientsOptionList: ingredientsOptionList,
-                    recipe: recipe,
-                    numOfRecipes: numOfItems,
-                    title: "Ingredientes",
-                    currentFase: $currentTasteFase,
-                    isGameFinished: $isTasteGameFinished
-                )
-            }
-            .onChange(of: isTasteGameFinished) { newValue in
-                if newValue {
-                    OK3 = true
-                }
-            }
-            .navigationDestination(isPresented: $isTasteGameFinished) {
-                BoardView()
-            }
+    
+        TasteSmellStructure(
+            ingredientsOptionList: ingredientsOptionList,
+            recipe: recipe,
+            numOfRecipes: numOfItems,
+            title: "Ingredientes"
+        ).onAppear() {
+            OK3 = true
         }
+       
     }
     
 }
