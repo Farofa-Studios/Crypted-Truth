@@ -39,6 +39,8 @@
 		8D55F92F299D2CE500964EAC /* MiniGame3Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55F92E299D2CE500964EAC /* MiniGame3Images.swift */; };
 		8D55F931299D2D4400964EAC /* MiniGame3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55F930299D2D4400964EAC /* MiniGame3.swift */; };
 		8D67B1E3299E94D4003A2B09 /* MiniGame3CardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67B1E2299E94D4003A2B09 /* MiniGame3CardButtonView.swift */; };
+		8D6B9CC529ABE479009B67CA /* Thriller.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B9CC329ABE479009B67CA /* Thriller.mp3 */; };
+		8D6B9CC629ABE479009B67CA /* Spooky.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B9CC429ABE479009B67CA /* Spooky.mp3 */; };
 		BD6C973429AAA78400DF0AA5 /* ChallengeConcludedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6C973329AAA78400DF0AA5 /* ChallengeConcludedView.swift */; };
 		BD78003E299D13C700C6C974 /* Victim.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD78003D299D13C700C6C974 /* Victim.swift */; };
 		BD780042299D15F100C6C974 /* VictimsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD780041299D15F100C6C974 /* VictimsService.swift */; };
@@ -86,6 +88,8 @@
 		8D55F92E299D2CE500964EAC /* MiniGame3Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3Images.swift; sourceTree = "<group>"; };
 		8D55F930299D2D4400964EAC /* MiniGame3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3.swift; sourceTree = "<group>"; };
 		8D67B1E2299E94D4003A2B09 /* MiniGame3CardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3CardButtonView.swift; sourceTree = "<group>"; };
+		8D6B9CC329ABE479009B67CA /* Thriller.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Thriller.mp3; sourceTree = "<group>"; };
+		8D6B9CC429ABE479009B67CA /* Spooky.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Spooky.mp3; sourceTree = "<group>"; };
 		BD6C973329AAA78400DF0AA5 /* ChallengeConcludedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeConcludedView.swift; sourceTree = "<group>"; };
 		BD78003D299D13C700C6C974 /* Victim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Victim.swift; sourceTree = "<group>"; };
 		BD780041299D15F100C6C974 /* VictimsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictimsService.swift; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 				17ED78AB29A8EDAF00CA20AF /* piano.mpeg */,
 				17ED78AA29A8EDAF00CA20AF /* sax.mpeg */,
 				17ED78A929A8EDAF00CA20AF /* tambourine.mpeg */,
+				8D6B9CC429ABE479009B67CA /* Spooky.mp3 */,
+				8D6B9CC329ABE479009B67CA /* Thriller.mp3 */,
 				173502DB29A6931F00C57D55 /* PTMono-Regular.ttf */,
 				17ED78BA29A924B900CA20AF /* PTMono-Bold.ttf */,
 				173502DA29A6931600C57D55 /* FuzzyBubbles-Regular.ttf */,
@@ -317,7 +323,9 @@
 				17ED78B629A91CBA00CA20AF /* FuzzyBubbles-Bold.ttf in Resources */,
 				17A3BB63299A72B700D27026 /* Preview Assets.xcassets in Resources */,
 				17ED78B829A91DF400CA20AF /* PTMono-Regular.ttf in Resources */,
+				8D6B9CC529ABE479009B67CA /* Thriller.mp3 in Resources */,
 				17ED78AE29A8EDAF00CA20AF /* sax.mpeg in Resources */,
+				8D6B9CC629ABE479009B67CA /* Spooky.mp3 in Resources */,
 				17A3BB6A299A72CD00D27026 /* .gitignore in Resources */,
 				17ED78B029A8EDAF00CA20AF /* guitar.mpeg in Resources */,
 			);

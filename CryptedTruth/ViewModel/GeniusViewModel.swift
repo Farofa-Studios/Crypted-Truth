@@ -65,7 +65,7 @@ class GeniusViewModel: ObservableObject {
     
     func playInstrument(_ instrument: Instrument) {
             
-        SoundManager.instance.playSound(instrument.name)
+        SoundManager.instance.playSoundMPEG(sound: instrument.name)
         updateInstrumentStatus(instrument, status: true)
         instrument.image = getCurrentInstrumentImage(instrument: instrument)
             
