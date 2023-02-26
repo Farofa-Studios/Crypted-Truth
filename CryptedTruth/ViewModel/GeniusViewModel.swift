@@ -67,29 +67,32 @@ class GeniusViewModel: ObservableObject {
             
         SoundManager.instance.playSound(instrument.name)
         updateInstrumentStatus(instrument, status: true)
-        instrument.image = getInstrumentImage(instrument: instrument)
+        instrument.image = getCurrentInstrumentImage(instrument: instrument)
             
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.updateInstrumentStatus(instrument, status: false)
-            instrument.image = self.getInstrumentImage(instrument: instrument)
+            instrument.image = self.getCurrentInstrumentImage(instrument: instrument)
         }
         
     }
     
-    func playInstrumentsByRoundNumber(roundNumber: Int) {
+    func startCpuTurn(completionHandler: @escaping () -> ()) {
         
-        let roundDirections = matchInstruments[roundNumber - 1]
+        isPlayerTurn = false
+        
+        let roundDirections = matchInstruments[roundCounter - 1]
         var counter = 0
         
         Timer.scheduledTimer(withTimeInterval: 1.25, repeats: true) { timer in
                         
             if counter == roundDirections.count {
                 timer.invalidate()
+                completionHandler()
                 return
             }
             
             let currentInstrument = roundDirections[counter]
-            print("\(counter + 1) - playing: \(currentInstrument.name)")
+            print("cpu input: \(currentInstrument.name)")
             self.playInstrument(currentInstrument)
             
             counter += 1
@@ -117,20 +120,79 @@ class GeniusViewModel: ObservableObject {
         
     }
     
-    private func getInstrumentImage(instrument: Instrument) -> String {
+    func playCurrentRound(completionHandler: @escaping () -> ()) {
+        
+        startCpuTurn(completionHandler: { [self] in
+            startPlayerTurn(completionHandler: {
+                completionHandler()
+            })
+        })
+        
+    }
+    
+    func playAllRounds() {
+        
+        print("round: \(roundCounter)/\(matchInstruments.count)")
+                    
+        playCurrentRound(completionHandler: { [self] in
+            if roundCounter < matchInstruments.count {
+                roundCounter += 1
+                playAllRounds()
+            } else {
+                print("genius finished")
+            }
+        })
+        
+    }
+    
+    func startPlayerTurn(completionHandler: @escaping () -> ()) {
+        
+        isPlayerTurn = true
+        
+        var inputCounter = 0
+        
+        GeniusMockedSwipes.getMockedSwipes(roundInstruments: matchInstruments[roundCounter - 1],
+                                           isSuccesfulRound: true,
+                                           swipeHandler: { [self] instrument, timer in
+            
+            inputCounter += 1
+            print("player input: \(instrument.name),", terminator: " ")
+            
+            if instrument.direction != matchInstruments[roundCounter - 1][inputCounter - 1].direction {
+                print("wrong input")
+                isCorrectInput = false
+                timer.invalidate()
+                return
+            } else {
+                isCorrectInput = true
+                print("correct input")
+            }
+            
+            playInstrument(instrument)
+            
+            if inputCounter == roundCounter {
+                print("round finished, \(inputCounter) correct inputs\n")
+                completionHandler()
+            }
+            
+        })
+        
+    }
+    
+    private func getCurrentInstrumentImage(instrument: Instrument) -> String {
         
         if !isInstrumentBlinking {
-            return "\(instrument.direction.rawValue)-default"
+            return "\(instrument.direction)-default"
         }
 
         if !isPlayerTurn {
-            return "\(instrument.direction.rawValue)-yellow"
+            return "\(instrument.direction)-yellow"
         }
 
         if isCorrectInput! {
-            return "\(instrument.direction.rawValue)-blue"
+            return "\(instrument.direction)-blue"
         } else {
-            return "\(instrument.direction.rawValue)-red"
+            return "\(instrument.direction)-red"
         }
 
     }
@@ -168,7 +230,8 @@ class GeniusViewModel: ObservableObject {
                 let microGamepad = gcController.microGamepad
                 microGamepad!.reportsAbsoluteDpadValues = true
                 microGamepad!.dpad.valueChangedHandler = { pad, x, y in
-                    directionHandler(GeniusViewModel.calcSwipeDirection(x, y))
+                    let direction = GeniusViewModel.calcSwipeDirection(x, y)
+                    directionHandler(direction)
                 }
                 
             }
