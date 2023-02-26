@@ -27,7 +27,9 @@
 		17ED78B829A91DF400CA20AF /* PTMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 173502DB29A6931F00C57D55 /* PTMono-Regular.ttf */; };
 		17ED78BB29A924B900CA20AF /* PTMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17ED78BA29A924B900CA20AF /* PTMono-Bold.ttf */; };
 		17ED78BD29A9872600CA20AF /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ED78BC29A9872600CA20AF /* Instrument.swift */; };
-		8B5B663E299E7AA5006A23CD /* TasteSmellStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B663D299E7AA5006A23CD /* TasteSmellStructure.swift */; };
+		8B202F6029AB15B8009C5CB6 /* TasteSmellStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202F5F29AB15B8009C5CB6 /* TasteSmellStructure.swift */; };
+		8B202F6229AB15E9009C5CB6 /* MiniGameSubtitlesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202F6129AB15E9009C5CB6 /* MiniGameSubtitlesService.swift */; };
+		8B202F6429AB164C009C5CB6 /* Shape+Pentagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202F6329AB164C009C5CB6 /* Shape+Pentagon.swift */; };
 		8B5B6640299E7AEA006A23CD /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B663F299E7AEA006A23CD /* Recipe.swift */; };
 		8B5B6642299E8169006A23CD /* RecipesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B6641299E8169006A23CD /* RecipesService.swift */; };
 		8BBBDC9629A7B57D00F40463 /* SmellMiniGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBBDC9529A7B57D00F40463 /* SmellMiniGame.swift */; };
@@ -42,7 +44,6 @@
 		BD780042299D15F100C6C974 /* VictimsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD780041299D15F100C6C974 /* VictimsService.swift */; };
 		BD780049299D581D00C6C974 /* VictimViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD780048299D581D00C6C974 /* VictimViewModel.swift */; };
 		BD78004C299E5C8300C6C974 /* Subtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD78004B299E5C8300C6C974 /* Subtitle.swift */; };
-		BD78004E299E5D7600C6C974 /* MiniGameSubtitlesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD78004D299E5D7600C6C974 /* MiniGameSubtitlesService.swift */; };
 		BD780050299E5F4E00C6C974 /* SubtitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD78004F299E5F4E00C6C974 /* SubtitleViewModel.swift */; };
 		BD780052299E5FA400C6C974 /* SubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD780051299E5FA400C6C974 /* SubtitleView.swift */; };
 		BD780054299FA89200C6C974 /* AnagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD780053299FA89200C6C974 /* AnagramView.swift */; };
@@ -73,7 +74,9 @@
 		17ED78B929A91ED500CA20AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		17ED78BA29A924B900CA20AF /* PTMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTMono-Bold.ttf"; sourceTree = "<group>"; };
 		17ED78BC29A9872600CA20AF /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
-		8B5B663D299E7AA5006A23CD /* TasteSmellStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteSmellStructure.swift; sourceTree = "<group>"; };
+		8B202F5F29AB15B8009C5CB6 /* TasteSmellStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteSmellStructure.swift; sourceTree = "<group>"; };
+		8B202F6129AB15E9009C5CB6 /* MiniGameSubtitlesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGameSubtitlesService.swift; sourceTree = "<group>"; };
+		8B202F6329AB164C009C5CB6 /* Shape+Pentagon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+Pentagon.swift"; sourceTree = "<group>"; };
 		8B5B663F299E7AEA006A23CD /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		8B5B6641299E8169006A23CD /* RecipesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesService.swift; sourceTree = "<group>"; };
 		8BBBDC9529A7B57D00F40463 /* SmellMiniGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmellMiniGame.swift; sourceTree = "<group>"; };
@@ -88,7 +91,6 @@
 		BD780041299D15F100C6C974 /* VictimsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictimsService.swift; sourceTree = "<group>"; };
 		BD780048299D581D00C6C974 /* VictimViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictimViewModel.swift; sourceTree = "<group>"; };
 		BD78004B299E5C8300C6C974 /* Subtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subtitle.swift; sourceTree = "<group>"; };
-		BD78004D299E5D7600C6C974 /* MiniGameSubtitlesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGameSubtitlesService.swift; sourceTree = "<group>"; };
 		BD78004F299E5F4E00C6C974 /* SubtitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleViewModel.swift; sourceTree = "<group>"; };
 		BD780051299E5FA400C6C974 /* SubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleView.swift; sourceTree = "<group>"; };
 		BD780053299FA89200C6C974 /* AnagramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnagramView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				173502CA299FD92A00C57D55 /* Color+customColors.swift */,
+				8B202F6329AB164C009C5CB6 /* Shape+Pentagon.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -199,12 +202,12 @@
 				BDE36FC2299BBCF5005E399E /* BoardView.swift */,
 				BDE36FCC299BDC77005E399E /* CardBoardView.swift */,
 				BD780051299E5FA400C6C974 /* SubtitleView.swift */,
-				8B5B663D299E7AA5006A23CD /* TasteSmellStructure.swift */,
 				BD780053299FA89200C6C974 /* AnagramView.swift */,
 				173502C5299FD8D900C57D55 /* GeniusView.swift */,
 				8BBBDC9529A7B57D00F40463 /* SmellMiniGame.swift */,
 				8BBBDC9729A7B59200F40463 /* TasteMiniGame.swift */,
 				BD6C973329AAA78400DF0AA5 /* ChallengeConcludedView.swift */,
+				8B202F5F29AB15B8009C5CB6 /* TasteSmellStructure.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,9 +230,9 @@
 			children = (
 				17ED78B129A8F09C00CA20AF /* SoundManager.swift */,
 				BD780041299D15F100C6C974 /* VictimsService.swift */,
-				BD78004D299E5D7600C6C974 /* MiniGameSubtitlesService.swift */,
 				8B5B6641299E8169006A23CD /* RecipesService.swift */,
 				8BBBDC9929A7B9EE00F40463 /* AromasService.swift */,
+				8B202F6129AB15E9009C5CB6 /* MiniGameSubtitlesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				BDE36FC3299BBCF5005E399E /* BoardView.swift in Sources */,
 				8D67B1E3299E94D4003A2B09 /* MiniGame3CardButtonView.swift in Sources */,
 				8BBBDC9E29A8E99E00F40463 /* MiniGameSubtitle.swift in Sources */,
+				8B202F6029AB15B8009C5CB6 /* TasteSmellStructure.swift in Sources */,
 				8BBBDC9A29A7B9EE00F40463 /* AromasService.swift in Sources */,
 				8D55F931299D2D4400964EAC /* MiniGame3.swift in Sources */,
 				173502C8299FD8F000C57D55 /* GeniusViewModel.swift in Sources */,
@@ -337,11 +341,10 @@
 				BD6C973429AAA78400DF0AA5 /* ChallengeConcludedView.swift in Sources */,
 				17A3BB5C299A72B600D27026 /* CryptedTruthApp.swift in Sources */,
 				8B5B6640299E7AEA006A23CD /* Recipe.swift in Sources */,
+				8B202F6429AB164C009C5CB6 /* Shape+Pentagon.swift in Sources */,
 				BD780049299D581D00C6C974 /* VictimViewModel.swift in Sources */,
 				8B5B6642299E8169006A23CD /* RecipesService.swift in Sources */,
 				17ED78B229A8F09C00CA20AF /* SoundManager.swift in Sources */,
-				8B5B663E299E7AA5006A23CD /* TasteSmellStructure.swift in Sources */,
-				8B5B663E299E7AA5006A23CD /* TasteSmellStructure.swift in Sources */,
 				BD780042299D15F100C6C974 /* VictimsService.swift in Sources */,
 				8BBBDC9629A7B57D00F40463 /* SmellMiniGame.swift in Sources */,
 				BD78004C299E5C8300C6C974 /* Subtitle.swift in Sources */,
@@ -350,14 +353,13 @@
 				17ED78BD29A9872600CA20AF /* Instrument.swift in Sources */,
 				173502CD299FD97B00C57D55 /* Direction.swift in Sources */,
 				173502CB299FD92A00C57D55 /* Color+customColors.swift in Sources */,
-				BD78004E299E5D7600C6C974 /* MiniGameSubtitlesService.swift in Sources */,
-				BD78004E299E5D7600C6C974 /* MiniGameSubtitlesService.swift in Sources */,
 				8BBBDC9829A7B59200F40463 /* TasteMiniGame.swift in Sources */,
 				BD78003E299D13C700C6C974 /* Victim.swift in Sources */,
 				BD780054299FA89200C6C974 /* AnagramView.swift in Sources */,
 				BD780052299E5FA400C6C974 /* SubtitleView.swift in Sources */,
 				17CA287E29AADD6200A3F563 /* GeniusMockedSwipes.swift in Sources */,
 				8D55F92F299D2CE500964EAC /* MiniGame3Images.swift in Sources */,
+				8B202F6229AB15E9009C5CB6 /* MiniGameSubtitlesService.swift in Sources */,
 				17BA3DA329AA9AB500D7E810 /* Avatars.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
