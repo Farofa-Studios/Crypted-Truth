@@ -9,17 +9,16 @@ import SwiftUI
 
 struct TasteSmellStructure: View {
     
-    let ingredientsOptionList: [String]
-    
+    @State var ingredientsOptionList: [String]
     @State var scale = 1.0
-    
     @State var ingredient = "Ing-faltando"
     
     let recipe: Recipe
-    
     let numOfRecipes: Int
-    
     let title: String
+    
+    @Binding var currentFase: Int
+    @Binding var isGameFinished: Bool
     
     var body: some View {
         
@@ -85,7 +84,9 @@ struct TasteSmellStructure: View {
                 
                 HStack (alignment: .top, spacing: 32) {
                     ForEach(ingredientsOptionList, id: \.self) { item in
-                        
+                        if item == ingredientsOptionList.first {
+                            
+                        }
                         IngredientsButton(image: item, answer: recipe.correctAnswer){
                             self.buttonTapped(item)
                         }
@@ -115,6 +116,17 @@ struct TasteSmellStructure: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
                 withAnimation(.easeIn(duration: 0.3)){
                     self.scale = 1.0
+                }
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                ingredient = "Ing-faltando"
+                ingredientsOptionList = ingredientsOptionList.shuffled()
+                
+                if currentFase == 3 {
+                    isGameFinished = true
+                } else {
+                    currentFase += 1
                 }
             }
         }
@@ -173,37 +185,20 @@ struct IngredientsButton: View {
             
             
         }
-        //        .background(self.selected ? Color.white.opacity(20.0) : Color.white.opacity(20.0))
         .background(Color.buttonMinigame)
         .clipShape(Pentagon())
-        
         .rotationEffect(.degrees(image != answer ? angle: 0))
     }
 }
 
-struct TasteSmellStructure_Previews: PreviewProvider {
-    static var previews: some View {
-        TasteSmellStructure(
-            ingredientsOptionList: ["Op-Ovos", "Op-Bacon", "Op-Queijo", "Op-Tomate", "Op-Trigo"],
-            recipe: Recipes.allRecipes[3],
-            numOfRecipes: Recipes.allRecipes.count,
-            title: "Ingredientes")
-    }
-}
-
-//struct ContentView: View {
-//    @FocusState private var isButtonFocused: Bool
-//
-//    var body: some View {
-//        Button("Botão") {}
-//            .tint(.blue)
-//            .focusedSceneValue(isButtonFocused ? Color.red : Color.blue)
-//            .focusable(true)
-//            .focused($isButtonFocused) {
-//                print("Botão está em foco: \(isButtonFocused)")
-//            }
-//            .onReceive(NotificationCenter.default.publisher(for: UIFocusSystem.didUpdateNotification)) { _ in
-//                isButtonFocused = UIScreen.main.focusedItem === self
-//            }
+//struct TasteSmellStructure_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TasteSmellStructure(
+//            ingredientsOptionList: ["Op-Ovos", "Op-Bacon", "Op-Queijo", "Op-Tomate", "Op-Trigo"],
+//            recipe: Recipes.allRecipes[3],
+//            numOfRecipes: Recipes.allRecipes.count,
+//            title: "Ingredientes")
 //    }
 //}
+
+
