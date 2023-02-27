@@ -11,7 +11,8 @@ import SwiftUI
 struct CryptedTruthApp: App {
     var body: some Scene {
         WindowGroup {
-            InitialView()
+//            InitialView()
+            SmellMiniGame()
         }
     }
 }
