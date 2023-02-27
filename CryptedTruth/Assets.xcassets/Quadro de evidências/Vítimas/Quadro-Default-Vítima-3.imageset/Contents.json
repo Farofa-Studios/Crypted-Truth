@@ -1,12 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "Quadro-Default-Vítima-3.png",
+      "filename" : "Quadro-Default-Vítima-3.svg",
       "idiom" : "universal"
     }
   ],
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
   }
 }

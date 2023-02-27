@@ -96,6 +96,7 @@
 		8D6B9D2229AC35D1009B67CA /* Wrong answer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B9D2129AC35D1009B67CA /* Wrong answer.mp3 */; };
 		8D6B9D2429AC35EB009B67CA /* Borrifador-Olfato-Game.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B9D2329AC35EB009B67CA /* Borrifador-Olfato-Game.mp3 */; };
 		8D6B9D2629AC35F9009B67CA /* Acerto minigame 3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B9D2529AC35F9009B67CA /* Acerto minigame 3.mp3 */; };
+		BD2B265429AD0D30008592E5 /* BoardButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2B265329AD0D30008592E5 /* BoardButtonStyle.swift */; };
 		BD6C973429AAA78400DF0AA5 /* ChallengeConcludedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6C973329AAA78400DF0AA5 /* ChallengeConcludedView.swift */; };
 		BD78003E299D13C700C6C974 /* Victim.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD78003D299D13C700C6C974 /* Victim.swift */; };
 		BD780042299D15F100C6C974 /* VictimsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD780041299D15F100C6C974 /* VictimsService.swift */; };
@@ -200,6 +201,7 @@
 		8D6B9D2129AC35D1009B67CA /* Wrong answer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Wrong answer.mp3"; sourceTree = "<group>"; };
 		8D6B9D2329AC35EB009B67CA /* Borrifador-Olfato-Game.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Borrifador-Olfato-Game.mp3"; sourceTree = "<group>"; };
 		8D6B9D2529AC35F9009B67CA /* Acerto minigame 3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Acerto minigame 3.mp3"; sourceTree = "<group>"; };
+		BD2B265329AD0D30008592E5 /* BoardButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardButtonStyle.swift; sourceTree = "<group>"; };
 		BD6C973329AAA78400DF0AA5 /* ChallengeConcludedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeConcludedView.swift; sourceTree = "<group>"; };
 		BD78003D299D13C700C6C974 /* Victim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Victim.swift; sourceTree = "<group>"; };
 		BD780041299D15F100C6C974 /* VictimsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictimsService.swift; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 				8B7FEA5829ABBD9E00ABCDF0 /* InitialView.swift */,
 				8B7FEA5A29ABD03300ABCDF0 /* IntroductionView.swift */,
 				1768019B29AC2EA500517A96 /* BlankButtonStyle.swift */,
+				BD2B265329AD0D30008592E5 /* BoardButtonStyle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				BD6C973429AAA78400DF0AA5 /* ChallengeConcludedView.swift in Sources */,
 				17A3BB5C299A72B600D27026 /* CryptedTruthApp.swift in Sources */,
 				8B0B824529AC22FF00B4AE95 /* IntroductionSubtitlesService.swift in Sources */,
+				BD2B265429AD0D30008592E5 /* BoardButtonStyle.swift in Sources */,
 				8B5B6640299E7AEA006A23CD /* Recipe.swift in Sources */,
 				17EB95C329ABEE86003407BF /* GeniusConcludedView.swift in Sources */,
 				8B202F6429AB164C009C5CB6 /* Shape+Pentagon.swift in Sources */,
