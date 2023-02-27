@@ -12,6 +12,8 @@ struct SubtitleView: View {
     let subtitle: Subtitle
     let buttonAction: (() -> ())?
     
+    @State var text: String = ""
+    
     var body: some View {
         HStack (alignment: .center, spacing: 16) {
             
@@ -25,7 +27,7 @@ struct SubtitleView: View {
             }
             
             ZStack {
-                Text(subtitle.subtitle)
+                Text (subtitle.subtitle)
                     .frame(width: 1255.81, height: 120, alignment: .leading)
                     .font(.custom("PTMono-Regular", size: 29))
                 
@@ -61,28 +63,6 @@ struct SubtitleView: View {
             }
             
         }
-        .onAppear(){
-//            typeWriter()
-        }
-    }
-    
-//    func typeWriter(at position: Int = 0) {
-//
-//        if position == 0 {
-//            text = ""
-//        }
-//        if position < subtitle.subtitle.count {
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-//                text.append(subtitle.subtitle[position])
-//                typeWriter(at: position + 1)
-//            }
-//        }
-//    }
-}
-
-extension String {
-    subscript(offset: Int) -> Character {
-        self[index(startIndex, offsetBy: offset)]
     }
 }
 

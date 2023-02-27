@@ -33,6 +33,7 @@
 		8B0B824529AC22FF00B4AE95 /* IntroductionSubtitlesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B824429AC22FF00B4AE95 /* IntroductionSubtitlesService.swift */; };
 		8B0B824729AC2E3C00B4AE95 /* Shape+Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B824629AC2E3C00B4AE95 /* Shape+Triangle.swift */; };
 		8B0B824929AC5E1900B4AE95 /* IntroductionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B824829AC5E1900B4AE95 /* IntroductionViewModel.swift */; };
+		8B0B824B29ACE1A200B4AE95 /* TypedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B824A29ACE1A200B4AE95 /* TypedText.swift */; };
 		8B202F6029AB15B8009C5CB6 /* TasteSmellStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202F5F29AB15B8009C5CB6 /* TasteSmellStructure.swift */; };
 		8B202F6229AB15E9009C5CB6 /* MiniGameSubtitlesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202F6129AB15E9009C5CB6 /* MiniGameSubtitlesService.swift */; };
 		8B202F6429AB164C009C5CB6 /* Shape+Pentagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202F6329AB164C009C5CB6 /* Shape+Pentagon.swift */; };
@@ -88,6 +89,7 @@
 		8B0B824429AC22FF00B4AE95 /* IntroductionSubtitlesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionSubtitlesService.swift; sourceTree = "<group>"; };
 		8B0B824629AC2E3C00B4AE95 /* Shape+Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+Triangle.swift"; sourceTree = "<group>"; };
 		8B0B824829AC5E1900B4AE95 /* IntroductionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewModel.swift; sourceTree = "<group>"; };
+		8B0B824A29ACE1A200B4AE95 /* TypedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypedText.swift; sourceTree = "<group>"; };
 		8B202F5F29AB15B8009C5CB6 /* TasteSmellStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteSmellStructure.swift; sourceTree = "<group>"; };
 		8B202F6129AB15E9009C5CB6 /* MiniGameSubtitlesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGameSubtitlesService.swift; sourceTree = "<group>"; };
 		8B202F6329AB164C009C5CB6 /* Shape+Pentagon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+Pentagon.swift"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				173502CA299FD92A00C57D55 /* Color+customColors.swift */,
 				8B202F6329AB164C009C5CB6 /* Shape+Pentagon.swift */,
 				8B0B824629AC2E3C00B4AE95 /* Shape+Triangle.swift */,
+				8B0B824A29ACE1A200B4AE95 /* TypedText.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				17ED78BD29A9872600CA20AF /* Instrument.swift in Sources */,
 				1768019C29AC2EA500517A96 /* BlankButtonStyle.swift in Sources */,
 				173502CD299FD97B00C57D55 /* Direction.swift in Sources */,
+				8B0B824B29ACE1A200B4AE95 /* TypedText.swift in Sources */,
 				173502CB299FD92A00C57D55 /* Color+customColors.swift in Sources */,
 				8BBBDC9829A7B59200F40463 /* TasteMiniGame.swift in Sources */,
 				BD78003E299D13C700C6C974 /* Victim.swift in Sources */,
