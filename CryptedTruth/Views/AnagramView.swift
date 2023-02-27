@@ -13,10 +13,24 @@ struct AnagramView: View {
     
     let letters = ["E", "T", "S", "D", "I", "N", "S", "O"]
     @State var anagramaFinal: [String] = []
+    
+    @FocusState private var isFocusedE: Bool
+    @FocusState private var isFocusedT: Bool
+    @FocusState private var isFocusedS: Bool
+    @FocusState private var isFocusedD: Bool
+    @FocusState private var isFocusedI: Bool
+    @FocusState private var isFocusedN: Bool
+    @FocusState private var isFocusedS1: Bool
+    @FocusState private var isFocusedO: Bool
+    @FocusState private var isFocusedDesfazer: Bool
+    @FocusState private var isFocusedApagar: Bool
+
     @AppStorage("minigame5") var ok5 = false
     
     var body: some View {
         ZStack {
+//            Color.white
+//                .ignoresSafeArea()
             
             if !ok5 {
                 VStack(spacing: 16){
@@ -32,23 +46,137 @@ struct AnagramView: View {
                     .frame(width: 540, height: 60)
                     
                     HStack (spacing: 8) {
-                        ForEach(letters, id: \.self) { letter in
-                            Button(action: {
-                                if anagramaFinal.count > 7 {
-                                    //
-                                } else {
-                                    anagramaFinal.append(letter)
-                                }
-                            }) {
-                                Image(letter)
-                                
+                        Button(action: {
+                            if anagramaFinal.count > 7 {
+                                //
+                            } else {
+                                anagramaFinal.append("E")
                             }
-                            .buttonStyle(.card)
-                            .clipShape(Rectangle())
+                        }) {
+                            Image("E")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 46, height: 44)
                         }
+                        .focused($isFocusedE)
+                        .background(isFocusedE ? Color.blue : Color.clear)
+                        .buttonStyle(BoardButtonStyle())
+                                                
+                        Button(action: {
+                            if anagramaFinal.count > 7 {
+                                //
+                            } else {
+                                anagramaFinal.append("T")
+                            }
+                        }) {
+                            Image("T")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 46, height: 44)
+
+                        }
+                        .focused($isFocusedT)
+                        .background(isFocusedT ? Color.blue : Color.clear)
+                        .buttonStyle(BoardButtonStyle())
+                        
+                        Button(action: {
+                            if anagramaFinal.count > 7 {
+                                //
+                            } else {
+                                anagramaFinal.append("S")
+                            }
+                        }) {
+                            Image("S")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 46, height: 44)
+                        }
+                        .focused($isFocusedS)
+                        .background(isFocusedS ? Color.blue : Color.clear)
+                        .buttonStyle(BoardButtonStyle())
+                        
+                        Button(action: {
+                            if anagramaFinal.count > 7 {
+                                //
+                            } else {
+                                anagramaFinal.append("D")
+                            }
+                        }) {
+                            Image("D")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 46, height: 44)
+                        }
+                        .focused($isFocusedD)
+                        .background(isFocusedD ? Color.blue : Color.clear)
+                        .buttonStyle(BoardButtonStyle())
+                        
+                        Button(action: {
+                            if anagramaFinal.count > 7 {
+                                //
+                            } else {
+                                anagramaFinal.append("I")
+                            }
+                        }) {
+                            Image("I")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 46, height: 44)
+                        }
+                        .focused($isFocusedI)
+                        .background(isFocusedI ? Color.blue : Color.clear)
+                        .buttonStyle(BoardButtonStyle())
+                                                                        
+                        Button(action: {
+                            if anagramaFinal.count > 7 {
+                                //
+                            } else {
+                                anagramaFinal.append("N")
+                            }
+                        }) {
+                            Image("N")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 46, height: 44)
+                        }
+                        .focused($isFocusedN)
+                        .background(isFocusedN ? Color.blue : Color.clear)
+                        .buttonStyle(BoardButtonStyle())
+                        
+                        
+                        Button(action: {
+                            if anagramaFinal.count > 7 {
+                                //
+                            } else {
+                                anagramaFinal.append("S")
+                            }
+                        }) {
+                            Image("S")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 46, height: 44)
+                        }
+                        .focused($isFocusedS1)
+                        .background(isFocusedS1 ? Color.blue : Color.clear)
+                        .buttonStyle(BoardButtonStyle())
+                                                                        
+                        Button(action: {
+                            if anagramaFinal.count > 7 {
+                                //
+                            } else {
+                                anagramaFinal.append("O")
+                            }
+                        }) {
+                            Image("O")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 46, height: 44)
+                        }
+                        .focused($isFocusedO)
+                        .background(isFocusedO ? Color.blue : Color.clear)
+                        .buttonStyle(BoardButtonStyle())
+                                                
                     }
-                    
-                    
                     
                     HStack(spacing: 16) {
                         Button {
@@ -57,10 +185,14 @@ struct AnagramView: View {
                             }
                         } label: {
                             Image("bt-desfazer")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 190, height: 44)
                             
                         }
-                        .buttonStyle(.card)
-                        .clipShape(Rectangle())
+                        .buttonStyle(BoardButtonStyle())
+                        .focused($isFocusedDesfazer)
+                        .background(isFocusedDesfazer ? Color.blue : Color.clear)
                         
                         Button {
                             if !anagramaFinal.isEmpty {
@@ -69,21 +201,14 @@ struct AnagramView: View {
                         } label: {
                             
                             Image("bt-apagar")
-
-                            
-//                            HStack(spacing: 12) {
-//                                Image(systemName: "trash")
-//                                    .foregroundColor(.primaryColor)
-//                                Text("Apagar")
-//                                    .font(.custom("PTMono-Regular", size: 25))
-//                                    .foregroundColor(.primaryColor)
-//                            }
-//                            .frame(width: 190, height: 44)
-                            
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 190, height: 44)
+            
                         }
-                        .buttonStyle(.card)
-                        .clipShape(Rectangle())
-                        
+                        .buttonStyle(BoardButtonStyle())
+                        .focused($isFocusedApagar)
+                        .background(isFocusedApagar ? Color.blue : Color.clear)
                     }
                 }
                 .frame(width: 540, height: 194)
@@ -110,46 +235,4 @@ struct AnagramView_Previews: PreviewProvider {
         AnagramView()
     }
 }
-
-//let finalText: String = "Hello, World!"
-//let writing = false
-
-//    extension String {
-//        subscript(offset: Int) -> Character {
-//            self[index(startIndex, offsetBy: offset)]
-//        }
-//    }
-
-//VStack(spacing: 16.0) {
-//            ZStack {
-//                //SubtitleView()
-//                Text(text)
-//
-//            }
-//            Button("Type") {
-//                typeWriter()
-//            }
-//
-//
-//
-//        }
-//        .onAppear() {
-//            OK4 = true
-//        }
-//
-//    }
-//
-//    func typeWriter(at position: Int = 0) {
-//            if position == 0 {
-//                text = ""
-//            }
-//            if position < finalText.count {
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-//                    text.append(finalText[position])
-//                    typeWriter(at: position + 1)
-//                }
-//            }
-//        }
-
-//@AppStorage("minigame4") var OK4 = false
 

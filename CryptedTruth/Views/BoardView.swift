@@ -10,7 +10,7 @@ import SwiftUI
 struct BoardView: View {
     
     let columns =
-    [GridItem(.fixed(672)), GridItem(.fixed(672))]
+    [GridItem(.fixed(846)), GridItem(.fixed(846))]
     
     @State private var victims = Victim.allVictims()
     
@@ -32,7 +32,7 @@ struct BoardView: View {
                 VStack {
                     ZStack {
                         
-                        Image("Quadro")
+                        Image("Quadro-Sem")
                         
                         LazyVGrid(columns: columns, spacing: 168) {
                             
@@ -46,6 +46,9 @@ struct BoardView: View {
                                             
                                         } label: {
                                             Image(ok5 ? "\(victim.finalPicture)" :  "\(victim.picture)")
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(width: ok5 ? 487 : 336, height: 223)
                                         }
                                         .buttonStyle(.card)
                                     }
@@ -56,6 +59,9 @@ struct BoardView: View {
                                             
                                         } label: {
                                             Image("\(victim.firstPicture)")
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(width: 336, height: 223)
                                         }
                                         .buttonStyle(.card)
                                         //.disabled(anagramShowing)
