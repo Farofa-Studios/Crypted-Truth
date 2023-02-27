@@ -59,7 +59,7 @@ struct AnagramView: View {
                                 .frame(width: 46, height: 44)
                         }
                         .focused($isFocusedE)
-                        .background(isFocusedE ? Color.blue : Color.clear)
+                        .background(isFocusedE ? Color(UIColor(red: 0.83, green: 0.16, blue: 0.20, alpha: 1.00)).opacity(0.3): Color.clear)
                         .buttonStyle(BoardButtonStyle())
                                                 
                         Button(action: {
@@ -76,7 +76,7 @@ struct AnagramView: View {
 
                         }
                         .focused($isFocusedT)
-                        .background(isFocusedT ? Color.blue : Color.clear)
+                        .background(isFocusedT ? Color(UIColor(red: 0.83, green: 0.16, blue: 0.20, alpha: 1.00)).opacity(0.3) : Color.clear)
                         .buttonStyle(BoardButtonStyle())
                         
                         Button(action: {
@@ -92,7 +92,7 @@ struct AnagramView: View {
                                 .frame(width: 46, height: 44)
                         }
                         .focused($isFocusedS)
-                        .background(isFocusedS ? Color.blue : Color.clear)
+                        .background(isFocusedS ? Color(UIColor(red: 0.83, green: 0.16, blue: 0.20, alpha: 1.00)).opacity(0.3) : Color.clear)
                         .buttonStyle(BoardButtonStyle())
                         
                         Button(action: {
@@ -108,7 +108,7 @@ struct AnagramView: View {
                                 .frame(width: 46, height: 44)
                         }
                         .focused($isFocusedD)
-                        .background(isFocusedD ? Color.blue : Color.clear)
+                        .background(isFocusedD ? Color(UIColor(red: 0.83, green: 0.16, blue: 0.20, alpha: 1.00)).opacity(0.3) : Color.clear)
                         .buttonStyle(BoardButtonStyle())
                         
                         Button(action: {
@@ -124,7 +124,7 @@ struct AnagramView: View {
                                 .frame(width: 46, height: 44)
                         }
                         .focused($isFocusedI)
-                        .background(isFocusedI ? Color.blue : Color.clear)
+                        .background(isFocusedI ? Color(UIColor(red: 0.83, green: 0.16, blue: 0.20, alpha: 1.00)).opacity(0.3) : Color.clear)
                         .buttonStyle(BoardButtonStyle())
                                                                         
                         Button(action: {
@@ -140,7 +140,7 @@ struct AnagramView: View {
                                 .frame(width: 46, height: 44)
                         }
                         .focused($isFocusedN)
-                        .background(isFocusedN ? Color.blue : Color.clear)
+                        .background(isFocusedN ? Color(UIColor(red: 0.83, green: 0.16, blue: 0.20, alpha: 1.00)).opacity(0.3) : Color.clear)
                         .buttonStyle(BoardButtonStyle())
                         
                         
@@ -157,7 +157,7 @@ struct AnagramView: View {
                                 .frame(width: 46, height: 44)
                         }
                         .focused($isFocusedS1)
-                        .background(isFocusedS1 ? Color.blue : Color.clear)
+                        .background(isFocusedS1 ? Color(UIColor(red: 0.83, green: 0.16, blue: 0.20, alpha: 1.00)).opacity(0.3) : Color.clear)
                         .buttonStyle(BoardButtonStyle())
                                                                         
                         Button(action: {
@@ -173,7 +173,7 @@ struct AnagramView: View {
                                 .frame(width: 46, height: 44)
                         }
                         .focused($isFocusedO)
-                        .background(isFocusedO ? Color.blue : Color.clear)
+                        .background(isFocusedO ? Color(UIColor(red: 0.83, green: 0.16, blue: 0.20, alpha: 1.00)).opacity(0.3) : Color.clear)
                         .buttonStyle(BoardButtonStyle())
                                                 
                     }
@@ -192,7 +192,7 @@ struct AnagramView: View {
                         }
                         .buttonStyle(BoardButtonStyle())
                         .focused($isFocusedDesfazer)
-                        .background(isFocusedDesfazer ? Color.blue : Color.clear)
+                        .background(isFocusedDesfazer ? Color(UIColor(red: 0.83, green: 0.16, blue: 0.20, alpha: 1.00)).opacity(0.3) : Color.clear)
                         
                         Button {
                             if !anagramaFinal.isEmpty {
@@ -208,7 +208,7 @@ struct AnagramView: View {
                         }
                         .buttonStyle(BoardButtonStyle())
                         .focused($isFocusedApagar)
-                        .background(isFocusedApagar ? Color.blue : Color.clear)
+                        .background(isFocusedApagar ? Color(UIColor(red: 0.83, green: 0.16, blue: 0.20, alpha: 1.00)).opacity(0.3) : Color.clear)
                     }
                 }
                 .frame(width: 540, height: 194)
@@ -217,6 +217,10 @@ struct AnagramView: View {
             }
             else {
                 Image("Quadro-Final-Vítima-5")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 156, height: 307)
+                    .offset(y: -80)
             }
         }
         .onChange(of: anagramaFinal, perform: { newValue in

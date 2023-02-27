@@ -18,7 +18,7 @@ struct CardBoardView: View {
             Color(UIColor(red: 0.09, green: 0.11, blue: 0.13, alpha: 1.00))
                 .ignoresSafeArea()
         
-            Image("Quadro")
+            Image("Quadro-Sem")
             Image(victim.card)
             
         }
