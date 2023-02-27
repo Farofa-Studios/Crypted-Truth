@@ -1,18 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "bt-desfazer.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "bt-desfazer@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "bt-desfazer.svg",
+      "idiom" : "universal"
     }
   ],
   "info" : {
