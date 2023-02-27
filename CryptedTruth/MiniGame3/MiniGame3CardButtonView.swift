@@ -16,8 +16,10 @@ struct CardButton: View {
         Button(action: {
             rotation = rotation % 4 + 1
             
+            SoundManager.instance.playSoundMPEG(sound: "") // peça rodadando
             if rotation == 1 {
                 // varrer vetor e confirmar posição 1 em rotation
+                SoundManager.instance.playSoundMP3(sound: "") // vencer jogo
             }
             print(rotation)
             
