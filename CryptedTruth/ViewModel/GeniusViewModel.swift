@@ -13,8 +13,11 @@ class GeniusViewModel: ObservableObject {
     @Published var matchInstruments: [[Instrument]]
     @Published var roundCounter: Int
     @Published var mistakesCounter: Int
+    
     @Published var isPlayerTurn: Bool
     @Published var isCorrectInput: Bool?
+    @Published var isGameOver: Bool
+    @Published var didConcludeGame: Bool
     
     @Published var isInstrumentBlinking: Bool
     @Published var isGuitarBlinking: Bool
@@ -38,6 +41,9 @@ class GeniusViewModel: ObservableObject {
         self.roundCounter = 1
         self.mistakesCounter = 0
         self.isPlayerTurn = false
+        self.isCorrectInput = nil
+        self.didConcludeGame = false
+        self.isGameOver = false
         
         self.isInstrumentBlinking = false
         self.isGuitarBlinking = false
@@ -76,31 +82,6 @@ class GeniusViewModel: ObservableObject {
         
     }
     
-    func startCpuTurn(completionHandler: @escaping () -> ()) {
-        
-        isPlayerTurn = false
-        
-        let roundDirections = matchInstruments[roundCounter - 1]
-        var counter = 0
-        
-        Timer.scheduledTimer(withTimeInterval: 1.25, repeats: true) { timer in
-                        
-            if counter == roundDirections.count {
-                timer.invalidate()
-                completionHandler()
-                return
-            }
-            
-            let currentInstrument = roundDirections[counter]
-            print("cpu input: \(currentInstrument.name)")
-            self.playInstrument(currentInstrument)
-            
-            counter += 1
-            
-        }
-        
-    }
-    
     private func updateInstrumentStatus(_ instrument: Instrument, status: Bool) {
         
         isInstrumentBlinking = status
@@ -120,12 +101,23 @@ class GeniusViewModel: ObservableObject {
         
     }
     
+    func restartGame() {
+        roundCounter = 1
+        isGameOver = false
+        playAllRounds()
+    }
+    
     func playCurrentRound(completionHandler: @escaping () -> ()) {
         
         startCpuTurn(completionHandler: { [self] in
-            startPlayerTurn(completionHandler: {
-                completionHandler()
+            startPlayerTurn(completionHandler: { [self] didPlayerFinishRound in
+                if !didPlayerFinishRound {
+                    isGameOver = true
+                } else {
+                    completionHandler()
+                }
             })
+            
         })
         
     }
@@ -139,42 +131,81 @@ class GeniusViewModel: ObservableObject {
                 roundCounter += 1
                 playAllRounds()
             } else {
+                didConcludeGame = true
                 print("genius finished")
             }
         })
         
     }
     
-    func startPlayerTurn(completionHandler: @escaping () -> ()) {
+    func startCpuTurn(completionHandler: @escaping () -> ()) {
+        
+        isPlayerTurn = false
+        
+        let roundInstruments = matchInstruments[roundCounter - 1]
+        var cpuInputCounter = 0
+        
+        Timer.scheduledTimer(withTimeInterval: 1.25, repeats: true) { timer in
+                        
+            if cpuInputCounter == roundInstruments.count {
+                timer.invalidate()
+                completionHandler()
+                return
+            }
+            
+            let currentInstrument = roundInstruments[cpuInputCounter]
+            print("cpu input: \(currentInstrument.name)")
+            self.playInstrument(currentInstrument)
+            
+            cpuInputCounter += 1
+            
+        }
+        
+    }
+    
+    func startPlayerTurn(completionHandler: @escaping (Bool) -> ()) {
         
         isPlayerTurn = true
         
-        var inputCounter = 0
+        var playerInputCounter = 0
+        var didPlayerFinishRound = false
         
         GeniusMockedSwipes.getMockedSwipes(roundInstruments: matchInstruments[roundCounter - 1],
-                                           isSuccesfulRound: true,
-                                           swipeHandler: { [self] instrument, timer in
+                                           isSuccesfulRound: false,
+                                           swipeHandler: { [self] playerInput, timer in
             
-            inputCounter += 1
-            print("player input: \(instrument.name),", terminator: " ")
+            playerInputCounter += 1
+            print("player input: \(playerInput.name),", terminator: " ")
             
-            if instrument.direction != matchInstruments[roundCounter - 1][inputCounter - 1].direction {
-                print("wrong input")
-                isCorrectInput = false
-                timer.invalidate()
-                return
-            } else {
-                isCorrectInput = true
+            let cpuInputDirection = matchInstruments[roundCounter - 1][playerInputCounter - 1].direction
+            
+            if playerInput.direction == cpuInputDirection {
                 print("correct input")
+                isCorrectInput = true
+            } else {
+                print("incorrect input")
+                isCorrectInput = false
+                mistakesCounter += 1
             }
             
-            playInstrument(instrument)
+            playInstrument(playerInput)
             
-            if inputCounter == roundCounter {
-                print("round finished, \(inputCounter) correct inputs\n")
-                completionHandler()
+            if playerInputCounter == roundCounter {
+                print("round finished, \(playerInputCounter) correct inputs\n")
+                didPlayerFinishRound = true
+                timer.invalidate() // apagar depois
+                completionHandler(didPlayerFinishRound)
+                return
             }
             
+            if !(isCorrectInput!) {
+                print("round finished, \(playerInputCounter) correct inputs\n")
+                didPlayerFinishRound = false
+                timer.invalidate() // apagar depois
+                completionHandler(didPlayerFinishRound)
+                return
+            }
+                        
         })
         
     }
@@ -186,7 +217,7 @@ class GeniusViewModel: ObservableObject {
         }
 
         if !isPlayerTurn {
-            return "\(instrument.direction)-yellow"
+            return "\(instrument.direction)-white"
         }
 
         if isCorrectInput! {
