@@ -46,6 +46,7 @@
 		8BBBDC9A29A7B9EE00F40463 /* AromasService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBBDC9929A7B9EE00F40463 /* AromasService.swift */; };
 		8BBBDC9E29A8E99E00F40463 /* MiniGameSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBBDC9D29A8E99E00F40463 /* MiniGameSubtitle.swift */; };
 		8D494C7329ACF91700B86C8D /* Correct Answer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D494C7229ACF91700B86C8D /* Correct Answer.mp3 */; };
+		8D494C7529AD060300B86C8D /* Quadro 17.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D494C7429AD060300B86C8D /* Quadro 17.mp3 */; };
 		8D55F92F299D2CE500964EAC /* MiniGame3Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55F92E299D2CE500964EAC /* MiniGame3Images.swift */; };
 		8D55F931299D2D4400964EAC /* MiniGame3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55F930299D2D4400964EAC /* MiniGame3.swift */; };
 		8D67B1E3299E94D4003A2B09 /* MiniGame3CardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67B1E2299E94D4003A2B09 /* MiniGame3CardButtonView.swift */; };
@@ -85,7 +86,6 @@
 		8D6B9D1529AC358A009B67CA /* Introdução Sofia.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B9CF029AC358A009B67CA /* Introdução Sofia.m4a */; };
 		8D6B9D1629AC358A009B67CA /* Quadro 6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B9CF129AC358A009B67CA /* Quadro 6.m4a */; };
 		8D6B9D1729AC358A009B67CA /* Quadro 1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B9CF229AC358A009B67CA /* Quadro 1.m4a */; };
-		8D6B9D1829AC358A009B67CA /* Quadra 17.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B9CF329AC358A009B67CA /* Quadra 17.m4a */; };
 		8D6B9D1929AC358A009B67CA /* Quadro 2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B9CF429AC358A009B67CA /* Quadro 2.m4a */; };
 		8D6B9D1A29AC358A009B67CA /* Instrucao MiniGame Tato.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B9CF529AC358A009B67CA /* Instrucao MiniGame Tato.mp3 */; };
 		8D6B9D1B29AC358A009B67CA /* Intrucao MiniGame Olfato.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B9CF629AC358A009B67CA /* Intrucao MiniGame Olfato.mp3 */; };
@@ -150,6 +150,7 @@
 		8BBBDC9929A7B9EE00F40463 /* AromasService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AromasService.swift; sourceTree = "<group>"; };
 		8BBBDC9D29A8E99E00F40463 /* MiniGameSubtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGameSubtitle.swift; sourceTree = "<group>"; };
 		8D494C7229ACF91700B86C8D /* Correct Answer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Correct Answer.mp3"; sourceTree = "<group>"; };
+		8D494C7429AD060300B86C8D /* Quadro 17.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Quadro 17.mp3"; sourceTree = "<group>"; };
 		8D55F92E299D2CE500964EAC /* MiniGame3Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3Images.swift; sourceTree = "<group>"; };
 		8D55F930299D2D4400964EAC /* MiniGame3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3.swift; sourceTree = "<group>"; };
 		8D67B1E2299E94D4003A2B09 /* MiniGame3CardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3CardButtonView.swift; sourceTree = "<group>"; };
@@ -189,7 +190,6 @@
 		8D6B9CF029AC358A009B67CA /* Introdução Sofia.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Introdução Sofia.m4a"; sourceTree = "<group>"; };
 		8D6B9CF129AC358A009B67CA /* Quadro 6.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quadro 6.m4a"; sourceTree = "<group>"; };
 		8D6B9CF229AC358A009B67CA /* Quadro 1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quadro 1.m4a"; sourceTree = "<group>"; };
-		8D6B9CF329AC358A009B67CA /* Quadra 17.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quadra 17.m4a"; sourceTree = "<group>"; };
 		8D6B9CF429AC358A009B67CA /* Quadro 2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quadro 2.m4a"; sourceTree = "<group>"; };
 		8D6B9CF529AC358A009B67CA /* Instrucao MiniGame Tato.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Instrucao MiniGame Tato.mp3"; sourceTree = "<group>"; };
 		8D6B9CF629AC358A009B67CA /* Intrucao MiniGame Olfato.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Intrucao MiniGame Olfato.mp3"; sourceTree = "<group>"; };
@@ -367,7 +367,6 @@
 				8D6B9CE529AC3589009B67CA /* MiniGame paladar-olfato acerto 2.m4a */,
 				8D6B9CE429AC3589009B67CA /* MiniGame tato acerto.m4a */,
 				8D6B9CEC29AC358A009B67CA /* MiniGame tato concluído.m4a */,
-				8D6B9CF329AC358A009B67CA /* Quadra 17.m4a */,
 				8D6B9CF229AC358A009B67CA /* Quadro 1.m4a */,
 				8D6B9CF429AC358A009B67CA /* Quadro 2.m4a */,
 				8D6B9CDA29AC3589009B67CA /* Quadro 3.m4a */,
@@ -381,6 +380,7 @@
 				8D6B9CEA29AC358A009B67CA /* Quadro 14.m4a */,
 				8D6B9CEF29AC358A009B67CA /* Quadro 15.m4a */,
 				8D6B9CE229AC3589009B67CA /* Quadro 16.m4a */,
+				8D494C7429AD060300B86C8D /* Quadro 17.mp3 */,
 				8D6B9CF729AC358A009B67CA /* Quadro 18.m4a */,
 				8D6B9CD629AC3589009B67CA /* Quadro 19.m4a */,
 				8D6B9CED29AC358A009B67CA /* Sofia 5.m4a */,
@@ -533,7 +533,6 @@
 				8D6B9D0629AC358A009B67CA /* MiniGame olfato erro.m4a in Resources */,
 				8D6B9D2429AC35EB009B67CA /* Borrifador-Olfato-Game.mp3 in Resources */,
 				8D6B9D2229AC35D1009B67CA /* Wrong answer.mp3 in Resources */,
-				8D6B9D1829AC358A009B67CA /* Quadra 17.m4a in Resources */,
 				8D6B9D0329AC358A009B67CA /* Quadro 12.m4a in Resources */,
 				8D6B9D0129AC358A009B67CA /* Instruçoes MiniGame Audicao.mp3 in Resources */,
 				8D6B9D1C29AC358A009B67CA /* Quadro 18.m4a in Resources */,
@@ -576,6 +575,7 @@
 				8D6B9CFB29AC358A009B67CA /* Quadro 19.m4a in Resources */,
 				17ED78AE29A8EDAF00CA20AF /* sax.mpeg in Resources */,
 				8D6B9D1929AC358A009B67CA /* Quadro 2.m4a in Resources */,
+				8D494C7529AD060300B86C8D /* Quadro 17.mp3 in Resources */,
 				8D6B9CFC29AC358A009B67CA /* Introdução Sofia 3.m4a in Resources */,
 				8D6B9CCE29AC3532009B67CA /* Game3Tap.mp3 in Resources */,
 				8D6B9D0C29AC358A009B67CA /* Introdução Sofia 2.m4a in Resources */,
