@@ -13,10 +13,11 @@ class GeniusViewModel: ObservableObject {
     @Published var matchInstruments: [[Instrument]]
     @Published var roundCounter: Int
     @Published var mistakesCounter: Int
-    @Published var isPlayerTurn: Bool
     
+    @Published var isPlayerTurn: Bool
     @Published var isCorrectInput: Bool?
-//    @Published var didFinishRound: Bool
+    @Published var isGameOver: Bool
+    @Published var didConcludeGame: Bool
     
     @Published var isInstrumentBlinking: Bool
     @Published var isGuitarBlinking: Bool
@@ -37,9 +38,12 @@ class GeniusViewModel: ObservableObject {
         instruments = [sax, guitar, piano, tambourine]
         
         self.matchInstruments = GeniusViewModel.createGeniusGame(instruments: instruments)
-        self.roundCounter = 2
+        self.roundCounter = 9
         self.mistakesCounter = 0
         self.isPlayerTurn = false
+        self.isCorrectInput = nil
+        self.didConcludeGame = false
+        self.isGameOver = false
         
         self.isInstrumentBlinking = false
         self.isGuitarBlinking = false
@@ -78,31 +82,6 @@ class GeniusViewModel: ObservableObject {
         
     }
     
-    func startCpuTurn(completionHandler: @escaping () -> ()) {
-        
-        isPlayerTurn = false
-        
-        let roundDirections = matchInstruments[roundCounter - 1]
-        var counter = 0
-        
-        Timer.scheduledTimer(withTimeInterval: 1.25, repeats: true) { timer in
-                        
-            if counter == roundDirections.count {
-                timer.invalidate()
-                completionHandler()
-                return
-            }
-            
-            let currentInstrument = roundDirections[counter]
-            print("cpu input: \(currentInstrument.name)")
-            self.playInstrument(currentInstrument)
-            
-            counter += 1
-            
-        }
-        
-    }
-    
     private func updateInstrumentStatus(_ instrument: Instrument, status: Bool) {
         
         isInstrumentBlinking = status
@@ -122,13 +101,18 @@ class GeniusViewModel: ObservableObject {
         
     }
     
+    func restartGame() {
+        roundCounter = 1
+        isGameOver = false
+        playAllRounds()
+    }
+    
     func playCurrentRound(completionHandler: @escaping () -> ()) {
         
         startCpuTurn(completionHandler: { [self] in
             startPlayerTurn(completionHandler: { [self] didPlayerFinishRound in
                 if !didPlayerFinishRound {
-                    roundCounter = 1
-                    playCurrentRound(completionHandler: completionHandler)
+                    isGameOver = true
                 } else {
                     completionHandler()
                 }
@@ -147,9 +131,35 @@ class GeniusViewModel: ObservableObject {
                 roundCounter += 1
                 playAllRounds()
             } else {
+                didConcludeGame = true
                 print("genius finished")
             }
         })
+        
+    }
+    
+    func startCpuTurn(completionHandler: @escaping () -> ()) {
+        
+        isPlayerTurn = false
+        
+        let roundInstruments = matchInstruments[roundCounter - 1]
+        var cpuInputCounter = 0
+        
+        Timer.scheduledTimer(withTimeInterval: 1.25, repeats: true) { timer in
+                        
+            if cpuInputCounter == roundInstruments.count {
+                timer.invalidate()
+                completionHandler()
+                return
+            }
+            
+            let currentInstrument = roundInstruments[cpuInputCounter]
+            print("cpu input: \(currentInstrument.name)")
+            self.playInstrument(currentInstrument)
+            
+            cpuInputCounter += 1
+            
+        }
         
     }
     
@@ -173,7 +183,7 @@ class GeniusViewModel: ObservableObject {
                 print("correct input")
                 isCorrectInput = true
             } else {
-                print("wrong input")
+                print("incorrect input")
                 isCorrectInput = false
                 mistakesCounter += 1
             }
