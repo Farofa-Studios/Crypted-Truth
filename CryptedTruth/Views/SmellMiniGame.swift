@@ -22,7 +22,7 @@ struct SmellMiniGame: View {
     var body: some View {
     
         let recipe = Aromas.allAromas[currentSmellFase]
-        NavigationStack {
+        NavigationView () {
             ZStack {
                 TasteSmellStructure(
                     ingredientsOptionList: ingredientsOptionList,

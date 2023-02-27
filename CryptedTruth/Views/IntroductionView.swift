@@ -16,12 +16,11 @@ struct IntroductionView: View {
     
     @ObservedObject var viewModel = IntroductionViewModel()
     
-//    @AppStorage("introduction") var introduction = false
+    @AppStorage("introduction") var introduction = false
     
     func buttonAction(){
         if viewModel.index == 4 {
-//            introduction = true
-//            print("introduction: ", introduction)
+            introduction = true
             viewModel.isIntroductionDone = true
         } else {
             viewModel.index += 1
@@ -29,7 +28,7 @@ struct IntroductionView: View {
     }
     
     var body: some View {
-        NavigationStack {
+        NavigationView(){
             ZStack {
                 Color.backgroundColor
                     .ignoresSafeArea()

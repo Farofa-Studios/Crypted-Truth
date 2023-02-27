@@ -45,7 +45,7 @@ struct SubtitleView: View {
                     .padding(.bottom, 16)
                     .padding(.trailing, 16)
                 }
-                    
+                
             }
             .frame(width: 1320, height: 200, alignment: .center)
             .background {
@@ -61,15 +61,32 @@ struct SubtitleView: View {
             }
             
         }
+        .onAppear(){
+//            typeWriter()
+        }
+    }
+    
+//    func typeWriter(at position: Int = 0) {
+//
+//        if position == 0 {
+//            text = ""
+//        }
+//        if position < subtitle.subtitle.count {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+//                text.append(subtitle.subtitle[position])
+//                typeWriter(at: position + 1)
+//            }
+//        }
+//    }
+}
+
+extension String {
+    subscript(offset: Int) -> Character {
+        self[index(startIndex, offsetBy: offset)]
     }
 }
 
 struct SubtitleView_Previews: PreviewProvider {
-    
-    static func teste () {
-        _ = ""
-    }
-    
     static var previews: some View {
         SubtitleView(subtitle: MiniGameSubtitles.allMiniGameSubtitles[1].hit!, buttonAction: nil)
     }
