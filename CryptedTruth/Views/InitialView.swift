@@ -21,7 +21,7 @@ struct InitialView: View {
                 
                 NavigationLink {
                     
-                    BoardView()
+                    IntroductionView(index: 0)
                     
                 } label: {
                     
