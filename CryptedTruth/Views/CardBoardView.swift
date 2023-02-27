@@ -23,7 +23,7 @@ struct CardBoardView: View {
             
         }
         
-        SubtitleView()
+//        SubtitleView()
         
     }
 }
