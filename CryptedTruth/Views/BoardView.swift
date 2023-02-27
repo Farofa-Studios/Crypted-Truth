@@ -10,7 +10,7 @@ import SwiftUI
 struct BoardView: View {
     
     let columns =
-    [GridItem(.fixed(824)), GridItem(.fixed(824))]
+    [GridItem(.fixed(672)), GridItem(.fixed(672))]
     
     @State private var victims = Victim.allVictims()
     
@@ -48,6 +48,7 @@ struct BoardView: View {
                                             Image(ok5 ? "\(victim.finalPicture)" :  "\(victim.picture)")
                                         }
                                         .buttonStyle(.card)
+            
                                     }
                                     else {
                                         NavigationLink {
@@ -58,6 +59,7 @@ struct BoardView: View {
                                             Image("\(victim.firstPicture)")
                                         }
                                         .buttonStyle(.card)
+                                        //.disabled(anagramShowing)
                                     }
                                 }
                             }
@@ -93,7 +95,7 @@ struct BoardView: View {
                                             .onAppear(){
                                                 lettersAnagram.append("\(victim.letters[0])")
                                             }
-                                            
+                                        
                                         Text("\(victim.letters[1])")
                                             .foregroundColor(.primaryColor)
                                             .font(.custom("PTMono-Regular", size: 29))
@@ -113,7 +115,7 @@ struct BoardView: View {
                                         anagramShowing = true
                                     }
                                 }
-                                        
+                                
                             }
                         }
                         
@@ -127,7 +129,7 @@ struct BoardView: View {
                     SubtitleView()
                     
                 }
-                                
+                
             }
         }
         
