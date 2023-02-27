@@ -29,6 +29,7 @@ struct TasteMiniGame: View {
                     recipe: recipe,
                     numOfRecipes: numOfItems,
                     title: "Ingredientes",
+                    idSubtitles: 2,
                     currentFase: $currentTasteFase,
                     isGameFinished: $isTasteGameFinished
                 )

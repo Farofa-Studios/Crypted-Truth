@@ -32,6 +32,7 @@
 		17ED78BD29A9872600CA20AF /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ED78BC29A9872600CA20AF /* Instrument.swift */; };
 		8B0B824529AC22FF00B4AE95 /* IntroductionSubtitlesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B824429AC22FF00B4AE95 /* IntroductionSubtitlesService.swift */; };
 		8B0B824729AC2E3C00B4AE95 /* Shape+Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B824629AC2E3C00B4AE95 /* Shape+Triangle.swift */; };
+		8B0B824929AC5E1900B4AE95 /* IntroductionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B824829AC5E1900B4AE95 /* IntroductionViewModel.swift */; };
 		8B202F6029AB15B8009C5CB6 /* TasteSmellStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202F5F29AB15B8009C5CB6 /* TasteSmellStructure.swift */; };
 		8B202F6229AB15E9009C5CB6 /* MiniGameSubtitlesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202F6129AB15E9009C5CB6 /* MiniGameSubtitlesService.swift */; };
 		8B202F6429AB164C009C5CB6 /* Shape+Pentagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B202F6329AB164C009C5CB6 /* Shape+Pentagon.swift */; };
@@ -86,6 +87,7 @@
 		17ED78BC29A9872600CA20AF /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
 		8B0B824429AC22FF00B4AE95 /* IntroductionSubtitlesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionSubtitlesService.swift; sourceTree = "<group>"; };
 		8B0B824629AC2E3C00B4AE95 /* Shape+Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+Triangle.swift"; sourceTree = "<group>"; };
+		8B0B824829AC5E1900B4AE95 /* IntroductionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewModel.swift; sourceTree = "<group>"; };
 		8B202F5F29AB15B8009C5CB6 /* TasteSmellStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteSmellStructure.swift; sourceTree = "<group>"; };
 		8B202F6129AB15E9009C5CB6 /* MiniGameSubtitlesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGameSubtitlesService.swift; sourceTree = "<group>"; };
 		8B202F6329AB164C009C5CB6 /* Shape+Pentagon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+Pentagon.swift"; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				BD780048299D581D00C6C974 /* VictimViewModel.swift */,
 				BD78004F299E5F4E00C6C974 /* SubtitleViewModel.swift */,
 				173502C7299FD8F000C57D55 /* GeniusViewModel.swift */,
+				8B0B824829AC5E1900B4AE95 /* IntroductionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				8B7FEA5929ABBD9E00ABCDF0 /* InitialView.swift in Sources */,
 				17EB95C629AC26E4003407BF /* GeniusSubtitleView.swift in Sources */,
 				BD78004C299E5C8300C6C974 /* Subtitle.swift in Sources */,
+				8B0B824929AC5E1900B4AE95 /* IntroductionViewModel.swift in Sources */,
 				173502C6299FD8D900C57D55 /* GeniusView.swift in Sources */,
 				BDE36FCD299BDC77005E399E /* CardBoardView.swift in Sources */,
 				17ED78BD29A9872600CA20AF /* Instrument.swift in Sources */,

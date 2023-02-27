@@ -52,7 +52,7 @@ struct ChallengeConcludedView: View {
                         .offset(y: 156)
                     }
                     .frame(width: 1320, height: 742.5)
-                    SubtitleView()
+//                    SubtitleView()
                 }
             }
         }

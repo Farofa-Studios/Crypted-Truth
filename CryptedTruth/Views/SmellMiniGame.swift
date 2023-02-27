@@ -29,6 +29,7 @@ struct SmellMiniGame: View {
                     recipe: recipe,
                     numOfRecipes: numOfItems,
                     title: "Cheiros \(recipe.title)",
+                    idSubtitles: 3,
                     currentFase: $currentSmellFase,
                     isGameFinished: $isSmellGameFinished
                 )
@@ -39,7 +40,7 @@ struct SmellMiniGame: View {
                 }
             }
             .navigationDestination(isPresented: $isSmellGameFinished) {
-                BoardView()
+                ChallengeConcludedView()
             }
         }
        

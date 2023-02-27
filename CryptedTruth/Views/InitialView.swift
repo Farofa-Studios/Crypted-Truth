@@ -9,8 +9,13 @@ import Foundation
 import SwiftUI
 
 struct InitialView: View {
-
+    
+    @ObservedObject var viewModel = IntroductionViewModel()
+    
+    //    @AppStorage("introduction") var introduction = false
+    
     var body: some View {
+        
         NavigationStack {
             ZStack {
                 
@@ -21,7 +26,7 @@ struct InitialView: View {
                 
                 NavigationLink {
                     
-                    IntroductionView(index: 0)
+                    IntroductionView()
                     
                 } label: {
                     
@@ -33,6 +38,10 @@ struct InitialView: View {
                 .buttonStyle(.card)
                 .offset( x: -540, y: 370)
                 
+            }
+            .onAppear(){
+                viewModel.index = 0
+                viewModel.isIntroductionDone = false
             }
         }
     }

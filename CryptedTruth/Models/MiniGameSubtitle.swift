@@ -37,5 +37,15 @@ struct MiniGameSubtitle {
         self.completedWithoutError = completedWithoutError
         self.completed = completed
     }
+    
+    init() {
+        self.instructions = Subtitle()
+        self.hit = Subtitle()
+        self.lastHit = Subtitle()
+        self.error = Subtitle()
+        self.completedWithError = Subtitle()
+        self.completedWithoutError = Subtitle()
+        self.completed = Subtitle()
+    }
 }
 

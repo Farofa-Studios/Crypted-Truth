@@ -14,8 +14,19 @@ struct IntroductionView: View {
     
     var subtitlesList = IntroductionSubtitles.allIntroductionSubtitles
     
-    @State var index: Int
-    @State var isIntroductionDone: Bool = false
+    @ObservedObject var viewModel = IntroductionViewModel()
+    
+//    @AppStorage("introduction") var introduction = false
+    
+    func buttonAction(){
+        if viewModel.index == 4 {
+//            introduction = true
+//            print("introduction: ", introduction)
+            viewModel.isIntroductionDone = true
+        } else {
+            viewModel.index += 1
+        }
+    }
     
     var body: some View {
         NavigationStack {
@@ -25,50 +36,17 @@ struct IntroductionView: View {
                 
                 VStack{
                     
-                    Image(imagesIntroductionList[index])
+                    Image(imagesIntroductionList[viewModel.index])
                         .resizable()
                         .frame(width: 1320, height: 742.5)
                     
-                    HStack (alignment: .center, spacing: 16) {
-                        
-                        ZStack {
-                            Rectangle()
-                                .frame(width: 1320, height: 200, alignment: .center)
-                                .foregroundColor(Color(red: 1, green: 1, blue: 1, opacity: 0.1))
-                            
-                            VStack (spacing: 0) {
-                                
-                                Text(subtitlesList[index])
-                                    .frame(width: 1255.81, height: 120, alignment: .leading)
-                                    .font(.custom("PTMono-Regular", size: 29))
-                                    .lineSpacing(5)
-                                    .lineLimit(10)
-                                             
-                                Button(action: {
-                                    
-                                    if index == 4 {
-                                        isIntroductionDone = true
-                                    } else {
-                                        index += 1
-                                    }
-                                    
-                                }) {
-                                    
-                                    Image("Next")
-                                        .resizable()
-                                        .scaledToFill()
-                                        .frame(width: 32, height: 39, alignment: .center)
-                                }
-                                .buttonStyle(.card)
-                                .clipShape(Triangle())
-                                .offset( x: 600, y: 0)
-                            }
-                        }
-                    }
+                    
+                    SubtitleView(subtitle: subtitlesList[viewModel.index], buttonAction: buttonAction)
                 }
             }
             
-            .navigationDestination(isPresented: $isIntroductionDone) {
+            .navigationDestination(isPresented: $viewModel.isIntroductionDone) {
+                
                 BoardView()
             }
         }
@@ -77,7 +55,7 @@ struct IntroductionView: View {
 
 struct IntroductionView_Previews: PreviewProvider {
     static var previews: some View {
-        IntroductionView(index: 0)
+        IntroductionView()
     }
 }
 
