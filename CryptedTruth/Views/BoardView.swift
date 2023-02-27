@@ -124,7 +124,7 @@ struct BoardView: View {
                         
                     }
                     
-                    SubtitleView()
+//                    SubtitleView()
                     
                 }
                                 

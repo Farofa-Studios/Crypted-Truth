@@ -22,13 +22,14 @@ struct SmellMiniGame: View {
     var body: some View {
     
         let recipe = Aromas.allAromas[currentSmellFase]
-        NavigationStack {
+        NavigationView () {
             ZStack {
                 TasteSmellStructure(
                     ingredientsOptionList: ingredientsOptionList,
                     recipe: recipe,
                     numOfRecipes: numOfItems,
                     title: "Cheiros \(recipe.title)",
+                    idSubtitles: 3,
                     currentFase: $currentSmellFase,
                     isGameFinished: $isSmellGameFinished
                 )
@@ -39,7 +40,7 @@ struct SmellMiniGame: View {
                 }
             }
             .navigationDestination(isPresented: $isSmellGameFinished) {
-                BoardView()
+                ChallengeConcludedView()
             }
         }
        

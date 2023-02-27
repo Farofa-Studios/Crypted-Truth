@@ -24,7 +24,7 @@ struct MiniGame3: View {
                     CardButton(image: piece.image, rotation: Int(piece.rotation))
                 }
             }
-            SubtitleView()
+//            SubtitleView()
         }
         .onAppear() {
             OK2 = true
