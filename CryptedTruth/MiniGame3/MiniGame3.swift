@@ -28,6 +28,7 @@ struct MiniGame3: View {
         }
         .onAppear() {
             OK2 = true
+            SoundManager.instance.playSoundMP3(sound: "Spooky", loops: -1)
         }
     }
 }
