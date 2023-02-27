@@ -12,7 +12,8 @@ struct CryptedTruthApp: App {
     var body: some Scene {
         WindowGroup {
 //            InitialView()
-            SmellMiniGame()
+//            SmellMiniGame()
+            IntroductionView()
         }
     }
 }
