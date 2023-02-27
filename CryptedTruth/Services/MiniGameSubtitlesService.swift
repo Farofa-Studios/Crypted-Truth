@@ -25,7 +25,7 @@ struct MiniGameSubtitles {
         // minigame tato
         
             .init(instructions: .init(id: 5, image: "Bot", type: .villain, subtitle: "Deslize entre as peças e clique para rotacionar até formar a imagem completa.", audio: "Instrucao MiniGame Tato"),
-                  hit: .init(id: 6, image: "sophia-animada", type: .streamer, subtitle: "Conseguimos! Olha só a imagem completa, é linda! Acho que são vasos de cerâmia.", audio: "MiniGame tato acerto"),
+                  hit: .init(id: 6, image: "sophia-animada", type: .streamer, subtitle: "Conseguimos! Olha só a imagem completa, é linda! Acho que são vasos de cerâmica.", audio: "MiniGame tato acerto"),
                   lastHist: nil,
                   error: nil,
                   completedWithError: nil,

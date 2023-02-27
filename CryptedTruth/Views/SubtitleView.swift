@@ -63,6 +63,9 @@ struct SubtitleView: View {
             }
             
         }
+        .onAppear {
+            SoundManager.instance.playSoundM4A(sound: subtitle.audio, loops: 0)
+        }
     }
 }
 
