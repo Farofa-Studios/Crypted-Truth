@@ -17,9 +17,9 @@ struct CardButton: View {
     var body: some View {
         
         Button(action: {
-            rotation = rotation % 4 + 1
+            rotation = (rotation + 1) % 4
             
-            if rotation == 4 {
+            if rotation == 0 {
                 if check.checkPiecesRotation() == 1 {
                     print("jogo ganho")
                 }
