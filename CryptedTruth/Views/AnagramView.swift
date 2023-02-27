@@ -40,18 +40,11 @@ struct AnagramView: View {
                                     anagramaFinal.append(letter)
                                 }
                             }) {
-                                ZStack {
-                                    Rectangle()
-                                        .frame(width: 52, height: 50)
-                                    Text("\(letter)")
-                                        .font(.custom("PTMono-Regular", size: 29))
-                                        .foregroundColor(.primaryColor)
-                                }
+                                Image(letter)
                                 
                             }
                             .buttonStyle(.card)
-                            .clipShape(RoundedRectangle(cornerRadius: 5))
-                            
+                            .clipShape(Rectangle())
                         }
                     }
                     
@@ -63,14 +56,7 @@ struct AnagramView: View {
                                 anagramaFinal.removeLast()
                             }
                         } label: {
-                            HStack(spacing: 12) {
-                                Image(systemName: "delete.left")
-                                    .foregroundColor(.primaryColor)
-                                Text("Desfazer")
-                                    .font(.custom("PTMono-Regular", size: 25))
-                                    .foregroundColor(.primaryColor)
-                            }
-                            .frame(width: 190, height: 44)
+                            Image("bt-desfazer")
                             
                         }
                         .buttonStyle(.card)
@@ -81,14 +67,18 @@ struct AnagramView: View {
                                 anagramaFinal.removeAll()
                             }
                         } label: {
-                            HStack(spacing: 12) {
-                                Image(systemName: "trash")
-                                    .foregroundColor(.primaryColor)
-                                Text("Apagar")
-                                    .font(.custom("PTMono-Regular", size: 25))
-                                    .foregroundColor(.primaryColor)
-                            }
-                            .frame(width: 190, height: 44)
+                            
+                            Image("bt-apagar")
+
+                            
+//                            HStack(spacing: 12) {
+//                                Image(systemName: "trash")
+//                                    .foregroundColor(.primaryColor)
+//                                Text("Apagar")
+//                                    .font(.custom("PTMono-Regular", size: 25))
+//                                    .foregroundColor(.primaryColor)
+//                            }
+//                            .frame(width: 190, height: 44)
                             
                         }
                         .buttonStyle(.card)

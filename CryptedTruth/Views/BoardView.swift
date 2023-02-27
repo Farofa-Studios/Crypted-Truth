@@ -48,7 +48,6 @@ struct BoardView: View {
                                             Image(ok5 ? "\(victim.finalPicture)" :  "\(victim.picture)")
                                         }
                                         .buttonStyle(.card)
-            
                                     }
                                     else {
                                         NavigationLink {
@@ -131,7 +130,9 @@ struct BoardView: View {
                 }
                 
             }
+
         }
+        .ignoresSafeArea(.all)
         
     }
 }
