@@ -1,0 +1,18 @@
+{
+  "images" : [
+    {
+      "filename" : "Layer 4 - white spotlight.png",
+      "idiom" : "tv",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Layer 4 - white spotlight@2x.png",
+      "idiom" : "tv",
+      "scale" : "2x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
