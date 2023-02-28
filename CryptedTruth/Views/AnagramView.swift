@@ -24,7 +24,6 @@ struct AnagramView: View {
     @FocusState private var isFocusedO: Bool
     @FocusState private var isFocusedDesfazer: Bool
     @FocusState private var isFocusedApagar: Bool
-    @FocusState private var isFocusedFinal: Bool
 
     @AppStorage("minigame5") var ok5 = false
     
@@ -217,27 +216,11 @@ struct AnagramView: View {
                 
             }
             else {
-                
-                NavigationLink  {
-                    FinalView()
-                } label: {
-                    Image("Quadro-Final-Vítima-5")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 156, height: 307)
-                        .offset(y: -80)
-                        
-                }
-                .focused($isFocusedFinal)
-                .background(isFocusedFinal ? Color.white.opacity(0.2) : Color.clear)
-                .buttonStyle(BoardButtonStyle())
-
-                
-//                Image("Quadro-Final-Vítima-5")
-//                    .resizable()
-//                    .scaledToFit()
-//                    .frame(width: 156, height: 307)
-//                    .offset(y: -80)
+                Image("Quadro-Final-Vítima-5")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 156, height: 307)
+                    .offset(y: -80)
             }
         }
         .onChange(of: anagramaFinal, perform: { newValue in
