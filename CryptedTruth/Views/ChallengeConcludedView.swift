@@ -36,16 +36,9 @@ struct ChallengeConcludedView: View {
                         BoardView()
                     } label: {
                         
-                        ZStack {
-                            
-                            Rectangle()
-                                .frame(width: 724, height: 102)
-                                .foregroundColor(Color(UIColor(red: 0.83, green: 0.16, blue: 0.20, alpha: 1.00)))
-                            Text("Voltar para o quadro de evidências")
-                                .font(.custom("PTMono-Regular", size: 31))
-                                .foregroundColor(.white)
-                            
-                        }
+                        Image("bt-voltar")
+                            .resizable()
+                            .frame(width: 724, height: 102)
                         
                     }
                     .buttonStyle(.card)

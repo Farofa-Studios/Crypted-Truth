@@ -10,13 +10,11 @@ import SwiftUI
 
 class Instrument: ObservableObject {
     var name: String
-    var direction: Direction
     @Published var image: String
     
-    init(name: String, direction: Direction) {
+    init(name: String) {
         self.name = name
-        self.direction = direction
-        self.image = "\(direction)-default"
+        self.image = "\(name)-default"
     }
     
 }

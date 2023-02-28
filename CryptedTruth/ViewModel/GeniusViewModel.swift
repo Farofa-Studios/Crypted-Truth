@@ -25,15 +25,17 @@ class GeniusViewModel: ObservableObject {
     @Published var isSaxBlinking: Bool
     @Published var isTambourineBlinking: Bool
     
+    @Published var roundHitsCounter: Int
+    
     let sax, guitar, piano, tambourine: Instrument
     let instruments: [Instrument]
-            
+                
     init() {
         
-        sax = Instrument(name: "sax", direction: .up)
-        guitar = Instrument(name: "guitar", direction: .down)
-        piano = Instrument(name: "piano", direction: .left)
-        tambourine = Instrument(name: "tambourine", direction: .right)
+        sax = Instrument(name: "sax")
+        guitar = Instrument(name: "guitar")
+        piano = Instrument(name: "piano")
+        tambourine = Instrument(name: "tambourine")
         
         instruments = [sax, guitar, piano, tambourine]
         
@@ -50,6 +52,8 @@ class GeniusViewModel: ObservableObject {
         self.isPianoBlinking = false
         self.isSaxBlinking = false
         self.isTambourineBlinking = false
+        
+        self.roundHitsCounter = 0
         
     }
     
@@ -82,59 +86,101 @@ class GeniusViewModel: ObservableObject {
         
     }
     
+    func playInstrumentByDirection(direction: Direction) {
+        
+        switch direction {
+            case .up:
+                playInstrument(sax)
+            case .down:
+                playInstrument(guitar)
+            case .left:
+                playInstrument(piano)
+            case .right:
+                playInstrument(tambourine)
+            case .invalid:
+                break
+        }
+        
+    }
+    
     private func updateInstrumentStatus(_ instrument: Instrument, status: Bool) {
         
         isInstrumentBlinking = status
         
-        switch instrument.direction {
-            case .up:
+        switch instrument.name {
+            case "sax":
                 isSaxBlinking = status
-            case .down:
+            case "guitar":
                 isGuitarBlinking = status
-            case .left:
+            case "piano":
                 isPianoBlinking = status
-            case .right:
+            case "tambourine":
                 isTambourineBlinking = status
-            case .invalid:
-                print("invalid direction")
+            default:
+                break
         }
         
     }
     
     func restartGame() {
+        print("restarting...")
         roundCounter = 1
         isGameOver = false
-        playAllRounds()
+        playCurrentRound()
     }
     
-    func playCurrentRound(completionHandler: @escaping () -> ()) {
+    func playCurrentRound() {
+        
+        isPlayerTurn = false
+//        isCorrectInput = nil
+        roundHitsCounter = 0
         
         startCpuTurn(completionHandler: { [self] in
-            startPlayerTurn(completionHandler: { [self] didPlayerFinishRound in
-                if !didPlayerFinishRound {
-                    isGameOver = true
-                } else {
-                    completionHandler()
-                }
-            })
-            
+            isPlayerTurn = true
         })
         
     }
     
-    func playAllRounds() {
+    func evalPlayerInput(playerInput: Instrument) {
         
-        print("round: \(roundCounter)/\(matchInstruments.count)")
-                    
-        playCurrentRound(completionHandler: { [self] in
-            if roundCounter < matchInstruments.count {
-                roundCounter += 1
-                playAllRounds()
-            } else {
+//        isPlayerTurn = false
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.25) {
+//            self.isPlayerTurn = true
+//        }
+        
+        let roundInstruments = matchInstruments[roundCounter - 1]
+        
+        print("player input: \(playerInput.name)")
+        let cpuInput = roundInstruments[roundHitsCounter]
+
+        if playerInput.name == cpuInput.name { // jogador acertou
+            isCorrectInput = true
+            roundHitsCounter += 1
+        } else { // jogador errou
+            isCorrectInput = false
+            mistakesCounter += 1
+        }
+
+        playInstrument(playerInput)
+        
+        if roundHitsCounter == roundCounter {
+            print("round concluded")
+            if roundCounter == matchInstruments.count {
                 didConcludeGame = true
-                print("genius finished")
+                return
             }
-        })
+            roundCounter += 1
+            playCurrentRound()
+        }
+
+        if !(isCorrectInput!) {
+            print("round failed")
+            isGameOver = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                self.restartGame()
+            }
+        }
         
     }
     
@@ -163,67 +209,20 @@ class GeniusViewModel: ObservableObject {
         
     }
     
-    func startPlayerTurn(completionHandler: @escaping (Bool) -> ()) {
-        
-        isPlayerTurn = true
-        
-        var playerInputCounter = 0
-        var didPlayerFinishRound = false
-        
-        GeniusMockedSwipes.getMockedSwipes(roundInstruments: matchInstruments[roundCounter - 1],
-                                           isSuccesfulRound: false,
-                                           swipeHandler: { [self] playerInput, timer in
-            
-            playerInputCounter += 1
-            print("player input: \(playerInput.name),", terminator: " ")
-            
-            let cpuInputDirection = matchInstruments[roundCounter - 1][playerInputCounter - 1].direction
-            
-            if playerInput.direction == cpuInputDirection {
-                print("correct input")
-                isCorrectInput = true
-            } else {
-                print("incorrect input")
-                isCorrectInput = false
-                mistakesCounter += 1
-            }
-            
-            playInstrument(playerInput)
-            
-            if playerInputCounter == roundCounter {
-                print("round finished, \(playerInputCounter) correct inputs\n")
-                didPlayerFinishRound = true
-                timer.invalidate() // apagar depois
-                completionHandler(didPlayerFinishRound)
-                return
-            }
-            
-            if !(isCorrectInput!) {
-                print("round finished, \(playerInputCounter) correct inputs\n")
-                didPlayerFinishRound = false
-                timer.invalidate() // apagar depois
-                completionHandler(didPlayerFinishRound)
-                return
-            }
-                        
-        })
-        
-    }
-    
     private func getCurrentInstrumentImage(instrument: Instrument) -> String {
         
         if !isInstrumentBlinking {
-            return "\(instrument.direction)-default"
+            return "\(instrument.name)-default"
         }
 
         if !isPlayerTurn {
-            return "\(instrument.direction)-white"
+            return "\(instrument.name)-green"
         }
 
         if isCorrectInput! {
-            return "\(instrument.direction)-blue"
+            return "\(instrument.name)-blue"
         } else {
-            return "\(instrument.direction)-red"
+            return "\(instrument.name)-red"
         }
 
     }
@@ -252,8 +251,8 @@ class GeniusViewModel: ObservableObject {
                 
     }
     
-    static func getDirections(directionHandler: @escaping (Direction) -> ()) {
-        
+    static func getDirection(directionHandler: @escaping (Direction) -> ()) {
+                
         NotificationCenter.default.addObserver(forName: .GCControllerDidConnect, object: nil, queue: .main) { notification in
             
             if let gcController = notification.object as? GCController {
@@ -261,8 +260,13 @@ class GeniusViewModel: ObservableObject {
                 let microGamepad = gcController.microGamepad
                 microGamepad!.reportsAbsoluteDpadValues = true
                 microGamepad!.dpad.valueChangedHandler = { pad, x, y in
+                    
                     let direction = GeniusViewModel.calcSwipeDirection(x, y)
-                    directionHandler(direction)
+                    
+                    if direction != .invalid {
+                        directionHandler(direction)
+                    }
+                    
                 }
                 
             }
