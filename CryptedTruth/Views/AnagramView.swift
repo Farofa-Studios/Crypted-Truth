@@ -6,40 +6,177 @@
 //
 
 import SwiftUI
+import SwiftUI
+import SwiftUI
 
 struct AnagramView: View {
     
     let letters = ["E", "T", "S", "D", "I", "N", "S", "O"]
     @State var anagramaFinal: [String] = []
-    @State var ok = 0
+    
+    @FocusState private var isFocusedE: Bool
+    @FocusState private var isFocusedT: Bool
+    @FocusState private var isFocusedS: Bool
+    @FocusState private var isFocusedD: Bool
+    @FocusState private var isFocusedI: Bool
+    @FocusState private var isFocusedN: Bool
+    @FocusState private var isFocusedS1: Bool
+    @FocusState private var isFocusedO: Bool
+    @FocusState private var isFocusedDesfazer: Bool
+    @FocusState private var isFocusedApagar: Bool
+
+    @AppStorage("minigame5") var ok5 = false
     
     var body: some View {
         ZStack {
-            if ok == 0 {
-                VStack {
+//            Color.white
+//                .ignoresSafeArea()
+            
+            if !ok5 {
+                VStack(spacing: 16){
                     
-                    Text("\(anagramaFinal.joined(separator: " "))")
-                        .font(.custom("PTMono-Regular", size: 29))
-                        .foregroundColor(.primaryColor)
-                        .padding(.top, 16)
-                        .padding()
-                    
-                    HStack {
-                        ForEach(letters, id: \.self) { letter in
-                            Button("\(letter)") {
-                                if anagramaFinal.count > 7 {
-                                    //
-                                } else {
-                                    anagramaFinal.append(letter)
-                                    //anagramaFinal.contains(letter)
-                                }
-                            }
-                            .font(.custom("PTMono-Regular", size: 29))
-                            .foregroundColor(.primaryColor)
+                    HStack(spacing: 52) {
+                        ForEach(anagramaFinal, id: \.self) { test in
+                            Text(test)
+                                .font(.custom("PTMono-Regular", size: 29))
+                                .foregroundColor(.primaryColor)
                         }
                     }
+                    .offset(y: -20)
+                    .frame(width: 540, height: 60)
                     
-                    
+                    HStack (spacing: 8) {
+                        Button(action: {
+                            if anagramaFinal.count > 7 {
+                                //
+                            } else {
+                                anagramaFinal.append("E")
+                            }
+                        }) {
+                            Image("E")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 46, height: 44)
+                        }
+                        .focused($isFocusedE)
+                        .background(isFocusedE ? Color(UIColor(red: 0.83, green: 0.16, blue: 0.20, alpha: 1.00)).opacity(0.3): Color.clear)
+                        .buttonStyle(BoardButtonStyle())
+                                                
+                        Button(action: {
+                            if anagramaFinal.count > 7 {
+                                //
+                            } else {
+                                anagramaFinal.append("T")
+                            }
+                        }) {
+                            Image("T")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 46, height: 44)
+
+                        }
+                        .focused($isFocusedT)
+                        .background(isFocusedT ? Color(UIColor(red: 0.83, green: 0.16, blue: 0.20, alpha: 1.00)).opacity(0.3) : Color.clear)
+                        .buttonStyle(BoardButtonStyle())
+                        
+                        Button(action: {
+                            if anagramaFinal.count > 7 {
+                                //
+                            } else {
+                                anagramaFinal.append("S")
+                            }
+                        }) {
+                            Image("S")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 46, height: 44)
+                        }
+                        .focused($isFocusedS)
+                        .background(isFocusedS ? Color(UIColor(red: 0.83, green: 0.16, blue: 0.20, alpha: 1.00)).opacity(0.3) : Color.clear)
+                        .buttonStyle(BoardButtonStyle())
+                        
+                        Button(action: {
+                            if anagramaFinal.count > 7 {
+                                //
+                            } else {
+                                anagramaFinal.append("D")
+                            }
+                        }) {
+                            Image("D")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 46, height: 44)
+                        }
+                        .focused($isFocusedD)
+                        .background(isFocusedD ? Color(UIColor(red: 0.83, green: 0.16, blue: 0.20, alpha: 1.00)).opacity(0.3) : Color.clear)
+                        .buttonStyle(BoardButtonStyle())
+                        
+                        Button(action: {
+                            if anagramaFinal.count > 7 {
+                                //
+                            } else {
+                                anagramaFinal.append("I")
+                            }
+                        }) {
+                            Image("I")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 46, height: 44)
+                        }
+                        .focused($isFocusedI)
+                        .background(isFocusedI ? Color(UIColor(red: 0.83, green: 0.16, blue: 0.20, alpha: 1.00)).opacity(0.3) : Color.clear)
+                        .buttonStyle(BoardButtonStyle())
+                                                                        
+                        Button(action: {
+                            if anagramaFinal.count > 7 {
+                                //
+                            } else {
+                                anagramaFinal.append("N")
+                            }
+                        }) {
+                            Image("N")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 46, height: 44)
+                        }
+                        .focused($isFocusedN)
+                        .background(isFocusedN ? Color(UIColor(red: 0.83, green: 0.16, blue: 0.20, alpha: 1.00)).opacity(0.3) : Color.clear)
+                        .buttonStyle(BoardButtonStyle())
+                        
+                        
+                        Button(action: {
+                            if anagramaFinal.count > 7 {
+                                //
+                            } else {
+                                anagramaFinal.append("S")
+                            }
+                        }) {
+                            Image("S")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 46, height: 44)
+                        }
+                        .focused($isFocusedS1)
+                        .background(isFocusedS1 ? Color(UIColor(red: 0.83, green: 0.16, blue: 0.20, alpha: 1.00)).opacity(0.3) : Color.clear)
+                        .buttonStyle(BoardButtonStyle())
+                                                                        
+                        Button(action: {
+                            if anagramaFinal.count > 7 {
+                                //
+                            } else {
+                                anagramaFinal.append("O")
+                            }
+                        }) {
+                            Image("O")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 46, height: 44)
+                        }
+                        .focused($isFocusedO)
+                        .background(isFocusedO ? Color(UIColor(red: 0.83, green: 0.16, blue: 0.20, alpha: 1.00)).opacity(0.3) : Color.clear)
+                        .buttonStyle(BoardButtonStyle())
+                                                
+                    }
                     
                     HStack(spacing: 16) {
                         Button {
@@ -47,47 +184,54 @@ struct AnagramView: View {
                                 anagramaFinal.removeLast()
                             }
                         } label: {
-                            HStack(spacing: 12) {
-                                Image(systemName: "delete.left")
-                                    .foregroundColor(.primaryColor)
-                                Text("Desfazer")
-                                    .font(.custom("PTMono-Regular", size: 25))
-                                    .foregroundColor(.primaryColor)
-                            }
+                            Image("bt-desfazer")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 190, height: 44)
+                            
                         }
+                        .buttonStyle(BoardButtonStyle())
+                        .focused($isFocusedDesfazer)
+                        .background(isFocusedDesfazer ? Color(UIColor(red: 0.83, green: 0.16, blue: 0.20, alpha: 1.00)).opacity(0.3) : Color.clear)
                         
                         Button {
                             if !anagramaFinal.isEmpty {
                                 anagramaFinal.removeAll()
                             }
                         } label: {
-                            HStack(spacing: 12) {
-                                Image(systemName: "trash")
-                                    .foregroundColor(.primaryColor)
-                                Text("Apagar")
-                                    .font(.custom("PTMono-Regular", size: 25))
-                                    .foregroundColor(.primaryColor)
-                            }
+                            
+                            Image("bt-apagar")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 190, height: 44)
+            
                         }
-                        
+                        .buttonStyle(BoardButtonStyle())
+                        .focused($isFocusedApagar)
+                        .background(isFocusedApagar ? Color(UIColor(red: 0.83, green: 0.16, blue: 0.20, alpha: 1.00)).opacity(0.3) : Color.clear)
                     }
                 }
-                //.frame(width: 540, height: 190)
+                .frame(width: 540, height: 194)
+                
                 
             }
             else {
                 Image("Quadro-Final-Vítima-5")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 156, height: 307)
+                    .offset(y: -80)
             }
         }
         .onChange(of: anagramaFinal, perform: { newValue in
-                if anagramaFinal == ["S", "E", "N", "T", "I", "D", "O", "S"] {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        ok = 1
-                    }
+            if anagramaFinal == ["S", "E", "N", "T", "I", "D", "O", "S"] {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    ok5 = true
                 }
+            }
         })
-        
     }
+    
 }
 
 struct AnagramView_Previews: PreviewProvider {
@@ -95,46 +239,4 @@ struct AnagramView_Previews: PreviewProvider {
         AnagramView()
     }
 }
-
-//let finalText: String = "Hello, World!"
-//let writing = false
-
-//    extension String {
-//        subscript(offset: Int) -> Character {
-//            self[index(startIndex, offsetBy: offset)]
-//        }
-//    }
-
-//VStack(spacing: 16.0) {
-//            ZStack {
-//                //SubtitleView()
-//                Text(text)
-//
-//            }
-//            Button("Type") {
-//                typeWriter()
-//            }
-//
-//
-//
-//        }
-//        .onAppear() {
-//            OK4 = true
-//        }
-//
-//    }
-//
-//    func typeWriter(at position: Int = 0) {
-//            if position == 0 {
-//                text = ""
-//            }
-//            if position < finalText.count {
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-//                    text.append(finalText[position])
-//                    typeWriter(at: position + 1)
-//                }
-//            }
-//        }
-
-//@AppStorage("minigame4") var OK4 = false
 

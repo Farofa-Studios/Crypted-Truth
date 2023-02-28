@@ -16,12 +16,16 @@ struct TasteSmellStructure: View {
     let recipe: Recipe
     let numOfRecipes: Int
     let title: String
+    let idSubtitles: Int
     
     @Binding var currentFase: Int
     @Binding var isGameFinished: Bool
     
+    @State var subtitle = Subtitle()
+    @State var subtitlesGroup: MiniGameSubtitle = MiniGameSubtitle()
+    
     var body: some View {
-        
+
         ZStack {
             Color.backgroundColor
                 .ignoresSafeArea()
@@ -84,9 +88,7 @@ struct TasteSmellStructure: View {
                 
                 HStack (alignment: .top, spacing: 32) {
                     ForEach(ingredientsOptionList, id: \.self) { item in
-                        if item == ingredientsOptionList.first {
-                            
-                        }
+            
                         IngredientsButton(image: item, answer: recipe.correctAnswer){
                             self.buttonTapped(item)
                         }
@@ -96,8 +98,19 @@ struct TasteSmellStructure: View {
                 
                 Spacer()
                 
-                //                SubtitleView()
+                SubtitleView(subtitle: subtitle, buttonAction: nil)
             }
+        }
+        .onAppear(){
+
+            subtitlesGroup = MiniGameSubtitles.allMiniGameSubtitles[idSubtitles]
+            
+            subtitle = subtitlesGroup.instructions
+            
+        }
+        
+        .onChange(of: currentFase) { newValue in
+            subtitle = subtitlesGroup.instructions
         }
     }
     
@@ -105,6 +118,20 @@ struct TasteSmellStructure: View {
     private func buttonTapped(_ selected: String) {
         
         if selected.contains(recipe.correctAnswer) {
+            
+            if currentFase == (numOfRecipes - 1) {
+                
+                if let lastHit = subtitlesGroup.lastHit {
+                    subtitle = lastHit
+                }
+                
+            } else {
+                
+                if let hit = subtitlesGroup.hit {
+                    subtitle = hit
+                }
+            }
+        
             ingredient = recipe.correctAnswerImage
             
             // aumenta escala
@@ -127,6 +154,10 @@ struct TasteSmellStructure: View {
                     ingredientsOptionList = ingredientsOptionList.shuffled()
                     currentFase += 1
                 }
+            }
+        } else {
+            if let error = subtitlesGroup.error {
+                subtitle = error
             }
         }
     }
@@ -180,24 +211,32 @@ struct IngredientsButton: View {
                 Spacer()
                 Spacer()
             }
-            .frame(width: 236, height: 236, alignment: .center)
+            .frame(width: 220, height: 220, alignment: .center)
             
             
         }
-        .background(Color.buttonMiniGameColor)
+//        .background(Color.buttonMiniGameColor)
         .clipShape(Pentagon())
         .rotationEffect(.degrees(image != answer ? angle: 0))
     }
 }
 
-//struct TasteSmellStructure_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TasteSmellStructure(
-//            ingredientsOptionList: ["Op-Ovos", "Op-Bacon", "Op-Queijo", "Op-Tomate", "Op-Trigo"],
-//            recipe: Recipes.allRecipes[3],
-//            numOfRecipes: Recipes.allRecipes.count,
-//            title: "Ingredientes")
-//    }
-//}
+struct TasteSmellStructure_Previews: PreviewProvider {
+    @State static var currentTasteFase: Int = 0
+    @State static var isTasteGameFinished: Bool = false
+    
+    static var previews: some View {
+        TasteSmellStructure(
+            ingredientsOptionList: ["Op-Ovos", "Op-Bacon", "Op-Queijo", "Op-Tomate", "Op-Trigo"],
+            recipe: Recipes.allRecipes[3],
+            numOfRecipes: Recipes.allRecipes.count,
+            title: "Ingredientes",
+            idSubtitles: 2,
+            currentFase: $currentTasteFase,
+            isGameFinished: $isTasteGameFinished
+        )
+        
+    }
+}
 
 

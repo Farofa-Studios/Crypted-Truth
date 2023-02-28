@@ -24,10 +24,11 @@ struct MiniGame3: View {
                     CardButton(image: piece.image, rotation: Int(piece.rotation))
                 }
             }
-            SubtitleView()
+//            SubtitleView()
         }
         .onAppear() {
             OK2 = true
+            SoundManager.instance.playSoundMP3(sound: "Spooky", loops: -1)
         }
     }
 }
