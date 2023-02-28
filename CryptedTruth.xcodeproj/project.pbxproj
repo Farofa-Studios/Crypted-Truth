@@ -108,6 +108,9 @@
 		BD780050299E5F4E00C6C974 /* SubtitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD78004F299E5F4E00C6C974 /* SubtitleViewModel.swift */; };
 		BD780052299E5FA400C6C974 /* SubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD780051299E5FA400C6C974 /* SubtitleView.swift */; };
 		BD780054299FA89200C6C974 /* AnagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD780053299FA89200C6C974 /* AnagramView.swift */; };
+		BD914FA229AD86B0004696AB /* BoardSubtitlesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD914FA129AD86B0004696AB /* BoardSubtitlesService.swift */; };
+		BD914FA429AD8709004696AB /* BoardSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD914FA329AD8709004696AB /* BoardSubtitle.swift */; };
+		BD914FA629AD922C004696AB /* BoardSubtitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD914FA529AD922C004696AB /* BoardSubtitleViewModel.swift */; };
 		BDE36FC3299BBCF5005E399E /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE36FC2299BBCF5005E399E /* BoardView.swift */; };
 		BDE36FCD299BDC77005E399E /* CardBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE36FCC299BDC77005E399E /* CardBoardView.swift */; };
 /* End PBXBuildFile section */
@@ -216,6 +219,9 @@
 		BD78004F299E5F4E00C6C974 /* SubtitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleViewModel.swift; sourceTree = "<group>"; };
 		BD780051299E5FA400C6C974 /* SubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleView.swift; sourceTree = "<group>"; };
 		BD780053299FA89200C6C974 /* AnagramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnagramView.swift; sourceTree = "<group>"; };
+		BD914FA129AD86B0004696AB /* BoardSubtitlesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSubtitlesService.swift; sourceTree = "<group>"; };
+		BD914FA329AD8709004696AB /* BoardSubtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSubtitle.swift; sourceTree = "<group>"; };
+		BD914FA529AD922C004696AB /* BoardSubtitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSubtitleViewModel.swift; sourceTree = "<group>"; };
 		BDE36FC2299BBCF5005E399E /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		BDE36FCC299BDC77005E399E /* CardBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -447,6 +453,7 @@
 				8B5B663F299E7AEA006A23CD /* Recipe.swift */,
 				17ED78BC29A9872600CA20AF /* Instrument.swift */,
 				8BBBDC9D29A8E99E00F40463 /* MiniGameSubtitle.swift */,
+				BD914FA329AD8709004696AB /* BoardSubtitle.swift */,
 				17CA287D29AADD6200A3F563 /* GeniusMockedSwipes.swift */,
 			);
 			path = Models;
@@ -460,6 +467,7 @@
 				8B5B6641299E8169006A23CD /* RecipesService.swift */,
 				8BBBDC9929A7B9EE00F40463 /* AromasService.swift */,
 				8B202F6129AB15E9009C5CB6 /* MiniGameSubtitlesService.swift */,
+				BD914FA129AD86B0004696AB /* BoardSubtitlesService.swift */,
 				8B0B824429AC22FF00B4AE95 /* IntroductionSubtitlesService.swift */,
 				8BF72E0F29AD642300FEDE68 /* FinalSubtitlesService.swift */,
 			);
@@ -474,6 +482,7 @@
 				173502C7299FD8F000C57D55 /* GeniusViewModel.swift */,
 				8B0B824829AC5E1900B4AE95 /* IntroductionViewModel.swift */,
 				8BF72E1129AD665A00FEDE68 /* FinalViewModel.swift */,
+				BD914FA529AD922C004696AB /* BoardSubtitleViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -634,7 +643,9 @@
 				8B7FEA5929ABBD9E00ABCDF0 /* InitialView.swift in Sources */,
 				17EB95C629AC26E4003407BF /* GeniusSubtitleView.swift in Sources */,
 				BD78004C299E5C8300C6C974 /* Subtitle.swift in Sources */,
+				BD914FA229AD86B0004696AB /* BoardSubtitlesService.swift in Sources */,
 				8B0B824929AC5E1900B4AE95 /* IntroductionViewModel.swift in Sources */,
+				BD914FA629AD922C004696AB /* BoardSubtitleViewModel.swift in Sources */,
 				173502C6299FD8D900C57D55 /* GeniusView.swift in Sources */,
 				BDE36FCD299BDC77005E399E /* CardBoardView.swift in Sources */,
 				17ED78BD29A9872600CA20AF /* Instrument.swift in Sources */,
@@ -644,6 +655,7 @@
 				173502CB299FD92A00C57D55 /* Color+customColors.swift in Sources */,
 				8BBBDC9829A7B59200F40463 /* TasteMiniGame.swift in Sources */,
 				BD78003E299D13C700C6C974 /* Victim.swift in Sources */,
+				BD914FA429AD8709004696AB /* BoardSubtitle.swift in Sources */,
 				8BF72E1029AD642300FEDE68 /* FinalSubtitlesService.swift in Sources */,
 				BD780054299FA89200C6C974 /* AnagramView.swift in Sources */,
 				8BF72E1229AD665A00FEDE68 /* FinalViewModel.swift in Sources */,
