@@ -261,7 +261,7 @@ struct BoardView: View {
                             }
                             .offset(y: 80)
                             .onChange(of: lettersAnagram) { newValue in
-                                if lettersAnagram.count == 8 {
+                                if (ok1 && ok2 && ok3 && ok4) {
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                         anagramShowing = true
                                     }
