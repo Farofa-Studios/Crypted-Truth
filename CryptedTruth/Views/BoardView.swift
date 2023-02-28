@@ -32,8 +32,25 @@ struct BoardView: View {
     @FocusState private var isFocusedM1: Bool
     @FocusState private var isFocusedSA: Bool
     @FocusState private var isFocusedSA1: Bool
+    
+    // Subtitles
+    
+    var subtitlesBoardList = BoardSubtitles.allBoardSubtitles
+    
+    @AppStorage("board1") var board1 = false
+    
+    @ObservedObject var viewModel = BoardSubtitleViewModel()
 
-
+    func buttonAction(){
+        if viewModel.index == 2 {
+            board1 = true
+            viewModel.isBoard1 = true
+        } else {
+            viewModel.index += 1
+        }
+    }
+      
+    @State var habilita = true
     
     var body: some View {
         NavigationStack {
@@ -62,7 +79,8 @@ struct BoardView: View {
                                 .background(isFocusedV ? Color.white.opacity(0.2) : Color.clear)
                                 .buttonStyle(BoardButtonStyle())
                                 .offset(x: ok5 ? 80 : 0)
-
+                                //.disabled(habilita)
+                
                             }
                             else {
                                 NavigationLink {
@@ -78,6 +96,8 @@ struct BoardView: View {
                                 .focused($isFocusedV1)
                                 .background(isFocusedV1 ? Color.white.opacity(0.2) : Color.clear)
                                 .buttonStyle(BoardButtonStyle())
+                                //.disabled(habilita)
+
                             }
                             
                             if victims[1].tapped {
@@ -95,6 +115,8 @@ struct BoardView: View {
                                 .background(isFocusedS ? Color.white.opacity(0.2) : Color.clear)
                                 .buttonStyle(BoardButtonStyle())
                                 .offset(x: ok5 ? -80 : 0)
+                                //.disabled(habilita)
+
 
                             }
                             else {
@@ -111,6 +133,8 @@ struct BoardView: View {
                                 .focused($isFocusedS1)
                                 .background(isFocusedS1 ? Color.white.opacity(0.2) : Color.clear)
                                 .buttonStyle(BoardButtonStyle())
+                                //.disabled(habilita)
+
                             }
                             
                             if victims[2].tapped {
@@ -128,6 +152,8 @@ struct BoardView: View {
                                 .background(isFocusedM ? Color.white.opacity(0.2) : Color.clear)
                                 .buttonStyle(BoardButtonStyle())
                                 .offset(x: ok5 ? 80 : 0)
+                                //.disabled(habilita)
+
 
                             }
                             else {
@@ -144,6 +170,8 @@ struct BoardView: View {
                                 .focused($isFocusedM1)
                                 .background(isFocusedM1 ? Color.white.opacity(0.2) : Color.clear)
                                 .buttonStyle(BoardButtonStyle())
+                                //.disabled(habilita)
+
                             }
                             
                             if victims[3].tapped {
@@ -161,6 +189,8 @@ struct BoardView: View {
                                 .background(isFocusedSA ? Color.white.opacity(0.2) : Color.clear)
                                 .buttonStyle(BoardButtonStyle())
                                 .offset(x: ok5 ? -80 : 0)
+                                //.disabled(habilita)
+
 
                             }
                             else {
@@ -177,6 +207,8 @@ struct BoardView: View {
                                 .focused($isFocusedSA1)
                                 .background(isFocusedSA1 ? Color.white.opacity(0.2) : Color.clear)
                                 .buttonStyle(BoardButtonStyle())
+                                //.disabled(habilita)
+
                             }
                         }
                         .frame(width: 1320, height: 742.5)
@@ -229,7 +261,7 @@ struct BoardView: View {
                             }
                             .offset(y: 80)
                             .onChange(of: lettersAnagram) { newValue in
-                                if lettersAnagram.count == 8 {
+                                if (ok1 && ok2 && ok3 && ok4) {
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                         anagramShowing = true
                                     }
@@ -245,12 +277,12 @@ struct BoardView: View {
                         
                     }
                     
-//                    SubtitleView()
+                    SubtitleView(subtitle: subtitlesBoardList[viewModel.index], buttonAction: buttonAction)
                     
                 }
                 
             }
-
+            
         }        
     }
 }
