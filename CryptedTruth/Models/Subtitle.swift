@@ -16,16 +16,27 @@ struct Subtitle: Identifiable {
     /// Unique identifier.
     let id: Int
     /// Image speaker
-    let image: String
+    let image: String?
     /// Type of speaker
-    let type: Avatars
+    let type: Avatars?
     /// Subtitle
     let subtitle: String
     
-    init(id: Int, image: String, type: Avatars, subtitle: String) {
+    let audio: String
+    
+    init(id: Int, image: String?, type: Avatars?, subtitle: String, audio: String) {
         self.id = id
         self.image = image
         self.type = type
         self.subtitle = subtitle
+        self.audio = audio
+    }
+    
+    init() {
+        self.id = 0
+        self.image = ""
+        self.type = nil
+        self.subtitle = ""
+        self.audio = ""
     }
 }
