@@ -40,7 +40,7 @@ class GeniusViewModel: ObservableObject {
         instruments = [sax, guitar, piano, tambourine]
         
         self.matchInstruments = GeniusViewModel.createGeniusGame(instruments: instruments)
-        self.roundCounter = 3
+        self.roundCounter = 1
         self.mistakesCounter = 0
         self.isPlayerTurn = false
         self.isCorrectInput = nil
