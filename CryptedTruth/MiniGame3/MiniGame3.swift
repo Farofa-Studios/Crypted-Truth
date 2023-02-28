@@ -286,7 +286,7 @@ struct MiniGame3: View {
                         }
                     }
                     
-                    SubtitleView(subtitle: Subtitle(id: 30, image: "Bot", type: .villain, subtitle: "Deslize entre as peças e clique para rotacionar até formar a imagem completa."), buttonAction: nil)
+                    SubtitleView(subtitle: Subtitle(id: 30, image: "Bot", type: .villain, subtitle: "Deslize entre as peças e clique para rotacionar até formar a imagem completa.", audio: ""), buttonAction: nil)
                 }
             }
         }
