@@ -45,6 +45,9 @@
 		8BBBDC9829A7B59200F40463 /* TasteMiniGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBBDC9729A7B59200F40463 /* TasteMiniGame.swift */; };
 		8BBBDC9A29A7B9EE00F40463 /* AromasService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBBDC9929A7B9EE00F40463 /* AromasService.swift */; };
 		8BBBDC9E29A8E99E00F40463 /* MiniGameSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBBDC9D29A8E99E00F40463 /* MiniGameSubtitle.swift */; };
+		8BF72E0E29AD601D00FEDE68 /* FinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF72E0D29AD601D00FEDE68 /* FinalView.swift */; };
+		8BF72E1029AD642300FEDE68 /* FinalSubtitlesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF72E0F29AD642300FEDE68 /* FinalSubtitlesService.swift */; };
+		8BF72E1229AD665A00FEDE68 /* FinalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF72E1129AD665A00FEDE68 /* FinalViewModel.swift */; };
 		8D494C7329ACF91700B86C8D /* Correct Answer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D494C7229ACF91700B86C8D /* Correct Answer.mp3 */; };
 		8D494C7529AD060300B86C8D /* Quadro 17.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D494C7429AD060300B86C8D /* Quadro 17.mp3 */; };
 		8D55F92F299D2CE500964EAC /* MiniGame3Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55F92E299D2CE500964EAC /* MiniGame3Images.swift */; };
@@ -150,6 +153,9 @@
 		8BBBDC9729A7B59200F40463 /* TasteMiniGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteMiniGame.swift; sourceTree = "<group>"; };
 		8BBBDC9929A7B9EE00F40463 /* AromasService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AromasService.swift; sourceTree = "<group>"; };
 		8BBBDC9D29A8E99E00F40463 /* MiniGameSubtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGameSubtitle.swift; sourceTree = "<group>"; };
+		8BF72E0D29AD601D00FEDE68 /* FinalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalView.swift; sourceTree = "<group>"; };
+		8BF72E0F29AD642300FEDE68 /* FinalSubtitlesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalSubtitlesService.swift; sourceTree = "<group>"; };
+		8BF72E1129AD665A00FEDE68 /* FinalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalViewModel.swift; sourceTree = "<group>"; };
 		8D494C7229ACF91700B86C8D /* Correct Answer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Correct Answer.mp3"; sourceTree = "<group>"; };
 		8D494C7429AD060300B86C8D /* Quadro 17.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Quadro 17.mp3"; sourceTree = "<group>"; };
 		8D55F92E299D2CE500964EAC /* MiniGame3Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGame3Images.swift; sourceTree = "<group>"; };
@@ -428,6 +434,7 @@
 				8B7FEA5A29ABD03300ABCDF0 /* IntroductionView.swift */,
 				1768019B29AC2EA500517A96 /* BlankButtonStyle.swift */,
 				BD2B265329AD0D30008592E5 /* BoardButtonStyle.swift */,
+				8BF72E0D29AD601D00FEDE68 /* FinalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -454,6 +461,7 @@
 				8BBBDC9929A7B9EE00F40463 /* AromasService.swift */,
 				8B202F6129AB15E9009C5CB6 /* MiniGameSubtitlesService.swift */,
 				8B0B824429AC22FF00B4AE95 /* IntroductionSubtitlesService.swift */,
+				8BF72E0F29AD642300FEDE68 /* FinalSubtitlesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -465,6 +473,7 @@
 				BD78004F299E5F4E00C6C974 /* SubtitleViewModel.swift */,
 				173502C7299FD8F000C57D55 /* GeniusViewModel.swift */,
 				8B0B824829AC5E1900B4AE95 /* IntroductionViewModel.swift */,
+				8BF72E1129AD665A00FEDE68 /* FinalViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -621,6 +630,7 @@
 				17ED78B229A8F09C00CA20AF /* SoundManager.swift in Sources */,
 				BD780042299D15F100C6C974 /* VictimsService.swift in Sources */,
 				8BBBDC9629A7B57D00F40463 /* SmellMiniGame.swift in Sources */,
+				8BF72E0E29AD601D00FEDE68 /* FinalView.swift in Sources */,
 				8B7FEA5929ABBD9E00ABCDF0 /* InitialView.swift in Sources */,
 				17EB95C629AC26E4003407BF /* GeniusSubtitleView.swift in Sources */,
 				BD78004C299E5C8300C6C974 /* Subtitle.swift in Sources */,
@@ -634,7 +644,9 @@
 				173502CB299FD92A00C57D55 /* Color+customColors.swift in Sources */,
 				8BBBDC9829A7B59200F40463 /* TasteMiniGame.swift in Sources */,
 				BD78003E299D13C700C6C974 /* Victim.swift in Sources */,
+				8BF72E1029AD642300FEDE68 /* FinalSubtitlesService.swift in Sources */,
 				BD780054299FA89200C6C974 /* AnagramView.swift in Sources */,
+				8BF72E1229AD665A00FEDE68 /* FinalViewModel.swift in Sources */,
 				BD780052299E5FA400C6C974 /* SubtitleView.swift in Sources */,
 				17CA287E29AADD6200A3F563 /* GeniusMockedSwipes.swift in Sources */,
 				8D55F92F299D2CE500964EAC /* MiniGame3Images.swift in Sources */,
