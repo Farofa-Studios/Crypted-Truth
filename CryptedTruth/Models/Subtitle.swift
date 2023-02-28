@@ -22,11 +22,14 @@ struct Subtitle: Identifiable {
     /// Subtitle
     let subtitle: String
     
-    init(id: Int, image: String?, type: Avatars?, subtitle: String) {
+    let audio: String
+    
+    init(id: Int, image: String?, type: Avatars?, subtitle: String, audio: String) {
         self.id = id
         self.image = image
         self.type = type
         self.subtitle = subtitle
+        self.audio = audio
     }
     
     init() {
@@ -34,5 +37,6 @@ struct Subtitle: Identifiable {
         self.image = ""
         self.type = nil
         self.subtitle = ""
+        self.audio = ""
     }
 }

@@ -18,17 +18,18 @@ struct IntroductionView: View {
     
     @AppStorage("introduction") var introduction = false
     
-    func buttonAction(){
+    func buttonAction() {
         if viewModel.index == 4 {
             introduction = true
             viewModel.isIntroductionDone = true
         } else {
             viewModel.index += 1
+            SoundManager.instance.playSoundM4A(sound: subtitlesList[viewModel.index].audio, loops: 0)
         }
     }
     
     var body: some View {
-        NavigationView(){
+        NavigationStack() {
             ZStack {
                 Color.backgroundColor
                     .ignoresSafeArea()
@@ -41,13 +42,15 @@ struct IntroductionView: View {
                     
                     
                     SubtitleView(subtitle: subtitlesList[viewModel.index], buttonAction: buttonAction)
+                    
+                } .navigationDestination(isPresented: $viewModel.isIntroductionDone) {
+                    BoardView()
                 }
-            }
-            
-            .navigationDestination(isPresented: $viewModel.isIntroductionDone) {
                 
-                BoardView()
             }
+        }
+        .onAppear {
+            SoundManager.instance.playSoundM4A(sound: subtitlesList[viewModel.index].audio, loops: 0)
         }
     }
 }
