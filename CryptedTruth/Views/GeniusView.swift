@@ -29,6 +29,19 @@ struct GeniusView: View {
                     
                     Spacer()
                     
+                    if viewModel.isPlayerTurn {
+                        Text("Sua\nvez")
+                            .padding(.horizontal, 25)
+                            .font(.custom("PTMono-Bold", size: 48))
+                            .multilineTextAlignment(.center)
+                    } else {
+                        Text("Ouça")
+                            .padding(.horizontal, 25)
+                            .font(.custom("PTMono-Bold", size: 48))
+                    }
+                    
+                    Spacer()
+                    
                     VStack {
                         Text("Erros")
                             .font(.custom("PTMono-Regular", size: 38))
@@ -38,56 +51,82 @@ struct GeniusView: View {
                     }
                     
                 }
-                .padding(.horizontal, 100)
-                .offset(y: 215)
                 
                 Spacer()
                 
-                VStack {
-                    Image(viewModel.sax.image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 236, height: 236)
-                    HStack {
-                        ZStack {
+                HStack {
+                    Button(action: {
+                        viewModel.evalPlayerInput(playerInput: viewModel.sax)
+                    }) {
+                        VStack {
+                            Image(viewModel.sax.image)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 270, height: 270, alignment: .center)
+                            Spacer()
+                            Spacer()
+                        }
+                        .frame(width: 236, height: 236, alignment: .center)
+                    }
+                    .clipShape(Pentagon())
+                    .disabled(!viewModel.isPlayerTurn)
+                    
+                    Button(action: {
+                        viewModel.evalPlayerInput(playerInput: viewModel.piano)
+                    }) {
+                        VStack {
                             Image(viewModel.piano.image)
                                 .resizable()
-                                .frame(width: 236, height: 236)
-                                .padding(.trailing, 500)
-                            
-                            if viewModel.isPlayerTurn {
-                                Text("Sua\nvez")
-                                    .padding(.horizontal, 25)
-                                    .font(.custom("PTMono-Bold", size: 48))
-                                    .multilineTextAlignment(.center)
-                            } else {
-                                Text("Ouça")
-                                    .padding(.horizontal, 25)
-                                    .font(.custom("PTMono-Bold", size: 48))
-                            }
-                            
+                                .scaledToFit()
+                                .frame(width: 270, height: 270, alignment: .center)
+                            Spacer()
+                            Spacer()
+                        }
+                        .frame(width: 236, height: 236, alignment: .center)
+                    }
+                    .clipShape(Pentagon())
+                    .disabled(!viewModel.isPlayerTurn)
+                    
+                    Button(action: {
+                        viewModel.evalPlayerInput(playerInput: viewModel.tambourine)
+                    }) {
+                        VStack {
                             Image(viewModel.tambourine.image)
                                 .resizable()
-                                .frame(width: 236, height: 236)
-                                .padding(.leading, 500)
+                                .scaledToFit()
+                                .frame(width: 270, height: 270, alignment: .center)
+                            Spacer()
+                            Spacer()
                         }
+                        .frame(width: 236, height: 236, alignment: .center)
                     }
-                    Image(viewModel.guitar.image)
-                        .resizable()
-                        .frame(width: 236, height: 236)
+                    .clipShape(Pentagon())
+                    .disabled(!viewModel.isPlayerTurn)
+                    
+                    Button(action: {
+                        viewModel.evalPlayerInput(playerInput: viewModel.guitar)
+                    }) {
+                        VStack {
+                            Image(viewModel.guitar.image)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 270, height: 270, alignment: .center)
+                            Spacer()
+                            Spacer()
+                        }
+                        .frame(width: 236, height: 236, alignment: .center)
+                    }
+                    .clipShape(Pentagon())
+                    .disabled(!viewModel.isPlayerTurn)
+                    
                 }
-                .padding(.top, 75)
                 
                 Spacer()
                 
                 if viewModel.isGameOver {
                     GeniusSubtitleView(geniusViewModel: viewModel, avatar: .streamer, image: "sophia-chocada", subtitle: "Aahh! Errei a sequência... Vou ter que recomeçar!")
-                        .padding(.top, 20)
-                        .padding(.bottom, 175)
                 } else {
-                    GeniusSubtitleView(geniusViewModel: nil, avatar: .villain, image: "Bot", subtitle: "Deslize para o lado que corresponde ao som na ordem em que escutar...\nMemorize e reproduza a sequência de sons sem errar para liberar mais\ninformações do caso.")
-                        .padding(.top, 20)
-                        .padding(.bottom, 175)
+                    GeniusSubtitleView(geniusViewModel: nil, avatar: .villain, image: "Bot", subtitle: "Escolha o instrumento que corresponde ao som na ordem em que escutar...\nMemorize e reproduza a sequência de sons sem errar para liberar mais\ninformações do caso.")
                 }
                 
             }
@@ -96,8 +135,9 @@ struct GeniusView: View {
                 Color.darkColor
                     .ignoresSafeArea()
             }
+            .foregroundColor(.white)
             .onAppear {
-                viewModel.playAllRounds()
+                viewModel.playCurrentRound()
             }
             .onChange(of: viewModel.didConcludeGame) { newValue in
                 if newValue {

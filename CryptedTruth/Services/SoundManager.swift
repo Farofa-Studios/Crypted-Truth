@@ -41,5 +41,19 @@ class SoundManager {
         }
 
     }
+    
+    func playSoundM4A(sound: String, loops: Int) {
+        
+        guard let url = Bundle.main.url(forResource: sound, withExtension: ".m4a") else { return }
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.numberOfLoops = loops
+            player?.play()
+        } catch let error {
+            print("Error playing sound. \(error.localizedDescription)")
+        }
+
+    }
 
 }
