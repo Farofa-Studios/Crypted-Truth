@@ -216,6 +216,8 @@ struct AnagramView: View {
                 
             }
             else {
+                
+                
                 Image("Quadro-Final-Vítima-5")
                     .resizable()
                     .scaledToFit()

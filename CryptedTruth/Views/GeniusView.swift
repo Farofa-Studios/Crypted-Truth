@@ -141,7 +141,7 @@ struct GeniusView: View {
             }
             .onChange(of: viewModel.didConcludeGame) { newValue in
                 if newValue {
-                    ok1 = newValue
+                    //ok1 = newValue
                 }
             }
             .navigationDestination(isPresented: $viewModel.didConcludeGame) {
