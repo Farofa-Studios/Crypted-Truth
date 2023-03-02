@@ -23,7 +23,7 @@ struct GeniusView: View {
                         Text("Rodada")
                             .font(.custom("PTMono-Regular", size: 38))
                             .padding(.bottom, 10)
-                        Text("\(viewModel.roundCounter)/9")
+                        Text("\(viewModel.roundCounter)/5")
                             .font(.custom("PTMono-Regular", size: 50))
                     }
                     

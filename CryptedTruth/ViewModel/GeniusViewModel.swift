@@ -59,7 +59,7 @@ class GeniusViewModel: ObservableObject {
     
     static func createGeniusGame(instruments: [Instrument]) -> [[Instrument]] {
         
-        let rounds = 9
+        let rounds = 5
         
         var matchInstruments: [[Instrument]] = []
         var roundInstruments: [Instrument] = []

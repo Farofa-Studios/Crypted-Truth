@@ -51,13 +51,13 @@ extension Victim {
     
     static func allVictims() -> [Victim] {
         return [
-            .init(id: "1", name: "Vincent", firstPicture: "Quadro-Default-Vítima-1", card: "Cartão-Vítima-1", minigame: AnyView(GeniusView()), picture: "Quadro-Reveal-Vítima-1", letters: ["E", "T"], finalPicture: "Quadro-Final-Vítima-1", tapped: false),
+            .init(id: "1", name: "Vincent", firstPicture: "Quadro-Default-Vítima-1", card: "Cartão-Vítima-1", minigame: AnyView(SmellMiniGame()), picture: "Quadro-Reveal-Vítima-1", letters: ["E", "T"], finalPicture: "Quadro-Final-Vítima-1", tapped: false),
             
-            .init(id: "2", name: "Sandra", firstPicture: "Quadro-Default-Vítima-2", card: "Cartão-Vítima-2", minigame: AnyView(MiniGame3()), picture: "Quadro-Reveal-Vítima-2", letters: ["S", "D"], finalPicture: "Quadro-Final-Vítima-2", tapped: false),
+            .init(id: "2", name: "Sandra", firstPicture: "Quadro-Default-Vítima-2", card: "Cartão-Vítima-2", minigame: AnyView(TasteMiniGame()), picture: "Quadro-Reveal-Vítima-2", letters: ["S", "D"], finalPicture: "Quadro-Final-Vítima-2", tapped: false),
             
-            .init(id: "3", name: "Ming", firstPicture: "Quadro-Default-Vítima-3", card: "Cartão-Vítima-3", minigame: AnyView(TasteMiniGame()), picture: "Quadro-Reveal-Vítima-3", letters: ["I", "N"], finalPicture: "Quadro-Final-Vítima-3", tapped: false),
+            .init(id: "3", name: "Ming", firstPicture: "Quadro-Default-Vítima-3", card: "Cartão-Vítima-3", minigame: AnyView(MiniGame3()), picture: "Quadro-Reveal-Vítima-3", letters: ["I", "N"], finalPicture: "Quadro-Final-Vítima-3", tapped: false),
             
-            .init(id: "4", name: "Saulo", firstPicture: "Quadro-Default-Vítima-4", card: "Cartão-Vítima-4", minigame: AnyView(SmellMiniGame()), picture: "Quadro-Reveal-Vítima-4", letters: ["S", "O"], finalPicture: "Quadro-Final-Vítima-4", tapped: false),
+            .init(id: "4", name: "Saulo", firstPicture: "Quadro-Default-Vítima-4", card: "Cartão-Vítima-4", minigame: AnyView(GeniusView()), picture: "Quadro-Reveal-Vítima-4", letters: ["S", "O"], finalPicture: "Quadro-Final-Vítima-4", tapped: false),
         ]
     }
 }
