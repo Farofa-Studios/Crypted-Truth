@@ -26,10 +26,10 @@ struct MiniGame3: View {
     let image10 = "10"
     let image11 = "11"
     let image12 = "12"
-    let image13 = "12"
-    let image14 = "13"
-    let image15 = "14"
-    let image16 = "15"
+    let image13 = "13"
+    let image14 = "14"
+    let image15 = "15"
+    let image16 = "16"
     
     @State var rotation1 = 1
     @State var rotation2 = 3
@@ -53,28 +53,23 @@ struct MiniGame3: View {
             
             Color.backgroundColor
                 .ignoresSafeArea()
-            NavigationView(){
+            NavigationView () { 
                 VStack {
                     
-                    if rotation1 == 0 && rotation2 == 0 && rotation3 == 0 && rotation4 == 0 && rotation5 == 0 && rotation6 == 0 && rotation7 == 0 && rotation8 == 0 && rotation9 == 0 && rotation10 == 0 && rotation11 == 0 && rotation12 == 0 && rotation13 == 0 && rotation14 == 0 && rotation14 == 0 && rotation15 == 0 && rotation16 == 0 {
-                        
+                    if rotation1 == 0 && rotation2 == 0 && rotation3 == 0 && rotation4 == 0 && rotation5 == 0 && rotation6 == 0 && rotation7 == 0 && rotation8 == 0 && rotation9 == 0 && rotation10 == 0 && rotation11 == 0 && rotation12 == 0 && rotation13 == 0 && rotation14 == 0 && rotation15 == 0 && rotation16 == 0 {
                         
                         NavigationLink {
                             
-                            BoardView()
+                            ChallengeConcludedView()
                             
                         } label: {
-                            Button(action: {
-                                
-                                OK3 = true
-                                
-                            }) {
-                                Image("Imagem Completa")
-                                
-                            }
-                            .buttonStyle(BoardButtonStyle())
+                            Image("Imagem Completa")
                         }
                         .buttonStyle(BoardButtonStyle())
+                        .onAppear() {
+                            OK3 = true
+                            
+                        }
                     } else {
                         
                         VStack() {
