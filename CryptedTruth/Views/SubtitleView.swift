@@ -31,6 +31,7 @@ struct SubtitleView: View {
                     .frame(width: 1255.81, height: 120, alignment: .leading)
                     .font(.custom("PTMono-Regular", size: 29))
                     .foregroundColor(.white)
+                    .minimumScaleFactor(0.1)
                 
                 if let funcAction = buttonAction {
                     VStack {

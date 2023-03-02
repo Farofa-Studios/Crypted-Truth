@@ -113,6 +113,7 @@
 		BD914FA629AD922C004696AB /* BoardSubtitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD914FA529AD922C004696AB /* BoardSubtitleViewModel.swift */; };
 		BDE36FC3299BBCF5005E399E /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE36FC2299BBCF5005E399E /* BoardView.swift */; };
 		BDE36FCD299BDC77005E399E /* CardBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE36FCC299BDC77005E399E /* CardBoardView.swift */; };
+		BDFFE6B429B0FD9000FA5FC3 /* CardSubtitlesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFFE6B329B0FD9000FA5FC3 /* CardSubtitlesService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -224,6 +225,7 @@
 		BD914FA529AD922C004696AB /* BoardSubtitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSubtitleViewModel.swift; sourceTree = "<group>"; };
 		BDE36FC2299BBCF5005E399E /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		BDE36FCC299BDC77005E399E /* CardBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBoardView.swift; sourceTree = "<group>"; };
+		BDFFE6B329B0FD9000FA5FC3 /* CardSubtitlesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSubtitlesService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -470,6 +472,7 @@
 				BD914FA129AD86B0004696AB /* BoardSubtitlesService.swift */,
 				8B0B824429AC22FF00B4AE95 /* IntroductionSubtitlesService.swift */,
 				8BF72E0F29AD642300FEDE68 /* FinalSubtitlesService.swift */,
+				BDFFE6B329B0FD9000FA5FC3 /* CardSubtitlesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -633,6 +636,7 @@
 				BD2B265429AD0D30008592E5 /* BoardButtonStyle.swift in Sources */,
 				8B5B6640299E7AEA006A23CD /* Recipe.swift in Sources */,
 				17EB95C329ABEE86003407BF /* GeniusConcludedView.swift in Sources */,
+				BDFFE6B429B0FD9000FA5FC3 /* CardSubtitlesService.swift in Sources */,
 				8B202F6429AB164C009C5CB6 /* Shape+Pentagon.swift in Sources */,
 				BD780049299D581D00C6C974 /* VictimViewModel.swift in Sources */,
 				8B5B6642299E8169006A23CD /* RecipesService.swift in Sources */,
