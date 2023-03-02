@@ -25,7 +25,7 @@ struct GeniusConcludedView: View {
                         Text("Rodada")
                             .font(.custom("PTMono-Regular", size: 38))
                             .padding(.bottom, 10)
-                        Text("9/9")
+                        Text("5/5")
                             .font(.custom("PTMono-Regular", size: 50))
                     }
                     
@@ -48,6 +48,7 @@ struct GeniusConcludedView: View {
                     VStack {
                         Text("Desafio concluído.")
                             .font(.custom("PTMono-Regular", size: 76))
+                            .foregroundColor(.white)
                         
                         ZStack {
                             Rectangle()
@@ -56,6 +57,7 @@ struct GeniusConcludedView: View {
                             
                             Text("Novas informações liberadas")
                                 .font(.custom("FuzzyBubbles-Regular", size: 31))
+                                .foregroundColor(.white)
                         }
                         
                         NavigationLink {

@@ -22,6 +22,7 @@ struct ChallengeConcludedView: View {
                 VStack {
                     Text("Desafio concluído.")
                         .font(.custom("PTMono-Regular", size: 76))
+                        .foregroundColor(.white)
                     
                     ZStack {
                         Rectangle()
@@ -30,6 +31,7 @@ struct ChallengeConcludedView: View {
                         
                         Text("Novas informações liberadas")
                             .font(.custom("FuzzyBubbles-Regular", size: 31))
+                            .foregroundColor(.white)
                     }
                     
                     NavigationLink {

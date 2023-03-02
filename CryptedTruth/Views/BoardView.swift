@@ -277,7 +277,7 @@ struct BoardView: View {
                         
                     }
                     
-                    SubtitleView(subtitle: subtitlesBoardList[viewModel.index], buttonAction: buttonAction)
+//                    SubtitleView(subtitle: subtitlesBoardList[viewModel.index], buttonAction: buttonAction)
                     
                 }
                 
