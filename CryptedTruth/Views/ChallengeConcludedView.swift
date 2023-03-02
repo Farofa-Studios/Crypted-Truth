@@ -10,6 +10,7 @@ import SwiftUI
 struct ChallengeConcludedView: View {
     
     @State private var victims = Victim.allVictims()
+    @FocusState private var buttonFocusad: Bool
     
     var body: some View {
         
@@ -43,8 +44,10 @@ struct ChallengeConcludedView: View {
                             .frame(width: 724, height: 102)
                         
                     }
-                    .buttonStyle(.card)
+                    .focused($buttonFocusad)
+                    .buttonStyle(BoardButtonStyle())
                     .offset(y: 156)
+                    .scaleEffect(buttonFocusad ? 1.0 : 0.95)
                 }
                 .frame(width: 1320, height: 742.5)
                 //                    SubtitleView()

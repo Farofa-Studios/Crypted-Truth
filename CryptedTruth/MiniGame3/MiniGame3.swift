@@ -10,7 +10,7 @@ import SwiftUI
 struct MiniGame3: View {
     
     @StateObject var pieces = ImagesProperties()
-    @AppStorage("minigame2") var OK2 = false
+    @AppStorage("minigame3") var OK3 = false
     
 //    let rows = Array(repeating: GridItem(.flexible(), spacing: -1000), count: 4)
     
@@ -26,10 +26,10 @@ struct MiniGame3: View {
     let image10 = "10"
     let image11 = "11"
     let image12 = "12"
-    let image13 = "12"
-    let image14 = "13"
-    let image15 = "14"
-    let image16 = "15"
+    let image13 = "13"
+    let image14 = "14"
+    let image15 = "15"
+    let image16 = "16"
     
     @State var rotation1 = 1
     @State var rotation2 = 3
@@ -48,38 +48,51 @@ struct MiniGame3: View {
     @State var rotation15 = 1
     @State var rotation16 = 0
     
+    @FocusState private var b1: Bool
+    @FocusState private var b2: Bool
+    @FocusState private var b3: Bool
+    @FocusState private var b4: Bool
+    @FocusState private var b5: Bool
+    @FocusState private var b6: Bool
+    @FocusState private var b7: Bool
+    @FocusState private var b8: Bool
+    @FocusState private var b9: Bool
+    @FocusState private var b10: Bool
+    @FocusState private var b11: Bool
+    @FocusState private var b12: Bool
+    @FocusState private var b13: Bool
+    @FocusState private var b14: Bool
+    @FocusState private var b15: Bool
+    @FocusState private var b16: Bool
+
+    
     var body: some View {
         ZStack {
             
             Color.backgroundColor
                 .ignoresSafeArea()
-            NavigationView(){
+            NavigationView () { 
                 VStack {
                     
-                    if rotation1 == 0 && rotation2 == 0 && rotation3 == 0 && rotation4 == 0 && rotation5 == 0 && rotation6 == 0 && rotation7 == 0 && rotation8 == 0 && rotation9 == 0 && rotation10 == 0 && rotation11 == 0 && rotation12 == 0 && rotation13 == 0 && rotation14 == 0 && rotation14 == 0 && rotation15 == 0 && rotation16 == 0 {
-                        
+                    if rotation1 == 0 && rotation2 == 0 && rotation3 == 0 && rotation4 == 0 && rotation5 == 0 && rotation6 == 0 && rotation7 == 0 && rotation8 == 0 && rotation9 == 0 && rotation10 == 0 && rotation11 == 0 && rotation12 == 0 && rotation13 == 0 && rotation14 == 0 && rotation15 == 0 && rotation16 == 0 {
                         
                         NavigationLink {
                             
-                            BoardView()
+                            ChallengeConcludedView()
                             
                         } label: {
-                            Button(action: {
-                                
-                                OK2 = true
-                                
-                            }) {
-                                Image("Imagem Completa")
-                                
-                            }
-                            .buttonStyle(BoardButtonStyle())
+                            Image("Imagem Completa")
                         }
                         .buttonStyle(BoardButtonStyle())
+                        .onAppear() {
+                            OK3 = true
+                            
+                        }
                     } else {
                         
-                        VStack() {
+                        VStack(spacing: 32) {
                             
-                            HStack{
+                            HStack (spacing: 32) {
                                 
                                 Button(action: {
                                     rotation1 = (rotation1 + 1) % 4
@@ -90,10 +103,11 @@ struct MiniGame3: View {
                                         .scaledToFill()
                                         .frame(width: 160, height: 160)
                                 }
-                                .buttonStyle(.card)
+                                .buttonStyle(BoardButtonStyle())
                                 .rotationEffect(.degrees(90 * Double(rotation1)))
-                                
-                                
+                                .focused($b1)
+                                .scaleEffect(b1 ? 1.0 : 0.95)
+
                                 Button(action: {
                                     rotation2 = (rotation2 + 1) % 4
                                     
@@ -103,9 +117,10 @@ struct MiniGame3: View {
                                         .scaledToFill()
                                         .frame(width: 160, height: 160)
                                 }
-                                .buttonStyle(.card)
+                                .buttonStyle(BoardButtonStyle())
                                 .rotationEffect(.degrees(90 * Double(rotation2)))
-                                
+                                .focused($b2)
+                                .scaleEffect(b2 ? 1.0 : 0.95)
                                 
                                 Button(action: {
                                     rotation3 = (rotation3 + 1) % 4
@@ -116,8 +131,10 @@ struct MiniGame3: View {
                                         .scaledToFill()
                                         .frame(width: 160, height: 160)
                                 }
-                                .buttonStyle(.card)
+                                .buttonStyle(BoardButtonStyle())
                                 .rotationEffect(.degrees(90 * Double(rotation3)))
+                                .focused($b3)
+                                .scaleEffect(b3 ? 1.0 : 0.95)
                                 
                                 Button(action: {
                                     rotation4 = (rotation4 + 1) % 4
@@ -128,11 +145,13 @@ struct MiniGame3: View {
                                         .scaledToFill()
                                         .frame(width: 160, height: 160)
                                 }
-                                .buttonStyle(.card)
+                                .buttonStyle(BoardButtonStyle())
                                 .rotationEffect(.degrees(90 * Double(rotation4)))
+                                .focused($b4)
+                                .scaleEffect(b4 ? 1.0 : 0.95)
                             }
                             
-                            HStack {
+                            HStack (spacing: 32) {
                                 Button(action: {
                                     rotation5 = (rotation5 + 1) % 4
                                     
@@ -142,8 +161,10 @@ struct MiniGame3: View {
                                         .scaledToFill()
                                         .frame(width: 160, height: 160)
                                 }
-                                .buttonStyle(.card)
+                                .buttonStyle(BoardButtonStyle())
                                 .rotationEffect(.degrees(90 * Double(rotation5)))
+                                .focused($b5)
+                                .scaleEffect(b5 ? 1.0 : 0.95)
                                 
                                 Button(action: {
                                     rotation6 = (rotation6 + 1) % 4
@@ -154,8 +175,10 @@ struct MiniGame3: View {
                                         .scaledToFill()
                                         .frame(width: 160, height: 160)
                                 }
-                                .buttonStyle(.card)
+                                .buttonStyle(BoardButtonStyle())
                                 .rotationEffect(.degrees(90 * Double(rotation6)))
+                                .focused($b6)
+                                .scaleEffect(b6 ? 1.0 : 0.95)
                                 
                                 Button(action: {
                                     rotation7 = (rotation7 + 1) % 4
@@ -166,8 +189,10 @@ struct MiniGame3: View {
                                         .scaledToFill()
                                         .frame(width: 160, height: 160)
                                 }
-                                .buttonStyle(.card)
+                                .buttonStyle(BoardButtonStyle())
                                 .rotationEffect(.degrees(90 * Double(rotation7)))
+                                .focused($b7)
+                                .scaleEffect(b7 ? 1.0 : 0.95)
                                 
                                 Button(action: {
                                     rotation8 = (rotation8 + 1) % 4
@@ -178,12 +203,13 @@ struct MiniGame3: View {
                                         .scaledToFill()
                                         .frame(width: 160, height: 160)
                                 }
-                                .buttonStyle(.card)
+                                .buttonStyle(BoardButtonStyle())
                                 .rotationEffect(.degrees(90 * Double(rotation8)))
-                                
+                                .focused($b8)
+                                .scaleEffect(b8 ? 1.0 : 0.95)
                             }
                             
-                            HStack {
+                            HStack (spacing: 32) {
                                 Button(action: {
                                     rotation9 = (rotation9 + 1) % 4
                                     
@@ -193,8 +219,10 @@ struct MiniGame3: View {
                                         .scaledToFill()
                                         .frame(width: 160, height: 160)
                                 }
-                                .buttonStyle(.card)
+                                .buttonStyle(BoardButtonStyle())
                                 .rotationEffect(.degrees(90 * Double(rotation9)))
+                                .focused($b9)
+                                .scaleEffect(b9 ? 1.0 : 0.95)
                                 
                                 Button(action: {
                                     rotation10 = (rotation10 + 1) % 4
@@ -205,8 +233,10 @@ struct MiniGame3: View {
                                         .scaledToFill()
                                         .frame(width: 160, height: 160)
                                 }
-                                .buttonStyle(.card)
+                                .buttonStyle(BoardButtonStyle())
                                 .rotationEffect(.degrees(90 * Double(rotation10)))
+                                .focused($b10)
+                                .scaleEffect(b10 ? 1.0 : 0.95)
                                 
                                 Button(action: {
                                     rotation11 = (rotation11 + 1) % 4
@@ -217,8 +247,10 @@ struct MiniGame3: View {
                                         .scaledToFill()
                                         .frame(width: 160, height: 160)
                                 }
-                                .buttonStyle(.card)
+                                .buttonStyle(BoardButtonStyle())
                                 .rotationEffect(.degrees(90 * Double(rotation11)))
+                                .focused($b11)
+                                .scaleEffect(b11 ? 1.0 : 0.95)
                                 
                                 Button(action: {
                                     rotation12 = (rotation12 + 1) % 4
@@ -229,11 +261,13 @@ struct MiniGame3: View {
                                         .scaledToFill()
                                         .frame(width: 160, height: 160)
                                 }
-                                .buttonStyle(.card)
+                                .buttonStyle(BoardButtonStyle())
                                 .rotationEffect(.degrees(90 * Double(rotation12)))
+                                .focused($b12)
+                                .scaleEffect(b12 ? 1.0 : 0.95)
                             }
                             
-                            HStack {
+                            HStack (spacing: 32) {
                                 
                                 Button(action: {
                                     rotation13 = (rotation13 + 1) % 4
@@ -244,8 +278,10 @@ struct MiniGame3: View {
                                         .scaledToFill()
                                         .frame(width: 160, height: 160)
                                 }
-                                .buttonStyle(.card)
+                                .buttonStyle(BoardButtonStyle())
                                 .rotationEffect(.degrees(90 * Double(rotation13)))
+                                .focused($b13)
+                                .scaleEffect(b13 ? 1.0 : 0.95)
                                 
                                 Button(action: {
                                     rotation14 = (rotation14 + 1) % 4
@@ -256,8 +292,10 @@ struct MiniGame3: View {
                                         .scaledToFill()
                                         .frame(width: 160, height: 160)
                                 }
-                                .buttonStyle(.card)
+                                .buttonStyle(BoardButtonStyle())
                                 .rotationEffect(.degrees(90 * Double(rotation14)))
+                                .focused($b14)
+                                .scaleEffect(b14 ? 1.0 : 0.95)
                                 
                                 Button(action: {
                                     rotation15 = (rotation15 + 1) % 4
@@ -268,8 +306,10 @@ struct MiniGame3: View {
                                         .scaledToFill()
                                         .frame(width: 160, height: 160)
                                 }
-                                .buttonStyle(.card)
+                                .buttonStyle(BoardButtonStyle())
                                 .rotationEffect(.degrees(90 * Double(rotation15)))
+                                .focused($b15)
+                                .scaleEffect(b15 ? 1.0 : 0.95)
                                 
                                 Button(action: {
                                     rotation16 = (rotation16 + 1) % 4
@@ -280,8 +320,10 @@ struct MiniGame3: View {
                                         .scaledToFill()
                                         .frame(width: 160, height: 160)
                                 }
-                                .buttonStyle(.card)
+                                .buttonStyle(BoardButtonStyle())
                                 .rotationEffect(.degrees(90 * Double(rotation16)))
+                                .focused($b16)
+                                .scaleEffect(b16 ? 1.0 : 0.95)
                             }
                         }
                     }

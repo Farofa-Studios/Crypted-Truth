@@ -217,25 +217,11 @@ struct AnagramView: View {
             }
             else {
                 
-                NavigationLink {
-                    
-                    FinalView()
-                    
-                } label: {
-                    Button(action: {
-                        
-                        //
-                        
-                    }) {
-                        Image("Quadro-Final-Vítima-5")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 156, height: 307)
-                            .offset(y: -80)
-                    }
-                    .buttonStyle(BoardButtonStyle())
-                }
-                .buttonStyle(BoardButtonStyle())
+                Image("Quadro-Final-Vítima-5")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 156, height: 307)
+                    .offset(y: -80)
                 
                 
             }

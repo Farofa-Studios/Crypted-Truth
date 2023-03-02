@@ -14,7 +14,7 @@ struct SmellMiniGame: View {
     
     let numOfItems = Aromas.allAromas.count
     
-    @AppStorage("minigame4") var OK4 = false
+    @AppStorage("minigame1") var OK1 = false
     
     @State var currentSmellFase: Int = 0
     @State var isSmellGameFinished: Bool = false
@@ -36,7 +36,7 @@ struct SmellMiniGame: View {
             }
             .onChange(of: isSmellGameFinished) { newValue in
                 if newValue {
-                    OK4 = true
+                    OK1 = true
                 }
             }
             .navigationDestination(isPresented: $isSmellGameFinished) {
