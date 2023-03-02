@@ -14,7 +14,7 @@ struct TasteMiniGame: View {
     
     let numOfItems = Recipes.allRecipes.count
     
-    @AppStorage("minigame3") var OK3 = false
+    @AppStorage("minigame2") var OK2 = false
     
     @State var currentTasteFase: Int = 0
     @State var isTasteGameFinished: Bool = false
@@ -36,7 +36,7 @@ struct TasteMiniGame: View {
             }
             .onChange(of: isTasteGameFinished) { newValue in
                 if newValue {
-                    OK3 = true
+                    OK2 = true
                 }
             }
             .navigationDestination(isPresented: $isTasteGameFinished) {
