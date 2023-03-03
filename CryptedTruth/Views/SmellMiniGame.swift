@@ -40,7 +40,7 @@ struct SmellMiniGame: View {
                 }
             }
             .navigationDestination(isPresented: $isSmellGameFinished) {
-                ChallengeConcludedView()
+                ChallengeConcludedView(subtitle: MiniGameSubtitles.allMiniGameSubtitles[3].completed)
             }
         }
        

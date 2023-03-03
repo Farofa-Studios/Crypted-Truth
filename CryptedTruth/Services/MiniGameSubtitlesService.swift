@@ -36,21 +36,21 @@ struct MiniGameSubtitles {
         
         // minigame paladar
         
-            .init(instructions: .init(id: 8, image: "Bot", type: .villain, subtitle: "Selecione o ingrediente que falta para completar a receita.", audio: "Instrucao MiniGame Paladar"),
+            .init(instructions: .init(id: 8, image: "Bot", type: .villain, subtitle: "Selecione o ingrediente que falta para completar a receita.", audio: "Intrucao MiniGame Paladar"),
                   hit: .init(id: 9, image: "sophia-animada", type: .streamer, subtitle: "É isso aí! Ingrediente certo! Vamos para a próxima.", audio: "MiniGame Paladar acerto"),
-                  lastHist: .init(id: 10, image: "sophia-animada", type: .streamer, subtitle: "Isso! Conseguimos!", audio: ""),
+                  lastHist: .init(id: 10, image: "sophia-animada", type: .streamer, subtitle: "Isso! Conseguimos!", audio: "MiniGame paladar-olfato acerto 2"),
                   error: .init(id: 11, image: "sophia-concentrada", type: .streamer, subtitle: "Ah não, não era esse ingrediente! Hmmm... Então deve ser...", audio: "MiniGame paladar erro"),
                   completedWithError: nil,
                   completedWithoutError: nil,
-                  completed: .init(id: 12, image: "sophia-animada", type: .streamer, subtitle: "Nossa! Depois dessa, já posso até virar chef de cozinha! Vamos voltar ao quadro de evidências pra ver o que desbloqueamos?.", audio: "MiniGame paladar concluido")
+                  completed: .init(id: 12, image: "sophia-animada", type: .streamer, subtitle: "Nossa! Depois dessa, já posso até virar chef de cozinha! Vamos voltar ao quadro de evidências pra ver o que desbloqueamos?", audio: "MiniGame paladar concluido")
                  ),
         
         
         // minigame olfato
         
-            .init(instructions: .init(id: 13, image: "Bot", type: .villain, subtitle: "Selecione o item que falta para completar o conjunto de aromas.", audio: "Instrucao MiniGame Olfato"),
+            .init(instructions: .init(id: 13, image: "Bot", type: .villain, subtitle: "Selecione o item que falta para completar o conjunto de aromas.", audio: "Intrucao MiniGame Olfato"),
                   hit: .init(id: 14, image: "sophia-animada", type: .streamer, subtitle: "Isso! Aroma correto! Vamos para a próxima.", audio: "MiniGame olfato acerto"),
-                  lastHist: .init(id: 15, image: "sophia-animada", type: .streamer, subtitle: "Isso! Conseguimos!", audio: ""),
+                  lastHist: .init(id: 15, image: "sophia-animada", type: .streamer, subtitle: "Isso! Conseguimos!", audio: "MiniGame paladar-olfato acerto 2"),
                   error: .init(id: 16, image: "sophia-concentrada", type: .streamer, subtitle: "Ah não, não era isso! Hmmm... Então deve ser...", audio: "MiniGame olfato erro"),
                   completedWithError: nil,
                   completedWithoutError: nil,
