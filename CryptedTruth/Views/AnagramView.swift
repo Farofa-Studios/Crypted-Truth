@@ -29,9 +29,6 @@ struct AnagramView: View {
     
     var body: some View {
         ZStack {
-//            Color.white
-//                .ignoresSafeArea()
-            
             if !ok5 {
                 VStack(spacing: 16){
                     
@@ -215,16 +212,16 @@ struct AnagramView: View {
                 
                 
             }
-            else {
-                
-                Image("Quadro-Final-Vítima-5")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 156, height: 307)
-                    .offset(y: -80)
-                
-                
-            }
+//            else {
+//                
+//                Image("Quadro-Final-Vítima-5")
+//                    .resizable()
+//                    .scaledToFit()
+//                    .frame(width: 156, height: 307)
+//                    .offset(y: -80)
+//                
+//                
+//            }
         }
         .onChange(of: anagramaFinal, perform: { newValue in
             if anagramaFinal == ["S", "E", "N", "T", "I", "D", "O", "S"] {

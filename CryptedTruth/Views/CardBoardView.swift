@@ -10,6 +10,7 @@ import SwiftUI
 struct CardBoardView: View {
     
     let victim: Victim
+    var cardSubtitles = CardSubtitle.allICardSubtitles
         
     var body: some View {
         
@@ -23,7 +24,7 @@ struct CardBoardView: View {
             
         }
         
-//        SubtitleView()
+        SubtitleView(subtitle: cardSubtitles[victim.id], buttonAction: nil)
         
     }
 }

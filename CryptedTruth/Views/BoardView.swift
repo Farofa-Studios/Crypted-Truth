@@ -32,6 +32,7 @@ struct BoardView: View {
     @FocusState private var isFocusedM1: Bool
     @FocusState private var isFocusedSA: Bool
     @FocusState private var isFocusedSA1: Bool
+    @FocusState private var isFocusedVF: Bool
     
     // Subtitles
     
@@ -40,7 +41,7 @@ struct BoardView: View {
     @AppStorage("board1") var board1 = false
     
     @ObservedObject var viewModel = BoardSubtitleViewModel()
-
+    
     func buttonAction(){
         if viewModel.index == 2 {
             board1 = true
@@ -54,7 +55,7 @@ struct BoardView: View {
     @State var isPlayingThriller = false
     
     var body: some View {
-        NavigationStack {
+        NavigationView() {
             ZStack {
                 Color.darkColor
                     .ignoresSafeArea()
@@ -67,9 +68,9 @@ struct BoardView: View {
                             
                             if victims[0].tapped {
                                 NavigationLink {
-
+                                    
                                     CardBoardView(victim: victims[0])
-
+                                    
                                 } label: {
                                     Image(ok5 ? "\(victims[0].finalPicture)" :  "\(victims[0].picture)")
                                         .resizable()
@@ -80,14 +81,12 @@ struct BoardView: View {
                                 .background(isFocusedV ? Color.white.opacity(0.2) : Color.clear)
                                 .buttonStyle(BoardButtonStyle())
                                 .offset(x: ok5 ? 80 : 0)
-                                //.disabled(habilita)
-                
                             }
                             else {
                                 NavigationLink {
-
+                                    
                                     victims[0].minigame
-
+                                    
                                 } label: {
                                     Image("\(victims[0].firstPicture)")
                                         .resizable()
@@ -97,15 +96,13 @@ struct BoardView: View {
                                 .focused($isFocusedV1)
                                 .background(isFocusedV1 ? Color.white.opacity(0.2) : Color.clear)
                                 .buttonStyle(BoardButtonStyle())
-                                //.disabled(habilita)
-
                             }
                             
                             if victims[1].tapped {
                                 NavigationLink {
-
+                                    
                                     CardBoardView(victim: victims[1])
-
+                                    
                                 } label: {
                                     Image(ok5 ? "\(victims[1].finalPicture)" :  "\(victims[1].picture)")
                                         .resizable()
@@ -116,15 +113,13 @@ struct BoardView: View {
                                 .background(isFocusedS ? Color.white.opacity(0.2) : Color.clear)
                                 .buttonStyle(BoardButtonStyle())
                                 .offset(x: ok5 ? -80 : 0)
-                                //.disabled(habilita)
-
-
+                                
                             }
                             else {
                                 NavigationLink {
-
+                                    
                                     victims[1].minigame
-
+                                    
                                 } label: {
                                     Image("\(victims[1].firstPicture)")
                                         .resizable()
@@ -134,15 +129,13 @@ struct BoardView: View {
                                 .focused($isFocusedS1)
                                 .background(isFocusedS1 ? Color.white.opacity(0.2) : Color.clear)
                                 .buttonStyle(BoardButtonStyle())
-                                //.disabled(habilita)
-
                             }
                             
                             if victims[2].tapped {
                                 NavigationLink {
-
+                                    
                                     CardBoardView(victim: victims[2])
-
+                                    
                                 } label: {
                                     Image(ok5 ? "\(victims[2].finalPicture)" :  "\(victims[2].picture)")
                                         .resizable()
@@ -153,15 +146,13 @@ struct BoardView: View {
                                 .background(isFocusedM ? Color.white.opacity(0.2) : Color.clear)
                                 .buttonStyle(BoardButtonStyle())
                                 .offset(x: ok5 ? 80 : 0)
-                                //.disabled(habilita)
-
-
+                                
                             }
                             else {
                                 NavigationLink {
-
+                                    
                                     victims[2].minigame
-
+                                    
                                 } label: {
                                     Image("\(victims[2].firstPicture)")
                                         .resizable()
@@ -171,15 +162,13 @@ struct BoardView: View {
                                 .focused($isFocusedM1)
                                 .background(isFocusedM1 ? Color.white.opacity(0.2) : Color.clear)
                                 .buttonStyle(BoardButtonStyle())
-                                //.disabled(habilita)
-
                             }
                             
                             if victims[3].tapped {
                                 NavigationLink {
-
+                                    
                                     CardBoardView(victim: victims[3])
-
+                                    
                                 } label: {
                                     Image(ok5 ? "\(victims[3].finalPicture)" :  "\(victims[3].picture)")
                                         .resizable()
@@ -189,16 +178,13 @@ struct BoardView: View {
                                 .focused($isFocusedSA)
                                 .background(isFocusedSA ? Color.white.opacity(0.2) : Color.clear)
                                 .buttonStyle(BoardButtonStyle())
-                                .offset(x: ok5 ? -80 : 0)
-                                //.disabled(habilita)
-
-
+                                .offset(x: ok5 ? -80 : 0)                            
                             }
                             else {
                                 NavigationLink {
-
+                                    
                                     victims[3].minigame
-
+                                    
                                 } label: {
                                     Image("\(victims[3].firstPicture)")
                                         .resizable()
@@ -208,8 +194,7 @@ struct BoardView: View {
                                 .focused($isFocusedSA1)
                                 .background(isFocusedSA1 ? Color.white.opacity(0.2) : Color.clear)
                                 .buttonStyle(BoardButtonStyle())
-                                //.disabled(habilita)
-
+                                
                             }
                         }
                         .frame(width: 1320, height: 742.5)
@@ -244,7 +229,7 @@ struct BoardView: View {
                                             .onAppear(){
                                                 lettersAnagram.append("\(victim.letters[0])")
                                                 print(lettersAnagram.count)
-
+                                                
                                             }
                                         
                                         Text("\(victim.letters[1])")
@@ -253,9 +238,9 @@ struct BoardView: View {
                                             .onAppear(){
                                                 lettersAnagram.append("\(victim.letters[1])")
                                                 print(lettersAnagram.count)
-
+                                                
                                             }
-                                                                                
+                                        
                                     }
                                     
                                 }
@@ -273,13 +258,30 @@ struct BoardView: View {
                         }
                         
                         else if anagramShowing {
-                            AnagramView()
-                                .offset(y: 80)
+                            if ok5 {
+                                NavigationLink {
+                                    victims[3].viewFinal
+                                } label: {
+                                    Image("Quadro-Final-Vítima-5")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 156, height: 307)
+                                }
+                                .focused($isFocusedVF)
+                                .background(isFocusedVF ? Color.white.opacity(0.2) : Color.clear)
+                                .buttonStyle(BoardButtonStyle())
+                                
+                            }
+                            else {
+                                AnagramView()
+                                    .offset(y: 80)
+                            }
+                            
                         }
                         
                     }
                     
-//                    SubtitleView(subtitle: subtitlesBoardList[viewModel.index], buttonAction: buttonAction)
+                    //                SubtitleView(subtitle: subtitlesBoardList[viewModel.index], buttonAction: buttonAction)
                     
                 }
                 
