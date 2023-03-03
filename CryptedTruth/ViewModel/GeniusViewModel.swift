@@ -216,11 +216,11 @@ class GeniusViewModel: ObservableObject {
         }
 
         if !isPlayerTurn {
-            return "\(instrument.name)-green"
+            return "\(instrument.name)-dark-blue"
         }
 
         if isCorrectInput! {
-            return "\(instrument.name)-blue"
+            return "\(instrument.name)-light-blue"
         } else {
             return "\(instrument.name)-red"
         }
