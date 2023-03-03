@@ -41,8 +41,10 @@ struct InitialView: View {
                 }
                 .buttonStyle(.card)
                 .offset( x: -540, y: 370)
-                
             }
+        }
+        .onAppear() {
+            SoundManager.instance.playSoundMP3(sound: "Spooky", loops: -1)
         }
     }
 }

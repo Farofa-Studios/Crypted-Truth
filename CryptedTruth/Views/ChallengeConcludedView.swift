@@ -12,6 +12,8 @@ struct ChallengeConcludedView: View {
     @State private var victims = Victim.allVictims()
     @FocusState private var buttonFocusad: Bool
     
+    var subtitle: Subtitle?
+    
     var body: some View {
         
         
@@ -50,7 +52,16 @@ struct ChallengeConcludedView: View {
                     .scaleEffect(buttonFocusad ? 1.0 : 0.95)
                 }
                 .frame(width: 1320, height: 742.5)
-                //                    SubtitleView()
+                
+                if let subtitle = subtitle {
+                    SubtitleView(subtitle: subtitle, buttonAction: nil)
+                        .onAppear(){
+                            SoundManager.instance.playSoundM4A(sound: subtitle.audio, loops: 0)
+                        }
+                }
+            }
+            .onAppear(){
+                SoundManager.instance.playSoundMP3(sound: "Desafio-Concluído", loops: -1)
             }
         }
         
