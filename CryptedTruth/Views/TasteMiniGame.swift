@@ -40,7 +40,7 @@ struct TasteMiniGame: View {
                 }
             }
             .navigationDestination(isPresented: $isTasteGameFinished) {
-                ChallengeConcludedView()
+                ChallengeConcludedView(subtitle: MiniGameSubtitles.allMiniGameSubtitles[2].completed)
             }
         }
     }

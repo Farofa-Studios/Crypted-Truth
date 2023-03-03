@@ -23,6 +23,7 @@ struct TasteSmellStructure: View {
     
     @State var subtitle = Subtitle()
     @State var subtitlesGroup: MiniGameSubtitle = MiniGameSubtitle()
+    @State var isNotClickable = false
     
     var body: some View {
 
@@ -89,7 +90,7 @@ struct TasteSmellStructure: View {
                 HStack (alignment: .top, spacing: 32) {
                     ForEach(ingredientsOptionList, id: \.self) { item in
             
-                        IngredientsButton(image: item, answer: recipe.correctAnswer){
+                        IngredientsButton(isNotClickable: $isNotClickable, image: item, answer: recipe.correctAnswer){
                             self.buttonTapped(item)
                         }
                         .padding(-25)
@@ -102,11 +103,9 @@ struct TasteSmellStructure: View {
             }
         }
         .onAppear(){
-
             subtitlesGroup = MiniGameSubtitles.allMiniGameSubtitles[idSubtitles]
-            
             subtitle = subtitlesGroup.instructions
-            
+            SoundManager.instance.playSoundMP3(sound: subtitle.audio, loops: 0)
         }
         
         .onChange(of: currentFase) { newValue in
@@ -123,12 +122,16 @@ struct TasteSmellStructure: View {
                 
                 if let lastHit = subtitlesGroup.lastHit {
                     subtitle = lastHit
+                    isNotClickable = true
+                    SoundManager.instance.playSoundM4A(sound: subtitle.audio, loops: 0)
                 }
                 
             } else {
                 
                 if let hit = subtitlesGroup.hit {
                     subtitle = hit
+                    isNotClickable = true
+                    SoundManager.instance.playSoundM4A(sound: subtitle.audio, loops: 0)
                 }
             }
         
@@ -146,7 +149,10 @@ struct TasteSmellStructure: View {
                 }
             }
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.3){
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4.0){
+                
+                isNotClickable = false
+                
                 if currentFase == 3 {
                     isGameFinished = true
                 } else {
@@ -155,15 +161,20 @@ struct TasteSmellStructure: View {
                     currentFase += 1
                 }
             }
+            
         } else {
             if let error = subtitlesGroup.error {
                 subtitle = error
+                SoundManager.instance.playSoundM4A(sound: subtitle.audio, loops: 0)
             }
         }
     }
 }
 
 struct IngredientsButton: View {
+    
+    @Binding var isNotClickable: Bool
+
     let image: String
     let answer: String
     var showAnimation = false
@@ -218,6 +229,7 @@ struct IngredientsButton: View {
 //        .background(Color.buttonMiniGameColor)
         .clipShape(Pentagon())
         .rotationEffect(.degrees(image != answer ? angle: 0))
+        .disabled(isNotClickable)
     }
 }
 
