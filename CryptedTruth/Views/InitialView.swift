@@ -44,6 +44,9 @@ struct InitialView: View {
                 
             }
         }
+        .onAppear() {
+            SoundManager.instance.playSoundMP3(sound: "Spooky", loops: -1)
+        }
     }
 }
 
