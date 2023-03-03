@@ -166,6 +166,7 @@ struct TasteSmellStructure: View {
             if let error = subtitlesGroup.error {
                 subtitle = error
                 SoundManager.instance.playSoundM4A(sound: subtitle.audio, loops: 0)
+                
             }
         }
     }
