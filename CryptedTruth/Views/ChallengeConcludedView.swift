@@ -60,6 +60,9 @@ struct ChallengeConcludedView: View {
                         }
                 }
             }
+            .onAppear(){
+                SoundManager.instance.playSoundMP3(sound: "Desafio-Concluído", loops: -1)
+            }
         }
         
     }

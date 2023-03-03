@@ -51,6 +51,7 @@ struct BoardView: View {
     }
       
     @State var habilita = true
+    @State var isPlayingThriller = false
     
     var body: some View {
         NavigationStack {
@@ -212,6 +213,7 @@ struct BoardView: View {
                             }
                         }
                         .frame(width: 1320, height: 742.5)
+                        
                         .onAppear() {
                             if ok1 {
                                 victims[0].tapped = true
@@ -281,9 +283,14 @@ struct BoardView: View {
                     
                 }
                 
+                .onAppear() {
+                    if !isPlayingThriller {
+                        SoundManager.instance.playSoundMP3(sound: "Thriller", loops: -1)
+                        isPlayingThriller.toggle()
+                    }
+                }
             }
-            
-        }        
+        }
     }
 }
 
