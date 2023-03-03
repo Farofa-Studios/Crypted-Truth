@@ -41,7 +41,6 @@ struct InitialView: View {
                 }
                 .buttonStyle(.card)
                 .offset( x: -540, y: 370)
-                
             }
         }
         .onAppear() {
