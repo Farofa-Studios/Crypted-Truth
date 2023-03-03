@@ -102,11 +102,8 @@ struct TasteSmellStructure: View {
             }
         }
         .onAppear(){
-
             subtitlesGroup = MiniGameSubtitles.allMiniGameSubtitles[idSubtitles]
-            
             subtitle = subtitlesGroup.instructions
-            
         }
         
         .onChange(of: currentFase) { newValue in

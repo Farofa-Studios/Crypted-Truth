@@ -65,6 +65,8 @@ struct MiniGame3: View {
     @FocusState private var b15: Bool
     @FocusState private var b16: Bool
 
+    @State var subtitle = Subtitle()
+    @State var subtitlesGroup: MiniGameSubtitle = MiniGameSubtitle()
     
     var body: some View {
         ZStack {
@@ -78,16 +80,18 @@ struct MiniGame3: View {
                         
                         NavigationLink {
                             
-                            ChallengeConcludedView()
+                            ChallengeConcludedView(subtitle: subtitlesGroup.completed)
                             
                         } label: {
                             Image("Imagem Completa")
                         }
                         .buttonStyle(BoardButtonStyle())
                         .onAppear() {
+                            subtitle = subtitlesGroup.hit!
+                            SoundManager.instance.playSoundM4A(sound: subtitle.audio, loops: 0)
                             OK3 = true
-                            
                         }
+                        
                     } else {
                         
                         VStack(spacing: 32) {
@@ -328,9 +332,15 @@ struct MiniGame3: View {
                         }
                     }
                     
-                    SubtitleView(subtitle: Subtitle(id: 30, image: "Bot", type: .villain, subtitle: "Deslize entre as peças e clique para rotacionar até formar a imagem completa.", audio: ""), buttonAction: nil)
+                    SubtitleView(subtitle: subtitle, buttonAction: nil)
                 }
             }
+        }
+        
+        .onAppear(){
+            subtitlesGroup = MiniGameSubtitles.allMiniGameSubtitles[1]
+            subtitle = subtitlesGroup.instructions
+            SoundManager.instance.playSoundMP3(sound: subtitle.audio, loops: 0)
         }
     }
 }
