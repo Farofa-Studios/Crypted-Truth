@@ -87,9 +87,9 @@ struct MiniGame3: View {
                         }
                         .buttonStyle(BoardButtonStyle())
                         .onAppear() {
-                            OK3 = true
                             subtitle = subtitlesGroup.hit!
                             SoundManager.instance.playSoundM4A(sound: subtitle.audio, loops: 0)
+                            OK3 = true
                         }
                         
                     } else {
