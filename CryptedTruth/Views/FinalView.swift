@@ -51,23 +51,8 @@ struct FinalView: View {
                                 InitialView()
                                 
                             } label: {
-                                Button(action: {
-                                    
-                                    // não ta resetando
-                                    
-                                    ok1 = false
-                                    ok2 = false
-                                    ok3 = false
-                                    ok4 = false
-                                    ok5 = false
-                                    anagramShowing = false
-                                    introduction = false
-                                }) {
-                                    Text("Continua...")
-                                        .font(.custom("PTMono-Bold", size: 80))
-                                    
-                                }
-                                .buttonStyle(BoardButtonStyle())
+                                Text("Continua...")
+                                    .font(.custom("PTMono-Bold", size: 80))
                             }
                             .buttonStyle(BoardButtonStyle())
                         }
@@ -81,6 +66,14 @@ struct FinalView: View {
                         SubtitleView(subtitle: subtitlesList[viewModel.index], buttonAction: buttonAction)
                     }
                 }
+            }.onAppear() {
+                ok1 = false
+                ok2 = false
+                ok3 = false
+                ok4 = false
+                ok5 = false
+                anagramShowing = false
+                introduction = false
             }
         }
     }
