@@ -52,6 +52,9 @@ struct ChallengeConcludedView: View {
                 .frame(width: 1320, height: 742.5)
                 //                    SubtitleView()
             }
+            .onAppear(){
+                SoundManager.instance.playSoundMP3(sound: "Desafio-Concluído", loops: -1)
+            }
         }
         
     }
