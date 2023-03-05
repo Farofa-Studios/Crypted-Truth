@@ -8,5 +8,5 @@
 import Foundation
 
 enum Direction: String {
-    case up, down, left, right, invalid
+    case up, down, left, right, none
 }

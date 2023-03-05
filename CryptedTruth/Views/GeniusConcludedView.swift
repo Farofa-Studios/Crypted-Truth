@@ -10,6 +10,7 @@ import SwiftUI
 
 struct GeniusConcludedView: View {
     
+    let roundsCounter: Int
     let mistakesCounter: Int
     
     var body: some View {
@@ -25,7 +26,7 @@ struct GeniusConcludedView: View {
                         Text("Rodada")
                             .font(.custom("PTMono-Regular", size: 38))
                             .padding(.bottom, 10)
-                        Text("5/5")
+                        Text("\(roundsCounter)/\(roundsCounter)")
                             .font(.custom("PTMono-Regular", size: 50))
                     }
                     
@@ -88,7 +89,7 @@ struct GeniusConcludedView: View {
 
 struct GeniusConcludedView_Previews: PreviewProvider {
     static var previews: some View {
-        GeniusConcludedView(mistakesCounter: 0)
-        GeniusConcludedView(mistakesCounter: 2)
+        GeniusConcludedView(roundsCounter: 5, mistakesCounter: 0)
+        GeniusConcludedView(roundsCounter: 5, mistakesCounter: 2)
     }
 }

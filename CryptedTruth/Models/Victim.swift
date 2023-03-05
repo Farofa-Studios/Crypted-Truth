@@ -59,7 +59,7 @@ extension Victim {
             
             .init(id: 2, name: "Ming", firstPicture: "Quadro-Default-Vítima-3", card: "Cartão-Vítima-3", minigame: AnyView(MiniGame3()), picture: "Quadro-Reveal-Vítima-3", letters: ["I", "N"], finalPicture: "Quadro-Final-Vítima-3", tapped: false, viewFinal: nil),
             
-            .init(id: 3, name: "Saulo", firstPicture: "Quadro-Default-Vítima-4", card: "Cartão-Vítima-4", minigame: AnyView(GeniusView()), picture: "Quadro-Reveal-Vítima-4", letters: ["S", "O"], finalPicture: "Quadro-Final-Vítima-4", tapped: false, viewFinal: AnyView(FinalView())),
+                .init(id: 3, name: "Saulo", firstPicture: "Quadro-Default-Vítima-4", card: "Cartão-Vítima-4", minigame: AnyView(GeniusViewControllerRepresentable().ignoresSafeArea()), picture: "Quadro-Reveal-Vítima-4", letters: ["S", "O"], finalPicture: "Quadro-Final-Vítima-4", tapped: false, viewFinal: AnyView(FinalView())),
         ]
     }
 }

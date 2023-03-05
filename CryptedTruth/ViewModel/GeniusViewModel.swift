@@ -7,6 +7,7 @@
 
 import Foundation
 import GameController
+import Combine
 
 class GeniusViewModel: ObservableObject {
  
@@ -26,6 +27,19 @@ class GeniusViewModel: ObservableObject {
     @Published var isTambourineBlinking: Bool
     
     @Published var roundHitsCounter: Int
+    
+    var willChange = PassthroughSubject<GeniusViewModel, Never>()
+    var didChange = PassthroughSubject<GeniusViewModel, Never>()
+    
+    @Published var playerInputDirection: UISwipeGestureRecognizer.Direction? {
+        willSet {
+            willChange.send(self)
+        }
+        
+        didSet {
+            didChange.send(self)
+        }
+    }
     
     let sax, guitar, piano, tambourine: Instrument
     let instruments: [Instrument]
@@ -73,6 +87,23 @@ class GeniusViewModel: ObservableObject {
         
     }
     
+    func getInstrumentByInputDirection() -> Instrument? {
+        
+        switch playerInputDirection {
+            case UISwipeGestureRecognizer.Direction.up:
+                return sax
+            case UISwipeGestureRecognizer.Direction.down:
+                return guitar
+            case UISwipeGestureRecognizer.Direction.left:
+                return piano
+            case UISwipeGestureRecognizer.Direction.right:
+                return tambourine
+            default:
+                return nil
+        }
+        
+    }
+    
     func playInstrument(_ instrument: Instrument) {
             
         SoundManager.instance.playSoundMPEG(sound: instrument.name, loops: 0)
@@ -82,23 +113,6 @@ class GeniusViewModel: ObservableObject {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.updateInstrumentStatus(instrument, status: false)
             instrument.image = self.getCurrentInstrumentImage(instrument: instrument)
-        }
-        
-    }
-    
-    func playInstrumentByDirection(direction: Direction) {
-        
-        switch direction {
-            case .up:
-                playInstrument(sax)
-            case .down:
-                playInstrument(guitar)
-            case .left:
-                playInstrument(piano)
-            case .right:
-                playInstrument(tambourine)
-            case .invalid:
-                break
         }
         
     }
@@ -132,7 +146,6 @@ class GeniusViewModel: ObservableObject {
     func playCurrentRound() {
         
         isPlayerTurn = false
-//        isCorrectInput = nil
         roundHitsCounter = 0
         
         startCpuTurn(completionHandler: { [self] in
@@ -141,14 +154,14 @@ class GeniusViewModel: ObservableObject {
         
     }
     
-    func evalPlayerInput(playerInput: Instrument) {
+    func evalPlayerInput() {
         
-//        isPlayerTurn = false
-//
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.25) {
-//            self.isPlayerTurn = true
-//        }
+        if !isPlayerTurn {
+            print("not player turn")
+            return
+        }
         
+        let playerInput = getInstrumentByInputDirection()!
         let roundInstruments = matchInstruments[roundCounter - 1]
         
         print("player input: \(playerInput.name)")
@@ -177,9 +190,6 @@ class GeniusViewModel: ObservableObject {
         if !(isCorrectInput!) {
             print("round failed")
             isGameOver = true
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                self.restartGame()
-            }
         }
         
     }
@@ -216,63 +226,15 @@ class GeniusViewModel: ObservableObject {
         }
 
         if !isPlayerTurn {
-            return "\(instrument.name)-dark-blue"
+            return "\(instrument.name)-white"
         }
 
         if isCorrectInput! {
-            return "\(instrument.name)-light-blue"
+            return "\(instrument.name)-blue"
         } else {
             return "\(instrument.name)-red"
         }
 
-    }
-    
-    static func calcSwipeDirection(_ x: Float, _ y: Float) -> Direction {
-        
-        let fingerDistanceFromSiriRemoteCenter: Float = 0.7
-        
-        if y > fingerDistanceFromSiriRemoteCenter {
-            return .up
-        }
-        
-        if y < -fingerDistanceFromSiriRemoteCenter {
-            return .down
-        }
-        
-        if x < -fingerDistanceFromSiriRemoteCenter {
-            return .left
-        }
-        
-        if x > fingerDistanceFromSiriRemoteCenter {
-            return .right
-        }
-        
-        return .invalid
-                
-    }
-    
-    static func getDirection(directionHandler: @escaping (Direction) -> ()) {
-                
-        NotificationCenter.default.addObserver(forName: .GCControllerDidConnect, object: nil, queue: .main) { notification in
-            
-            if let gcController = notification.object as? GCController {
-                
-                let microGamepad = gcController.microGamepad
-                microGamepad!.reportsAbsoluteDpadValues = true
-                microGamepad!.dpad.valueChangedHandler = { pad, x, y in
-                    
-                    let direction = GeniusViewModel.calcSwipeDirection(x, y)
-                    
-                    if direction != .invalid {
-                        directionHandler(direction)
-                    }
-                    
-                }
-                
-            }
-            
-        }
-        
     }
     
 }

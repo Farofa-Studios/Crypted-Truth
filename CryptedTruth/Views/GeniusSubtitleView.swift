@@ -31,22 +31,22 @@ struct GeniusSubtitleView: View {
                     .font(.custom("PTMono-Regular", size: 29))
                     .foregroundColor(.white)
                 
-//                if image == "sophia-chocada" {
-//                    VStack {
-//                        Spacer()
-//                        HStack {
-//                            Spacer()
-//                            Button(action: {
-//                                geniusViewModel!.restartGame()
-//                            }, label: {
-//                                Image("Next")
-//                            })
-//                            .buttonStyle(BlankButtonStyle())
-//                        }
-//                    }
-//                    .padding(.bottom, 16)
-//                    .padding(.trailing, 16)
-//                }
+                if image == "sophia-chocada" {
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            Button(action: {
+                                geniusViewModel!.restartGame()
+                            }, label: {
+                                Image("Next")
+                            })
+                            .buttonStyle(BlankButtonStyle())
+                        }
+                    }
+                    .padding(.bottom, 16)
+                    .padding(.trailing, 16)
+                }
                 
             }
             .frame(width: 1320, height: 200, alignment: .center)

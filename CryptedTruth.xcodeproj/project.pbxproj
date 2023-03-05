@@ -11,12 +11,13 @@
 		173502C8299FD8F000C57D55 /* GeniusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173502C7299FD8F000C57D55 /* GeniusViewModel.swift */; };
 		173502CB299FD92A00C57D55 /* Color+customColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173502CA299FD92A00C57D55 /* Color+customColors.swift */; };
 		173502CD299FD97B00C57D55 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173502CC299FD97B00C57D55 /* Direction.swift */; };
+		173B8E5829B26D2900861F64 /* GeniusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B8E5729B26D2900861F64 /* GeniusViewController.swift */; };
+		173B8E5C29B51AEB00861F64 /* GeniusViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B8E5B29B51AEB00861F64 /* GeniusViewControllerRepresentable.swift */; };
 		1768019C29AC2EA500517A96 /* BlankButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768019B29AC2EA500517A96 /* BlankButtonStyle.swift */; };
 		17A3BB5C299A72B600D27026 /* CryptedTruthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A3BB5B299A72B600D27026 /* CryptedTruthApp.swift */; };
 		17A3BB63299A72B700D27026 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17A3BB62299A72B700D27026 /* Preview Assets.xcassets */; };
 		17A3BB6A299A72CD00D27026 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 17A3BB69299A72CD00D27026 /* .gitignore */; };
 		17BA3DA329AA9AB500D7E810 /* Avatars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA3DA229AA9AB500D7E810 /* Avatars.swift */; };
-		17CA287E29AADD6200A3F563 /* GeniusMockedSwipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA287D29AADD6200A3F563 /* GeniusMockedSwipes.swift */; };
 		17CA287F29AAECD800A3F563 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17A3BB5F299A72B700D27026 /* Assets.xcassets */; };
 		17EB95C329ABEE86003407BF /* GeniusConcludedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EB95C229ABEE86003407BF /* GeniusConcludedView.swift */; };
 		17EB95C629AC26E4003407BF /* GeniusSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EB95C429ABEF9C003407BF /* GeniusSubtitleView.swift */; };
@@ -124,6 +125,8 @@
 		173502D929A6931600C57D55 /* FuzzyBubbles-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FuzzyBubbles-Bold.ttf"; sourceTree = "<group>"; };
 		173502DA29A6931600C57D55 /* FuzzyBubbles-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FuzzyBubbles-Regular.ttf"; sourceTree = "<group>"; };
 		173502DB29A6931F00C57D55 /* PTMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTMono-Regular.ttf"; sourceTree = "<group>"; };
+		173B8E5729B26D2900861F64 /* GeniusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeniusViewController.swift; sourceTree = "<group>"; };
+		173B8E5B29B51AEB00861F64 /* GeniusViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeniusViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		1768019B29AC2EA500517A96 /* BlankButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankButtonStyle.swift; sourceTree = "<group>"; };
 		17A3BB58299A72B600D27026 /* CryptedTruth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptedTruth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17A3BB5B299A72B600D27026 /* CryptedTruthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptedTruthApp.swift; sourceTree = "<group>"; };
@@ -131,7 +134,6 @@
 		17A3BB62299A72B700D27026 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17A3BB69299A72CD00D27026 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		17BA3DA229AA9AB500D7E810 /* Avatars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatars.swift; sourceTree = "<group>"; };
-		17CA287D29AADD6200A3F563 /* GeniusMockedSwipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeniusMockedSwipes.swift; sourceTree = "<group>"; };
 		17EB95C229ABEE86003407BF /* GeniusConcludedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeniusConcludedView.swift; sourceTree = "<group>"; };
 		17EB95C429ABEF9C003407BF /* GeniusSubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeniusSubtitleView.swift; sourceTree = "<group>"; };
 		17ED78A929A8EDAF00CA20AF /* tambourine.mpeg */ = {isa = PBXFileReference; lastKnownFileType = video.mpeg; path = tambourine.mpeg; sourceTree = "<group>"; };
@@ -433,6 +435,8 @@
 				17EB95C429ABEF9C003407BF /* GeniusSubtitleView.swift */,
 				BD780053299FA89200C6C974 /* AnagramView.swift */,
 				173502C5299FD8D900C57D55 /* GeniusView.swift */,
+				173B8E5729B26D2900861F64 /* GeniusViewController.swift */,
+				173B8E5B29B51AEB00861F64 /* GeniusViewControllerRepresentable.swift */,
 				8BBBDC9529A7B57D00F40463 /* SmellMiniGame.swift */,
 				8BBBDC9729A7B59200F40463 /* TasteMiniGame.swift */,
 				BD6C973329AAA78400DF0AA5 /* ChallengeConcludedView.swift */,
@@ -456,7 +460,6 @@
 				17ED78BC29A9872600CA20AF /* Instrument.swift */,
 				8BBBDC9D29A8E99E00F40463 /* MiniGameSubtitle.swift */,
 				BD914FA329AD8709004696AB /* BoardSubtitle.swift */,
-				17CA287D29AADD6200A3F563 /* GeniusMockedSwipes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				17A3BB5C299A72B600D27026 /* CryptedTruthApp.swift in Sources */,
 				8B0B824529AC22FF00B4AE95 /* IntroductionSubtitlesService.swift in Sources */,
 				BD2B265429AD0D30008592E5 /* BoardButtonStyle.swift in Sources */,
+				173B8E5C29B51AEB00861F64 /* GeniusViewControllerRepresentable.swift in Sources */,
 				8B5B6640299E7AEA006A23CD /* Recipe.swift in Sources */,
 				17EB95C329ABEE86003407BF /* GeniusConcludedView.swift in Sources */,
 				BDFFE6B429B0FD9000FA5FC3 /* CardSubtitlesService.swift in Sources */,
@@ -657,6 +661,7 @@
 				173502CD299FD97B00C57D55 /* Direction.swift in Sources */,
 				8B0B824B29ACE1A200B4AE95 /* TypedText.swift in Sources */,
 				173502CB299FD92A00C57D55 /* Color+customColors.swift in Sources */,
+				173B8E5829B26D2900861F64 /* GeniusViewController.swift in Sources */,
 				8BBBDC9829A7B59200F40463 /* TasteMiniGame.swift in Sources */,
 				BD78003E299D13C700C6C974 /* Victim.swift in Sources */,
 				BD914FA429AD8709004696AB /* BoardSubtitle.swift in Sources */,
@@ -664,7 +669,6 @@
 				BD780054299FA89200C6C974 /* AnagramView.swift in Sources */,
 				8BF72E1229AD665A00FEDE68 /* FinalViewModel.swift in Sources */,
 				BD780052299E5FA400C6C974 /* SubtitleView.swift in Sources */,
-				17CA287E29AADD6200A3F563 /* GeniusMockedSwipes.swift in Sources */,
 				8D55F92F299D2CE500964EAC /* MiniGame3Images.swift in Sources */,
 				8B0B824729AC2E3C00B4AE95 /* Shape+Triangle.swift in Sources */,
 				8B202F6229AB15E9009C5CB6 /* MiniGameSubtitlesService.swift in Sources */,
@@ -798,7 +802,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CryptedTruth/Preview Content\"";
-				DEVELOPMENT_TEAM = FJ6C8YTY7V;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CryptedTruth/Info.plist;
@@ -826,7 +830,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CryptedTruth/Preview Content\"";
-				DEVELOPMENT_TEAM = FJ6C8YTY7V;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CryptedTruth/Info.plist;
