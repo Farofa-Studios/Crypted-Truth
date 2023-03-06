@@ -83,6 +83,7 @@ struct GeniusConcludedView: View {
                     
                 }
             }
+            .foregroundColor(.white)
         }
     }
 }

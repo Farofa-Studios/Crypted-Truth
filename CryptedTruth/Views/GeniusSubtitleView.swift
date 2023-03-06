@@ -50,7 +50,7 @@ struct GeniusSubtitleView: View {
                     .padding(.trailing, 16)
                 }
                 
-                if image == "Bot" && !didStartGame {
+                if image == "Bot" && !didStartGame && geniusViewModel!.mistakesCounter == 0 {
                     VStack {
                         Spacer()
                         HStack {

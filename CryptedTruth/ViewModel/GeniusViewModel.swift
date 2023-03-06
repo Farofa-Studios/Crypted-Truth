@@ -147,13 +147,13 @@ class GeniusViewModel: ObservableObject {
     
     func playCurrentRound() {
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) { [self] in
         
             isPlayerTurn = false
             roundHitsCounter = 0
             
             startCpuTurn(completionHandler: {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                     self.isPlayerTurn = true
                 }
             })

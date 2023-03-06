@@ -84,7 +84,7 @@ struct GeniusView: View {
                         .padding(.top, 20)
                         .padding(.bottom, 175)
                 } else {
-                    GeniusSubtitleView(geniusViewModel: viewModel, avatar: .villain, image: "Bot", subtitle: "Deslize para o lado que corresponde ao som na ordem em que escutar...\nMemorize e reproduza a sequência de sons sem errar para liberar mais\ninformações do caso.")
+                    GeniusSubtitleView(geniusViewModel: viewModel, avatar: .villain, image: "Bot", subtitle: "Deslize para a direção que corresponde ao som na ordem em que escutar...\nMemorize e reproduza a sequência de sons sem errar para liberar mais\ninformações do caso.")
                         .padding(.top, 20)
                         .padding(.bottom, 175)
                 }
@@ -96,9 +96,6 @@ struct GeniusView: View {
                     .ignoresSafeArea()
             }
             .foregroundColor(.white)
-//            .onAppear {
-//                viewModel.playCurrentRound()
-//            }
             .onChange(of: viewModel.playerInputDirection) { newValue in
                 if newValue != nil {
                     viewModel.evalPlayerInput()
