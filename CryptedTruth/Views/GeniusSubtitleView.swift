@@ -16,6 +16,8 @@ struct GeniusSubtitleView: View {
     let image: String
     let subtitle: String
     
+    @State var didStartGame = false
+    
     var body: some View {
         HStack (alignment: .center, spacing: 16) {
             
@@ -38,6 +40,24 @@ struct GeniusSubtitleView: View {
                             Spacer()
                             Button(action: {
                                 geniusViewModel!.restartGame()
+                            }, label: {
+                                Image("Next")
+                            })
+                            .buttonStyle(BlankButtonStyle())
+                        }
+                    }
+                    .padding(.bottom, 16)
+                    .padding(.trailing, 16)
+                }
+                
+                if image == "Bot" && !didStartGame {
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            Button(action: {
+                                didStartGame = true
+                                geniusViewModel!.playCurrentRound()
                             }, label: {
                                 Image("Next")
                             })

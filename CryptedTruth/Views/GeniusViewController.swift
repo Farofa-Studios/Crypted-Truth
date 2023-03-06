@@ -52,7 +52,9 @@ class GeniusViewController: UIViewController {
     }
     
     @objc private func didSwipe(_ sender: UISwipeGestureRecognizer) {
-        viewModel.playerInputDirection = sender.direction
+        if viewModel.isPlayerTurn && !viewModel.isGameOver {
+            viewModel.playerInputDirection = sender.direction
+        }
     }
     
 }

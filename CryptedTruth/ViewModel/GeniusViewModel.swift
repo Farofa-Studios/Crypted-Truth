@@ -137,40 +137,44 @@ class GeniusViewModel: ObservableObject {
     }
     
     func restartGame() {
+        
         print("restarting...")
         roundCounter = 1
         isGameOver = false
         playCurrentRound()
+        
     }
     
     func playCurrentRound() {
         
-        isPlayerTurn = false
-        roundHitsCounter = 0
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
         
-        startCpuTurn(completionHandler: { [self] in
-            isPlayerTurn = true
-        })
+            isPlayerTurn = false
+            roundHitsCounter = 0
+            
+            startCpuTurn(completionHandler: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.isPlayerTurn = true
+                }
+            })
+            
+        }
         
     }
     
     func evalPlayerInput() {
-        
-        if !isPlayerTurn {
-            print("not player turn")
-            return
-        }
-        
+                
         let playerInput = getInstrumentByInputDirection()!
-        let roundInstruments = matchInstruments[roundCounter - 1]
-        
         print("player input: \(playerInput.name)")
+        playerInputDirection = nil
+
+        let roundInstruments = matchInstruments[roundCounter - 1]
         let cpuInput = roundInstruments[roundHitsCounter]
 
-        if playerInput.name == cpuInput.name { // jogador acertou
+        if playerInput.name == cpuInput.name {
             isCorrectInput = true
             roundHitsCounter += 1
-        } else { // jogador errou
+        } else {
             isCorrectInput = false
             mistakesCounter += 1
         }
@@ -191,7 +195,7 @@ class GeniusViewModel: ObservableObject {
             print("round failed")
             isGameOver = true
         }
-        
+                
     }
     
     func startCpuTurn(completionHandler: @escaping () -> ()) {

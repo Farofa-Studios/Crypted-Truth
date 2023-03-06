@@ -45,36 +45,35 @@ struct GeniusView: View {
                 
                 VStack {
                     Image(viewModel.sax.image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 236, height: 236)
                     HStack {
                         ZStack {
                             Image(viewModel.piano.image)
-                                .resizable()
-                                .frame(width: 236, height: 236)
                                 .padding(.trailing, 500)
                             
-                            if viewModel.isPlayerTurn {
-                                Text("Sua\nvez")
-                                    .padding(.horizontal, 25)
-                                    .font(.custom("PTMono-Bold", size: 48))
-                                    .multilineTextAlignment(.center)
-                            } else {
-                                Text("Ouça")
-                                    .padding(.horizontal, 25)
-                                    .font(.custom("PTMono-Bold", size: 48))
+                            VStack(alignment: .center) {
+                                
+                                if viewModel.isPlayerTurn {
+                                    Text("Sua\nvez")
+                                        .padding(.horizontal, 25)
+                                        .font(.custom("PTMono-Bold", size: 48))
+                                        .multilineTextAlignment(.center)
+                                } else {
+                                    Text("Ouça")
+                                        .padding(.horizontal, 25)
+                                        .font(.custom("PTMono-Bold", size: 48))
+                                }
+                                
+                            }
+                            .frame(width: 170, height: 170)
+                            .background {
+                                Color.darkRedColor
                             }
                             
                             Image(viewModel.tambourine.image)
-                                .resizable()
-                                .frame(width: 236, height: 236)
                                 .padding(.leading, 500)
                         }
                     }
                     Image(viewModel.guitar.image)
-                        .resizable()
-                        .frame(width: 236, height: 236)
                 }
                 .padding(.top, 75)
                 
@@ -85,7 +84,7 @@ struct GeniusView: View {
                         .padding(.top, 20)
                         .padding(.bottom, 175)
                 } else {
-                    GeniusSubtitleView(geniusViewModel: nil, avatar: .villain, image: "Bot", subtitle: "Deslize para o lado que corresponde ao som na ordem em que escutar...\nMemorize e reproduza a sequência de sons sem errar para liberar mais\ninformações do caso.")
+                    GeniusSubtitleView(geniusViewModel: viewModel, avatar: .villain, image: "Bot", subtitle: "Deslize para o lado que corresponde ao som na ordem em que escutar...\nMemorize e reproduza a sequência de sons sem errar para liberar mais\ninformações do caso.")
                         .padding(.top, 20)
                         .padding(.bottom, 175)
                 }
@@ -96,11 +95,14 @@ struct GeniusView: View {
                 Color.darkColor
                     .ignoresSafeArea()
             }
-            .onAppear {
-                viewModel.playCurrentRound()
-            }
+            .foregroundColor(.white)
+//            .onAppear {
+//                viewModel.playCurrentRound()
+//            }
             .onChange(of: viewModel.playerInputDirection) { newValue in
-                viewModel.evalPlayerInput()
+                if newValue != nil {
+                    viewModel.evalPlayerInput()
+                }
             }
             .onChange(of: viewModel.didConcludeGame) { newValue in
                 if newValue {

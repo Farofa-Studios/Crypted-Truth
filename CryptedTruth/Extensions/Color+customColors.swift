@@ -15,4 +15,5 @@ extension Color {
     static let accentColor = Color("accent-color")
     static let backgroundColor = Color("background-color")
     static let buttonMiniGameColor = Color("button-minigame-color")
+    static let darkRedColor = Color("dark-red-color")
 }
