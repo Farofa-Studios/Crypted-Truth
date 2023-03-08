@@ -25,6 +25,12 @@ struct CardBoardView: View {
         }
         
         SubtitleView(subtitle: cardSubtitles[victim.id], buttonAction: nil)
+            .onAppear() {
+                SoundManager.instance.playSoundM4A(sound: cardSubtitles[victim.id].audio, loops: 0)
+            }
+            .onDisappear() {
+                SoundManager.instance.playSoundMP3(sound: "Thriller", loops: -1)
+            }
         
     }
 }
