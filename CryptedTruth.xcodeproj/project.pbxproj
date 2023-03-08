@@ -85,7 +85,7 @@
 		8D6B9D1029AC358A009B67CA /* MiniGame olfato concluido.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B9CEB29AC358A009B67CA /* MiniGame olfato concluido.m4a */; };
 		8D6B9D1129AC358A009B67CA /* MiniGame tato concluido.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B9CEC29AC358A009B67CA /* MiniGame tato concluido.m4a */; };
 		8D6B9D1229AC358A009B67CA /* Sofia 5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B9CED29AC358A009B67CA /* Sofia 5.m4a */; };
-		8D6B9D1329AC358A009B67CA /* Quadro 4 - 9 - 11 - 13.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B9CEE29AC358A009B67CA /* Quadro 4 - 9 - 11 - 13.m4a */; };
+		8D6B9D1329AC358A009B67CA /* Quadro 4-9-11-13.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B9CEE29AC358A009B67CA /* Quadro 4-9-11-13.m4a */; };
 		8D6B9D1429AC358A009B67CA /* Quadro 15.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B9CEF29AC358A009B67CA /* Quadro 15.m4a */; };
 		8D6B9D1529AC358A009B67CA /* Introducao Sofia.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B9CF029AC358A009B67CA /* Introducao Sofia.m4a */; };
 		8D6B9D1629AC358A009B67CA /* Quadro 6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B9CF129AC358A009B67CA /* Quadro 6.m4a */; };
@@ -198,7 +198,7 @@
 		8D6B9CEB29AC358A009B67CA /* MiniGame olfato concluido.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MiniGame olfato concluido.m4a"; sourceTree = "<group>"; };
 		8D6B9CEC29AC358A009B67CA /* MiniGame tato concluido.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MiniGame tato concluido.m4a"; sourceTree = "<group>"; };
 		8D6B9CED29AC358A009B67CA /* Sofia 5.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia 5.m4a"; sourceTree = "<group>"; };
-		8D6B9CEE29AC358A009B67CA /* Quadro 4 - 9 - 11 - 13.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quadro 4 - 9 - 11 - 13.m4a"; sourceTree = "<group>"; };
+		8D6B9CEE29AC358A009B67CA /* Quadro 4-9-11-13.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quadro 4-9-11-13.m4a"; sourceTree = "<group>"; };
 		8D6B9CEF29AC358A009B67CA /* Quadro 15.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quadro 15.m4a"; sourceTree = "<group>"; };
 		8D6B9CF029AC358A009B67CA /* Introducao Sofia.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Introducao Sofia.m4a"; sourceTree = "<group>"; };
 		8D6B9CF129AC358A009B67CA /* Quadro 6.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quadro 6.m4a"; sourceTree = "<group>"; };
@@ -388,7 +388,7 @@
 				8D6B9CF229AC358A009B67CA /* Quadro 1.m4a */,
 				8D6B9CF429AC358A009B67CA /* Quadro 2.m4a */,
 				8D6B9CDA29AC3589009B67CA /* Quadro 3.m4a */,
-				8D6B9CEE29AC358A009B67CA /* Quadro 4 - 9 - 11 - 13.m4a */,
+				8D6B9CEE29AC358A009B67CA /* Quadro 4-9-11-13.m4a */,
 				8D6B9CF829AC358A009B67CA /* Quadro 5.m4a */,
 				8D6B9CF129AC358A009B67CA /* Quadro 6.m4a */,
 				8D6B9CD529AC3589009B67CA /* Quadro 7.m4a */,
@@ -577,7 +577,7 @@
 				8D6B9D0B29AC358A009B67CA /* Intrucao MiniGame Paladar.mp3 in Resources */,
 				8D6B9D1B29AC358A009B67CA /* Intrucao MiniGame Olfato.mp3 in Resources */,
 				8D6B9D1729AC358A009B67CA /* Quadro 1.m4a in Resources */,
-				8D6B9D1329AC358A009B67CA /* Quadro 4 - 9 - 11 - 13.m4a in Resources */,
+				8D6B9D1329AC358A009B67CA /* Quadro 4-9-11-13.m4a in Resources */,
 				17ED78BB29A924B900CA20AF /* PTMono-Bold.ttf in Resources */,
 				8D6B9D0229AC358A009B67CA /* MiniGame Paladar acerto.m4a in Resources */,
 				8D6B9D1629AC358A009B67CA /* Quadro 6.m4a in Resources */,
