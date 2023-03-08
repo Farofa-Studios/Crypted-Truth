@@ -20,9 +20,9 @@ struct Aromas {
             .init(id: 2,
                   image: nil,
                   title: "herbais",
-                  ingredientsList: ["her-Alecrim", "her-Hortelã", "her-Babosa", "her-Cidreira"],
-                  correctAnswer: "Manjericão",
-                  correctAnswerImage: "her-Manjericão"),
+                  ingredientsList: ["her-Manjericão", "her-Hortelã", "her-Babosa", "her-Cidreira"],
+                  correctAnswer: "Alecrim",
+                  correctAnswerImage: "her-Alecrim"),
         
             .init(id: 3,
                   image: nil,
