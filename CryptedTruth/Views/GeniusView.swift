@@ -11,7 +11,7 @@ import GameController
 struct GeniusView: View {
     
     @ObservedObject var viewModel = GeniusViewModel()
-    @AppStorage("minigame1") var ok1 = false
+    @AppStorage("minigame4") var ok4 = false
 
     var body: some View {
        
@@ -103,7 +103,7 @@ struct GeniusView: View {
             }
             .onChange(of: viewModel.didConcludeGame) { newValue in
                 if newValue {
-                    ok1 = newValue
+                    ok4 = newValue
                 }
             }
             .navigationDestination(isPresented: $viewModel.didConcludeGame) {
