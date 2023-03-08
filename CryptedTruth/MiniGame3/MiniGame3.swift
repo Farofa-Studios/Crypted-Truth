@@ -281,9 +281,12 @@ struct MiniGame3: View {
                         }
                     }
                     
-                    SubtitleView(subtitle: Subtitle(id: 30, image: "Bot", type: .villain, subtitle: "Deslize entre as peças e clique para rotacionar até formar a imagem completa.", audio: ""), buttonAction: nil)
+                    SubtitleView(subtitle: Subtitle(id: 30, image: "Bot", type: .villain, subtitle: "Deslize entre as peças e clique para rotacionar até formar a imagem completa.", audio: "Instrucao MiniGame Tato"), buttonAction: nil)
                 }
             }
+        }
+        .onAppear(){
+            SoundManager.instance.playSoundMP3(sound: "Instrucao MiniGame Tato", loops: 0)
         }
     }
 }
