@@ -31,6 +31,7 @@ struct CardButton: View {
                 .resizable()
                 .scaledToFill()
                 .frame(width: 160, height: 160)
+            
         }
         .buttonStyle(.card)
         .rotationEffect(.degrees(90 * Double(rotation)))
