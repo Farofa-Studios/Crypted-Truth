@@ -76,9 +76,9 @@ struct GeniusConcludedView: View {
                     .frame(width: 1320, height: 742.5)
                     
                     if mistakesCounter == 0 {
-                        GeniusSubtitleView(geniusViewModel: nil, avatar: .streamer, image: "sophia-animada", subtitle: "Ah gente, achei fácil! Já terminamos o desafio e liberamos as informações da vítima, vamos dar uma olhada no quadro.")
+                        GeniusSubtitleView(geniusViewModel: nil, subtitleType: .winWithNoMistake, avatar: .streamer, image: "sophia-animada", subtitle: "Ah gente, achei fácil! Já terminamos o desafio e liberamos as informações da vítima, vamos dar uma olhada no quadro.")
                     } else {
-                        GeniusSubtitleView(geniusViewModel: nil, avatar: .streamer, image: "sophia-chocada", subtitle: "Ufa! Foi difícil, mas conseguimos! Terminamos o desafio e liberamos as informações dessa vítima! Vamos dar uma olhada no quadro.")
+                        GeniusSubtitleView(geniusViewModel: nil, subtitleType: .winWithMistake, avatar: .streamer, image: "sophia-chocada", subtitle: "Ufa! Foi difícil, mas conseguimos! Terminamos o desafio e liberamos as informações dessa vítima! Vamos dar uma olhada no quadro.")
                     }
                     
                 }

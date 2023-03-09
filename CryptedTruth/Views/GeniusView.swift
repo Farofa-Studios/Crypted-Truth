@@ -80,11 +80,11 @@ struct GeniusView: View {
                 Spacer()
                 
                 if viewModel.isGameOver {
-                    GeniusSubtitleView(geniusViewModel: viewModel, avatar: .streamer, image: "sophia-chocada", subtitle: "Aahh! Errei a sequência... Vou ter que recomeçar!")
+                    GeniusSubtitleView(geniusViewModel: viewModel, subtitleType: .gameOver, avatar: .streamer, image: "sophia-chocada", subtitle: "Aahh! Errei a sequência... Vou ter que recomeçar!")
                         .padding(.top, 20)
                         .padding(.bottom, 175)
                 } else {
-                    GeniusSubtitleView(geniusViewModel: viewModel, avatar: .villain, image: "Bot", subtitle: "Deslize para a direção que corresponde ao som na ordem em que escutar...\nMemorize e reproduza a sequência de sons sem errar para liberar mais\ninformações do caso.")
+                    GeniusSubtitleView(geniusViewModel: viewModel, subtitleType: .howToPlay, avatar: .villain, image: "Bot", subtitle: "Deslize para o lado que corresponde ao som na ordem em que escutar...\nMemorize e reproduza a sequência de sons sem errar para liberar mais\ninformações do caso.")
                         .padding(.top, 20)
                         .padding(.bottom, 175)
                 }

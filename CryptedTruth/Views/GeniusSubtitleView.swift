@@ -8,10 +8,15 @@
 import Foundation
 import SwiftUI
 
+enum SubtitleType {
+    case howToPlay, gameOver, winWithMistake, winWithNoMistake
+}
+
 struct GeniusSubtitleView: View {
     
     let geniusViewModel: GeniusViewModel?
     
+    let subtitleType: SubtitleType
     let avatar: Avatars
     let image: String
     let subtitle: String
@@ -81,6 +86,22 @@ struct GeniusSubtitleView: View {
             }
             
         }
+        .onAppear {
+            
+            switch subtitleType {
+                case .howToPlay:
+                    if geniusViewModel!.mistakesCounter == 0 {
+                        SoundManager.instance.playSoundMP3(sound: "Instrucoes MiniGame Audicao", loops: 0)
+                    }
+                case .gameOver:
+                    SoundManager.instance.playSoundM4A(sound: "MiniGame Audicao erro", loops: 0)
+                case .winWithMistake:
+                    SoundManager.instance.playSoundM4A(sound: "MiniGame Audicao erro", loops: 0)
+                case .winWithNoMistake:
+                    SoundManager.instance.playSoundM4A(sound: "MiniGame Audicao concluido sem erros", loops: 0)
+            }
+            
+        }
     }
 }
 
@@ -88,9 +109,9 @@ struct GeniusSubtitleView_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        GeniusSubtitleView(geniusViewModel: nil, avatar: .villain, image: "Bot", subtitle: "Deslize para o lado que corresponde ao som na ordem em que escutar...\nMemorize e reproduza a sequência de sons sem errar para liberar mais\ninformações do caso.")
+        GeniusSubtitleView(geniusViewModel: nil, subtitleType: .howToPlay, avatar: .villain, image: "Bot", subtitle: "Deslize para o lado que corresponde ao som na ordem em que escutar...\nMemorize e reproduza a sequência de sons sem errar para liberar mais\ninformações do caso.")
         
-        GeniusSubtitleView(geniusViewModel: GeniusViewModel(), avatar: .streamer, image: "sophia-chocada", subtitle: "Aahh! Errei a sequência... Vou ter que recomeçar!")
+        GeniusSubtitleView(geniusViewModel: GeniusViewModel(), subtitleType: .gameOver, avatar: .streamer, image: "sophia-chocada", subtitle: "Aahh! Errei a sequência... Vou ter que recomeçar!")
         
     }
     
