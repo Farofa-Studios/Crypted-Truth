@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "incorrect-queijo.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

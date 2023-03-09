@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SmellMiniGame: View {
     
-    let ingredientsOptionList = ["Op-Manjericão", "Op-Cereja", "Op-Chocolate", "Op-Limão", "Op-Lírio"].shuffled()
+    let ingredientsOptionList = ["Op-Alecrim", "Op-Cereja", "Op-Chocolate", "Op-Limão", "Op-Lírio"].shuffled()
     
     let numOfItems = Aromas.allAromas.count
     
